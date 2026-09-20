@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1117" />
   <title>Doryco Chorng | Portfolio</title>
   <meta name="description" content="Portfolio of Doryco Chorng, Computer Engineering student at Tacoma Community College." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111'/%3E%3Ctext x='50' y='66' font-size='44' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23fff'%3EDC%3C/text%3E%3C/svg%3E" />
@@ -13,6 +14,8 @@
       try { t = localStorage.getItem('theme'); } catch (e) {}
       if (!t) t = 'dark';
       document.documentElement.setAttribute('data-theme', t);
+      var m = document.querySelector('meta[name=theme-color]');
+      if (m) m.setAttribute('content', t === 'dark' ? '#0d1117' : '#f6f8fa');
     })();
   </script>
   <link rel="stylesheet" href="style.css" />
@@ -236,7 +239,7 @@
           <span class="line" style="--i:1"><span>Chorng</span></span>
         </h1>
         <p class="typing fade" style="--i:2"><span id="typed"></span><span class="caret"></span></p>
-        <p class="lead fade" style="--i:3" data-i18n="k7">I'm an Associate of Computer Engineering student at <strong>Tacoma Community College</strong>. I build websites &mdash; both the part you see and the part that runs behind the scenes.</p>
+        <p class="lead fade" style="--i:3" data-i18n="k7">I'm an Associate of Computer Engineering student at <strong>Tacoma Community College</strong>. I love learning to code and building something new, curiosity is what led me here, and my dream job is to become an <strong>Embedded ML Engineer</strong>.</p>
         <div class="cta fade" style="--i:4">
           <a href="#skills" class="btn solid" data-i18n="k8">See my skills</a>
           <a href="#contact" class="btn outline" data-i18n="k9">Contact me</a>
@@ -263,12 +266,16 @@
     <section id="about" class="section">
       <div class="title reveal"><span class="num">01 //</span><h2 data-i18n="k11">About me</h2></div>
       <div class="about-grid">
-        <p class="statement reveal" data-i18n="k12">I'm <strong>Doryco Chorng</strong>, currently studying for an <strong>Associate degree in Computer Engineering</strong> at Tacoma Community College (TCC). I enjoy working across the whole stack, from designing pages people can use to writing the code that powers them.</p>
+        <figure class="portrait reveal">
+          <div class="portrait-frame"><img src="profile.jpg" width="640" height="640" alt="Photo of Doryco Chorng" loading="lazy" decoding="async" /></div>
+          <figcaption data-i18n="thatsme">// that's me</figcaption>
+        </figure>
+        <p class="statement reveal" data-i18n="k12">I'm <strong>Doryco Chorng</strong>, currently studying for an <strong>Associate degree in Computer Engineering</strong> at Tacoma Community College (TCC). I love learning to code and building something new, and curiosity is what led me here. My dream job is to become an <strong>Embedded ML Engineer</strong>.</p>
         <ul class="facts card reveal">
           <li><span data-i18n="k13">Name</span><b>Doryco Chorng</b></li>
           <li><span data-i18n="k14">Studying</span><b data-i18n="k18">A.S. Computer Engineering</b></li>
           <li><span data-i18n="k15">School</span><b>Tacoma Community College (TCC), WA</b></li>
-          <li><span data-i18n="k16">Focus</span><b data-i18n="k19">Full Stack Developer</b></li>
+          <li><span data-i18n="k16">Focus</span><b data-i18n="focus">Full Stack, Hardware &amp; AI</b></li>
           <li><span data-i18n="k17">Nationality</span><b class="nation"><svg class="flag" viewBox="0 0 60 40" role="img" aria-label="Flag of Cambodia"><use href="#flag-kh" /></svg><span data-i18n="k20">Cambodian</span></b></li>
         </ul>
       </div>
@@ -447,32 +454,76 @@
     <section id="achievements" class="section">
       <div class="title reveal"><span class="num">06 //</span><h2 data-i18n="ach">Achievements</h2></div>
       <div class="skill-grid">
-        <article class="skill card award reveal tint-silver">
-          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-planet" /></svg></span><div><h3>Copernicus Olympiad</h3></div></div>
+        <article class="skill card award has-media reveal tint-silver">
+          <div class="award-media">
+            <button type="button" class="shot" data-full="ach-copernicus.jpg" data-cap="Copernicus Olympiad 2025 · silver medal and certificate (Mathematics, Preliminary Round)" data-cap-km="Copernicus Olympiad 2025 · មេដាយប្រាក់ និងវិញ្ញាបនបត្រ (គណិតវិទ្យា ជុំជម្រុះ)" aria-label="View photo: Copernicus Olympiad">
+              <img src="ach-copernicus.jpg" width="960" height="1280" alt="Doryco holding the Copernicus Olympiad silver medal and certificate outside a school building" style="object-position:50% 68%" loading="lazy" decoding="async" />
+              <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </button>
+            <button type="button" class="medal-badge" data-full="medals-all.jpg" data-cap="My 2025 medals, left to right: SASMO Bronze, AIMO Silver, WMI Silver and Copernicus Silver" data-cap-km="មេដាយរបស់ខ្ញុំឆ្នាំ ២០២៥ ពីឆ្វេងទៅស្តាំ៖ SASMO មេដាយសំរិទ្ធ, AIMO មេដាយប្រាក់, WMI មេដាយប្រាក់ និង Copernicus មេដាយប្រាក់" aria-label="View medal: Copernicus Olympiad">
+              <img src="medal-copernicus.jpg" width="240" height="240" alt="Copernicus Olympiad 2025 silver medal" loading="lazy" decoding="async" />
+            </button>
+          </div>
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-planet" /></svg></span><div><h3>Copernicus Olympiad</h3><span class="round" data-i18n="r_cop">Mathematics · Preliminary Round</span></div></div>
           <a class="organizer" href="https://copernicusolympiad.com/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile none"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-org" /></svg></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>Copernicus Olympiad (Houston, TX, USA)</b></span></a>
           <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
         </article>
-        <article class="skill card award reveal tint-silver">
-          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-network" /></svg></span><div><h3>WMI</h3><span class="sub">World Math Invitational Competition</span></div></div>
+        <article class="skill card award has-media reveal tint-silver">
+          <div class="award-media">
+            <button type="button" class="shot" data-full="ach-wmi.jpg" data-cap="WMI 2025 Medal Awarding Ceremony · Preliminary Round in Cambodia · 22 March 2025 · Institute of Technology of Cambodia" data-cap-km="ពិធីប្រគល់មេដាយ WMI 2025 · ជុំជម្រុះនៅកម្ពុជា · ថ្ងៃទី២២ មីនា ២០២៥ · Institute of Technology of Cambodia" aria-label="View photo: WMI">
+              <img src="ach-wmi.jpg" width="1080" height="720" alt="Doryco receiving the WMI 2025 silver medal on stage at the medal awarding ceremony in Cambodia" style="object-position:52% 62%" loading="lazy" decoding="async" />
+              <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </button>
+            <button type="button" class="medal-badge" data-full="medals-all.jpg" data-cap="My 2025 medals, left to right: SASMO Bronze, AIMO Silver, WMI Silver and Copernicus Silver" data-cap-km="មេដាយរបស់ខ្ញុំឆ្នាំ ២០២៥ ពីឆ្វេងទៅស្តាំ៖ SASMO មេដាយសំរិទ្ធ, AIMO មេដាយប្រាក់, WMI មេដាយប្រាក់ និង Copernicus មេដាយប្រាក់" aria-label="View medal: WMI">
+              <img src="medal-wmi.jpg" width="240" height="240" alt="WMI 2025 silver medal" loading="lazy" decoding="async" />
+            </button>
+          </div>
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-network" /></svg></span><div><h3>WMI</h3><span class="sub">World Math Invitational Competition</span><span class="round" data-i18n="r_wmi">Preliminary Round · Cambodia</span></div></div>
           <a class="organizer" href="https://www.wminv.org/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-wmi.png" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>World Mathematics Invitational Organizing Committee (Taiwan)</b></span></a>
           <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
         </article>
-        <article class="skill card award reveal tint-green">
+        <article class="skill card award has-media reveal tint-green">
+          <div class="award-media deco" aria-hidden="true">
+            <div class="deco-panel"><svg viewBox="0 0 24 24"><use href="#a-code" /></svg></div>
+            <span class="medal-badge"><svg viewBox="0 0 24 24"><use href="#a-cert" /></svg></span>
+          </div>
           <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-code" /></svg></span><div><h3>NEO Coding Olympiad</h3></div></div>
           <a class="organizer" href="https://codingolympiad.org/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-neo.svg" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>NEO Olympiad by Main Team Organization</b></span></a>
           <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-cert" /></svg><span data-i18n="honor">Honorable Certificate</span></span><span class="year" data-i18n="y2025">2025</span></div>
         </article>
-        <article class="skill card award reveal tint-bronze">
-          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-calc" /></svg></span><div><h3>SASMO 2025</h3></div></div>
+        <article class="skill card award has-media reveal tint-bronze">
+          <div class="award-media">
+            <button type="button" class="shot" data-full="ach-sasmo.jpg" data-cap="Bronze award announcement by Preah Yukunthor High School, New Generation School · SASMO and SMGF 2025" data-cap-km="ការប្រកាសកិត្តិយសមេដាយសំរិទ្ធដោយវិទ្យាល័យព្រះយុគន្ធរ សាលារៀនជំនាន់ថ្មី · SASMO and SMGF 2025" aria-label="View photo: SASMO 2025">
+              <img src="ach-sasmo.jpg" width="1253" height="1248" alt="Congratulation poster from Preah Yukunthor High School showing Doryco with the SASMO bronze medal and certificate" style="object-position:50% 52%" loading="lazy" decoding="async" />
+              <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </button>
+            <button type="button" class="medal-badge" data-full="medals-all.jpg" data-cap="My 2025 medals, left to right: SASMO Bronze, AIMO Silver, WMI Silver and Copernicus Silver" data-cap-km="មេដាយរបស់ខ្ញុំឆ្នាំ ២០២៥ ពីឆ្វេងទៅស្តាំ៖ SASMO មេដាយសំរិទ្ធ, AIMO មេដាយប្រាក់, WMI មេដាយប្រាក់ និង Copernicus មេដាយប្រាក់" aria-label="View medal: SASMO 2025">
+              <img src="medal-sasmo.jpg" width="240" height="240" alt="SASMO 2025 bronze medal" loading="lazy" decoding="async" />
+            </button>
+          </div>
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-calc" /></svg></span><div><h3>SASMO 2025</h3><span class="round" data-i18n="r_sasmo">Grade 10 · NGS Preah Yukunthor High School</span></div></div>
           <a class="organizer" href="https://simcc.org/sasmo/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile none"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-org" /></svg></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>Singapore International Mastery Contests Centre (SIMCC)</b></span></a>
           <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="bronze">Bronze</span></span><span class="year" data-i18n="y2025">2025</span></div>
         </article>
-        <article class="skill card award reveal tint-silver">
-          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-sigma" /></svg></span><div><h3>AIMO 2025</h3><span class="sub">Asia International Math Olympiad</span></div></div>
+        <article class="skill card award has-media reveal tint-silver">
+          <div class="award-media">
+            <button type="button" class="shot" data-full="ach-aimo.jpg" data-cap="AIMO medal ceremony · Cambodia Trial Round · 7 June 2025" data-cap-km="ពិធីប្រគល់មេដាយ AIMO · ជុំសាកល្បងនៅកម្ពុជា · ថ្ងៃទី៧ មិថុនា ២០២៥" aria-label="View photo: AIMO 2025">
+              <img src="ach-aimo.jpg" width="1080" height="720" alt="Doryco holding the AIMO silver medal and certificate at the medal ceremony in Cambodia" style="object-position:62% 40%" loading="lazy" decoding="async" />
+              <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </button>
+            <button type="button" class="medal-badge" data-full="medals-all.jpg" data-cap="My 2025 medals, left to right: SASMO Bronze, AIMO Silver, WMI Silver and Copernicus Silver" data-cap-km="មេដាយរបស់ខ្ញុំឆ្នាំ ២០២៥ ពីឆ្វេងទៅស្តាំ៖ SASMO មេដាយសំរិទ្ធ, AIMO មេដាយប្រាក់, WMI មេដាយប្រាក់ និង Copernicus មេដាយប្រាក់" aria-label="View medal: AIMO 2025">
+              <img src="medal-aimo.jpg" width="240" height="240" alt="AIMO 2025 silver medal" loading="lazy" decoding="async" />
+            </button>
+          </div>
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-sigma" /></svg></span><div><h3>AIMO 2025</h3><span class="sub">Asia International Math Olympiad</span><span class="round" data-i18n="r_aimo">Cambodia Trial Round</span></div></div>
           <a class="organizer" href="https://aimo.world/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-aimo.jpg" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>Asia International Mathematical Olympiad Union</b></span></a>
           <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
         </article>
-        <article class="skill card award reveal tint-gold">
+        <article class="skill card award has-media reveal tint-gold">
+          <div class="award-media deco" aria-hidden="true">
+            <div class="deco-panel"><svg viewBox="0 0 24 24"><use href="#a-abacus" /></svg></div>
+            <span class="medal-badge"><svg viewBox="0 0 24 24"><use href="#a-trophy" /></svg></span>
+          </div>
           <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-abacus" /></svg></span><div><h3>UCMAS</h3><span class="sub" data-i18n="intl">International competition</span></div></div>
           <a class="organizer" href="https://ucmas.com/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-ucmas.png" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>UC International Corporation (UCMAS)</b></span></a>
           <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-trophy" /></svg><span data-i18n="runner">3rd Runner-up</span></span><span class="year" data-i18n="y2019">2019</span></div>
@@ -553,6 +604,14 @@
       </div>
     </section>
   </main>
+
+    <!-- Photo viewer -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button type="button" class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+    <button type="button" class="lb-nav prev" id="lbPrev" aria-label="Previous">&#8249;</button>
+    <figure class="lb-fig"><img id="lbImg" alt="" /><figcaption id="lbCap"></figcaption></figure>
+    <button type="button" class="lb-nav next" id="lbNext" aria-label="Next">&#8250;</button>
+  </div>
 
   <script src="script.js"></script>
 </body>

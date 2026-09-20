@@ -7,10 +7,13 @@
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
   /* ---------- Language: English / Khmer ---------- */
-  const KM = {"k0":"អំពី","k1":"ជំនាញ","k2":"វិជ្ជាជីវៈ","k3":"ការអប់រំ","k4":"បទពិសោធន៍","k5":"ទំនាក់ទំនង","k6":"<span class=\"ps\">$</span> សួស្តី! ខ្ញុំគឺ","k7":"ខ្ញុំជានិស្សិតថ្នាក់បរិញ្ញាបត្ររង ផ្នែកវិស្វកម្មកុំព្យូទ័រ នៅ <strong>Tacoma Community College</strong>។ ខ្ញុំបង្កើតគេហទំព័រ ទាំងផ្នែកដែលអ្នកមើលឃើញ និងផ្នែកដែលដំណើរការនៅពីក្រោយ។","k8":"មើលជំនាញរបស់ខ្ញុំ","k9":"ទាក់ទងខ្ញុំ","k10":"រំកិលចុះក្រោម","k11":"អំពីខ្ញុំ","k12":"ខ្ញុំគឺ <strong>Doryco Chorng</strong> បច្ចុប្បន្នកំពុងសិក្សាថ្នាក់ <strong>បរិញ្ញាបត្ររងផ្នែកវិស្វកម្មកុំព្យូទ័រ</strong> នៅ Tacoma Community College (TCC)។ ខ្ញុំចូលចិត្តធ្វើការលើគ្រប់ផ្នែកនៃប្រព័ន្ធ ចាប់ពីការរចនាទំព័រសម្រាប់អ្នកប្រើ រហូតដល់ការសរសេរកូដដែលធ្វើឱ្យវាដំណើរការ។","k13":"ឈ្មោះ","k14":"កំពុងសិក្សា","k15":"សាលា","k16":"ផ្នែកផ្តោត","k17":"សញ្ជាតិ","k18":"បរិញ្ញាបត្ររង វិស្វកម្មកុំព្យូទ័រ","k19":"អ្នកអភិវឌ្ឍ Full Stack","k20":"ខ្មែរ","k21":"ក្តីសុបិនអនាគតរបស់ខ្ញុំ","k22":"វិស្វករ Embedded ML","k23":"ខ្ញុំចង់ផ្សំវិស្វកម្មកុំព្យូទ័រ និង machine learning ដើម្បីបង្កើតឧបករណ៍ឆ្លាតវៃ។","k24":"និស្សិតវិស្វកម្មកុំព្យូទ័រ","k25":"កម្មវិធីបរិញ្ញាបត្ររងនៅ TCC។","k26":"បង្កើតគេហទំព័រ ចាប់ពីអេក្រង់ដែលមនុស្សមើលឃើញ រហូតដល់ឡូជិកនៅពីក្រោយ។","k27":"អ្នកដោះស្រាយបញ្ហាបច្ចេកទេស","k28":"ដោះស្រាយបញ្ហាបច្ចេកទេស។","k29":"ប្រធានថ្នាក់","k30":"ជួយលោកគ្រូអ្នកគ្រូក្នុងកិច្ចការប្រចាំថ្ងៃ។","k31":"អ្នកស្ម័គ្រចិត្តសហគមន៍","k32":"ស្ម័គ្រចិត្ត និងជួយក្នុងសេវាកម្មសហគមន៍។","k33":"អ្នកដឹកនាំនិស្សិត","k34":"ទទួលខុសត្រូវក្នុងតួនាទីដឹកនាំ។","k35":"២០២៦ &ndash; បច្ចុប្បន្ន","k36":"២០២៥ &ndash; ២០២៦","k37":"២០២៤ &ndash; ២០២៥","k38":"២០១៩ &ndash; ២០២៤","k39":"WA សហរដ្ឋអាមេរិក","k40":"កម្ពុជា","k41":"ជំនាញបរិញ្ញាបត្ររង ផ្នែកវិស្វកម្មកុំព្យូទ័រ។","k42":"សិក្សានៅថ្នាក់ទី១១។","k43":"វិទ្យាល័យនៅកម្ពុជា ថ្នាក់ទី១០។","k44":"សាលាឯកជននៅកម្ពុជា ពីថ្នាក់ទី៥ ដល់ថ្នាក់ទី៩។","k45":"មិថុនា ២០២៥ &ndash; សីហា ២០២៥","k46":"ការដោះស្រាយបញ្ហាបច្ចេកទេស","k47":"ជួយដោះស្រាយបញ្ហាបច្ចេកទេស។","k48":"កញ្ញា ២០២៤ &ndash; កក្កដា ២០២៥","k49":"ប្រធានថ្នាក់ និងអ្នកស្ម័គ្រចិត្តសហគមន៍","k50":"ជួយលោកគ្រូអ្នកគ្រូក្នុងកិច្ចការប្រចាំថ្ងៃនៅក្នុងថ្នាក់ ចូលរួមការងារស្ម័គ្រចិត្តសហគមន៍ និងទទួលខុសត្រូវក្នុងតួនាទីដឹកនាំ។","k51":"ជជែកគ្នា","k52":"ចាប់អារម្មណ៍ធ្វើការជាមួយគ្នា ឬគ្រាន់តែចង់ជម្រាបសួរ? សូមផ្ញើសារតាមទម្រង់ ឬស្វែងរកខ្ញុំតាមគណនីទាំងនេះ។","k53":"ស្វែងរកខ្ញុំតាមអនឡាញ","k54":"ទំនាក់ទំនងយើង","k55":"សូមបំពេញទម្រង់ ហើយសាររបស់អ្នកនឹងត្រូវបានផ្ញើត្រង់ទៅប្រអប់សំបុត្ររបស់ខ្ញុំ។","k56":"ឈ្មោះពេញ","k57":"អ៊ីមែលរបស់អ្នក","k58":"គោលបំណង","k59":"សារ","k60":"ហេតុអ្វីអ្នកទាក់ទងខ្ញុំ?","k61":"ឱកាសការងារ ឬហ្វឹកហាត់ការ","k62":"សហការលើគម្រោង","k63":"សួរសំណួរ","k64":"មតិកែលម្អអំពី portfolio របស់ខ្ញុំ","k65":"គ្រាន់តែជម្រាបសួរ","k66":"ផ្សេងៗ","k67":"ផ្ញើសារ","k68":"បានផ្ញើសារហើយ!","k69":"ផ្ញើសារមួយទៀត"};
+  const KM = {"k0":"អំពី","k1":"ជំនាញ","k2":"វិជ្ជាជីវៈ","k3":"ការអប់រំ","k4":"បទពិសោធន៍","k5":"ទំនាក់ទំនង","k6":"<span class=\"ps\">$</span> សួស្តី! ខ្ញុំគឺ","k7":"ខ្ញុំជានិស្សិតថ្នាក់បរិញ្ញាបត្ររង ផ្នែកវិស្វកម្មកុំព្យូទ័រ នៅ <strong>Tacoma Community College</strong>។ ខ្ញុំចូលចិត្តរៀនសរសេរកូដ និងបង្កើតអ្វីដែលថ្មីៗ ភាពចង់ដឹងចង់ឃើញបាននាំខ្ញុំមកទីនេះ ហើយការងារក្តីសុបិនរបស់ខ្ញុំគឺក្លាយជា <strong>វិស្វករ Embedded ML</strong>។","k8":"មើលជំនាញរបស់ខ្ញុំ","k9":"ទាក់ទងខ្ញុំ","k10":"រំកិលចុះក្រោម","k11":"អំពីខ្ញុំ","k12":"ខ្ញុំគឺ <strong>Doryco Chorng</strong> បច្ចុប្បន្នកំពុងសិក្សាថ្នាក់ <strong>បរិញ្ញាបត្ររងផ្នែកវិស្វកម្មកុំព្យូទ័រ</strong> នៅ Tacoma Community College (TCC)។ ខ្ញុំចូលចិត្តរៀនសរសេរកូដ និងបង្កើតអ្វីដែលថ្មីៗ ហើយភាពចង់ដឹងចង់ឃើញបាននាំខ្ញុំមកទីនេះ។ ការងារក្តីសុបិនរបស់ខ្ញុំគឺក្លាយជា <strong>វិស្វករ Embedded ML</strong>។","k13":"ឈ្មោះ","k14":"កំពុងសិក្សា","k15":"សាលា","k16":"ផ្នែកផ្តោត","k17":"សញ្ជាតិ","k18":"បរិញ្ញាបត្ររង វិស្វកម្មកុំព្យូទ័រ","k19":"អ្នកអភិវឌ្ឍ Full Stack","k20":"ខ្មែរ","k21":"ក្តីសុបិនអនាគតរបស់ខ្ញុំ","k22":"វិស្វករ Embedded ML","k23":"ខ្ញុំចង់ផ្សំវិស្វកម្មកុំព្យូទ័រ និង machine learning ដើម្បីបង្កើតឧបករណ៍ឆ្លាតវៃ។","k24":"និស្សិតវិស្វកម្មកុំព្យូទ័រ","k25":"កម្មវិធីបរិញ្ញាបត្ររងនៅ TCC។","k26":"បង្កើតគេហទំព័រ ចាប់ពីអេក្រង់ដែលមនុស្សមើលឃើញ រហូតដល់ឡូជិកនៅពីក្រោយ។","k27":"អ្នកដោះស្រាយបញ្ហាបច្ចេកទេស","k28":"ដោះស្រាយបញ្ហាបច្ចេកទេស។","k29":"ប្រធានថ្នាក់","k30":"ជួយលោកគ្រូអ្នកគ្រូក្នុងកិច្ចការប្រចាំថ្ងៃ។","k31":"អ្នកស្ម័គ្រចិត្តសហគមន៍","k32":"ស្ម័គ្រចិត្ត និងជួយក្នុងសេវាកម្មសហគមន៍។","k33":"អ្នកដឹកនាំនិស្សិត","k34":"ទទួលខុសត្រូវក្នុងតួនាទីដឹកនាំ។","k35":"២០២៦ &ndash; បច្ចុប្បន្ន","k36":"២០២៥ &ndash; ២០២៦","k37":"២០២៤ &ndash; ២០២៥","k38":"២០១៩ &ndash; ២០២៤","k39":"WA សហរដ្ឋអាមេរិក","k40":"កម្ពុជា","k41":"ជំនាញបរិញ្ញាបត្ររង ផ្នែកវិស្វកម្មកុំព្យូទ័រ។","k42":"សិក្សានៅថ្នាក់ទី១១។","k43":"វិទ្យាល័យនៅកម្ពុជា ថ្នាក់ទី១០។","k44":"សាលាឯកជននៅកម្ពុជា ពីថ្នាក់ទី៥ ដល់ថ្នាក់ទី៩។","k45":"មិថុនា ២០២៥ &ndash; សីហា ២០២៥","k46":"ការដោះស្រាយបញ្ហាបច្ចេកទេស","k47":"ជួយដោះស្រាយបញ្ហាបច្ចេកទេស។","k48":"កញ្ញា ២០២៤ &ndash; កក្កដា ២០២៥","k49":"ប្រធានថ្នាក់ និងអ្នកស្ម័គ្រចិត្តសហគមន៍","k50":"ជួយលោកគ្រូអ្នកគ្រូក្នុងកិច្ចការប្រចាំថ្ងៃនៅក្នុងថ្នាក់ ចូលរួមការងារស្ម័គ្រចិត្តសហគមន៍ និងទទួលខុសត្រូវក្នុងតួនាទីដឹកនាំ។","k51":"ជជែកគ្នា","k52":"ចាប់អារម្មណ៍ធ្វើការជាមួយគ្នា ឬគ្រាន់តែចង់ជម្រាបសួរ? សូមផ្ញើសារតាមទម្រង់ ឬស្វែងរកខ្ញុំតាមគណនីទាំងនេះ។","k53":"ស្វែងរកខ្ញុំតាមអនឡាញ","k54":"ទំនាក់ទំនងយើង","k55":"សូមបំពេញទម្រង់ ហើយសាររបស់អ្នកនឹងត្រូវបានផ្ញើត្រង់ទៅប្រអប់សំបុត្ររបស់ខ្ញុំ។","k56":"ឈ្មោះពេញ","k57":"អ៊ីមែលរបស់អ្នក","k58":"គោលបំណង","k59":"សារ","k60":"ហេតុអ្វីអ្នកទាក់ទងខ្ញុំ?","k61":"ឱកាសការងារ ឬហ្វឹកហាត់ការ","k62":"សហការលើគម្រោង","k63":"សួរសំណួរ","k64":"មតិកែលម្អអំពី portfolio របស់ខ្ញុំ","k65":"គ្រាន់តែជម្រាបសួរ","k66":"ផ្សេងៗ","k67":"ផ្ញើសារ","k68":"បានផ្ញើសារហើយ!","k69":"ផ្ញើសារមួយទៀត"};
   const KMPH = {"p0":"ឈ្មោះពេញរបស់អ្នក","p1":"ដើម្បីឱ្យខ្ញុំអាចឆ្លើយតបទៅអ្នក","p2":"សរសេរសាររបស់អ្នកនៅទីនេះ..."};
   Object.assign(KM, { sch1: 'សាលារៀនជំនាន់ថ្មីវិទ្យាល័យព្រះយុគន្ធរ', sch2: 'សាលារៀនអន្តរជាតិបញ្ញាសាស្ត្រ សាខាសែនសុខ', sch2p: 'ភ្នំពេញ កម្ពុជា' });
   Object.assign(KM, { ach: 'សមិទ្ធផល', silver: 'មេដាយប្រាក់', bronze: 'មេដាយសំរិទ្ធ', honor: 'វិញ្ញាបនបត្រកិត្តិយស', runner: 'ជ័យលាភីលេខ ៣ (3rd Runner-up)', intl: 'ការប្រកួតអន្តរជាតិ', y2025: '២០២៥', y2019: '២០១៩' });
+  Object.assign(KM, { r_cop: 'គណិតវិទ្យា · ជុំជម្រុះ', r_wmi: 'ជុំជម្រុះ · កម្ពុជា', r_sasmo: 'ថ្នាក់ទី១០ · សាលារៀនជំនាន់ថ្មីវិទ្យាល័យព្រះយុគន្ធរ', r_aimo: 'ជុំសាកល្បងនៅកម្ពុជា' });
+  Object.assign(KM, { thatsme: '// នេះជាខ្ញុំ' });
+  Object.assign(KM, { focus: 'Full Stack, Hardware និង AI' });
   Object.assign(KM, { orgby: 'រៀបចំដោយ' });
   const MSG = {
     en: {
@@ -23,7 +26,8 @@
       thanks: (n, e) => 'Thank you, ' + n + '! I will reply to ' + e + ' soon.',
       sendFail: href => 'Sorry, the message could not be sent automatically. <a href="' + href + '">Click here to send it with your email app</a> instead.',
       caption: name => 'A quick summary of me, written in ' + name + '.',
-      captionJson: 'A quick summary of me, written as JSON.'
+      captionJson: 'A quick summary of me, written as JSON.',
+      lbClose: 'Close', lbPrev: 'Previous', lbNext: 'Next', lbView: 'Photo viewer'
     },
     km: {
       errName: 'សូមបញ្ចូលឈ្មោះពេញរបស់អ្នក។',
@@ -35,7 +39,8 @@
       thanks: (n, e) => 'អរគុណ ' + n + '! ខ្ញុំនឹងឆ្លើយតបទៅ ' + e + ' ក្នុងពេលឆាប់ៗ។',
       sendFail: href => 'សូមអភ័យទោស សារមិនអាចផ្ញើដោយស្វ័យប្រវត្តិបានទេ។ <a href="' + href + '">សូមចុចទីនេះ</a> ដើម្បីផ្ញើតាមកម្មវិធីអ៊ីមែលរបស់អ្នកជំនួស។',
       caption: name => 'សេចក្តីសង្ខេបខ្លីអំពីខ្ញុំ សរសេរជា ' + name + '។',
-      captionJson: 'សេចក្តីសង្ខេបខ្លីអំពីខ្ញុំ សរសេរជា JSON។'
+      captionJson: 'សេចក្តីសង្ខេបខ្លីអំពីខ្ញុំ សរសេរជា JSON។',
+      lbClose: 'បិទ', lbPrev: 'មុន', lbNext: 'បន្ទាប់', lbView: 'កម្មវិធីមើលរូបភាព'
     }
   };
   let LANG = 'en';
@@ -79,6 +84,8 @@
   $('#themeBtn').addEventListener('click', () => {
     const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
+    const tc = document.querySelector('meta[name="theme-color"]');
+    if (tc) tc.setAttribute('content', next === 'dark' ? '#0d1117' : '#f6f8fa');
     try { localStorage.setItem('theme', next); } catch (e) { /* storage may be blocked */ }
     readColors();
   });
@@ -506,6 +513,62 @@
         next.focus(); setLang(next.dataset.lang);
       });
     });
+  }
+
+  /* ---------- Photo viewer (lightbox) for the achievement photos and medals ---------- */
+  const lb = $('#lightbox');
+  if (lb) {
+    const lbImg = $('#lbImg'), lbCap = $('#lbCap'), lbPrev = $('#lbPrev'), lbNext = $('#lbNext'), lbClose = $('#lbClose');
+    let group = [], idx = 0, opener = null, touchX = null;
+
+    const labels = () => {
+      lbClose.setAttribute('aria-label', M('lbClose'));
+      lbPrev.setAttribute('aria-label', M('lbPrev'));
+      lbNext.setAttribute('aria-label', M('lbNext'));
+      lb.setAttribute('aria-label', M('lbView'));
+    };
+    const show = i => {
+      idx = (i + group.length) % group.length;
+      const b = group[idx], thumb = $('img', b);
+      lbImg.src = b.dataset.full;
+      lbImg.alt = thumb ? thumb.alt : '';
+      lbCap.textContent = LANG === 'km' && b.dataset.capKm ? b.dataset.capKm : b.dataset.cap;
+      lbPrev.hidden = lbNext.hidden = group.length < 2;
+    };
+    const open = btn => {
+      group = $$('[data-full]', btn.closest('.award-media'));
+      opener = btn; labels(); show(group.indexOf(btn));
+      lb.hidden = false; document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => lb.classList.add('open'));
+      lbClose.focus();
+    };
+    const close = () => {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(() => { lb.hidden = true; lbImg.removeAttribute('src'); }, reduceMotion ? 0 : 220);
+      if (opener) opener.focus();
+    };
+    document.addEventListener('click', e => {
+      const b = e.target.closest('[data-full]');
+      if (b) { e.preventDefault(); open(b); }
+    });
+    lbClose.addEventListener('click', close);
+    lbPrev.addEventListener('click', () => show(idx - 1));
+    lbNext.addEventListener('click', () => show(idx + 1));
+    lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lb-fig')) close(); });
+    document.addEventListener('keydown', e => {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowRight') show(idx + 1);
+      else if (e.key === 'ArrowLeft') show(idx - 1);
+    });
+    lb.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', e => {
+      if (touchX === null || group.length < 2) return;
+      const dx = e.changedTouches[0].clientX - touchX; touchX = null;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+    });
+    langHooks.push(() => { if (!lb.hidden) { labels(); show(idx); } });
   }
 
   applyLang(LANG);
