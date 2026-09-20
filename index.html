@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doryco Chorng | Portfolio</title>
+  <meta name="description" content="Portfolio of Doryco Chorng, Computer Engineering student at Tacoma Community College." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111'/%3E%3Ctext x='50' y='66' font-size='44' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23fff'%3EDC%3C/text%3E%3C/svg%3E" />
+  <script>
+    /* apply the saved theme (dark by default) before first paint to avoid a flash */
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (!t) t = 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Reusable symbols: logo, skill logos, flag -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="logo" viewBox="0 0 100 100">
+        <polygon points="50,6 90,28 90,72 50,94 10,72 10,28" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
+        <polygon class="logo-inner" points="50,18 80,34 80,66 50,82 20,66 20,34" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 5" opacity=".55" />
+        <path d="M35 33 H47 C59 33 67 40 67 50 C67 60 59 67 47 67 H35 Z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round" />
+      </symbol>
+
+      <symbol id="i-html" viewBox="0 0 48 48">
+        <path d="M6 4 L10 42 L24 46 L38 42 L42 4 Z" fill="#E44D26" />
+        <path d="M24 8 V42.5 L35 39.5 L38.5 8 Z" fill="#F16529" />
+        <path d="M14 14 H34 L33 24 H19 L19.5 30 L24 31.5 L28.5 30 L29 27" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" />
+      </symbol>
+      <symbol id="i-css" viewBox="0 0 48 48">
+        <path d="M6 4 L10 42 L24 46 L38 42 L42 4 Z" fill="#1572B6" />
+        <path d="M24 8 V42.5 L35 39.5 L38.5 8 Z" fill="#33A9DC" />
+        <path d="M15 14 H33 L32.6 19 H20 L20.4 24 H32 L31 33 L24 35 L17 33 L16.6 28 H21.4 L21.7 30.4 L24 31 L26.3 30.4 L26.7 26 H16 Z" fill="#fff" />
+      </symbol>
+      <symbol id="i-angular" viewBox="0 0 48 48">
+        <path d="M24 3 L4 10 L7 36 L24 45 L41 36 L44 10 Z" fill="#DD0031" />
+        <path d="M24 3 V45 L7 36 L4 10 Z" fill="#C3002F" />
+        <path fill="#fff" fill-rule="evenodd" d="M24 9 L11.5 37 H16.5 L19 31 H29 L31.5 37 H36.5 Z M24 19.5 L27.3 27 H20.7 Z" />
+      </symbol>
+      <symbol id="i-ts" viewBox="0 0 48 48">
+        <rect x="4" y="4" width="40" height="40" rx="4" fill="#3178C6" />
+        <text x="41" y="40" font-family="Arial, sans-serif" font-weight="700" font-size="20" text-anchor="end" fill="#fff">TS</text>
+      </symbol>
+      <symbol id="i-js" viewBox="0 0 48 48">
+        <rect x="4" y="4" width="40" height="40" rx="4" fill="#F7DF1E" />
+        <text x="41" y="40" font-family="Arial, sans-serif" font-weight="700" font-size="20" text-anchor="end" fill="#1a1a1a">JS</text>
+      </symbol>
+      <symbol id="i-java" viewBox="0 0 48 48">
+        <path d="M20 5 C27 11 14 14 20 22 C22 25 20 27 19 28" fill="none" stroke="#E76F00" stroke-width="2.6" stroke-linecap="round" />
+        <path d="M27 9 C31 14 25 16 28 21" fill="none" stroke="#E76F00" stroke-width="2.4" stroke-linecap="round" />
+        <path d="M11 30 H31 C31 38 27 41 21 41 C15 41 11 38 11 30 Z" fill="#5382A1" />
+        <path d="M31 31 C39 31 39 24 31 24" fill="none" stroke="#5382A1" stroke-width="2.6" />
+        <path d="M9 44 H33" stroke="#5382A1" stroke-width="2.6" stroke-linecap="round" />
+      </symbol>
+      <symbol id="i-python" viewBox="0 0 48 48">
+        <path fill="#3776AB" d="M24 4 C15 4 15 8 15 8 V13 H24.5 V15 H11 C11 15 5 14.5 5 24 C5 33.5 10.5 33 10.5 33 H14 V28 C14 28 13.8 22.5 19.5 22.5 H29 C29 22.5 34 22.6 34 17.8 V9 C34 9 34.8 4 24 4 Z" />
+        <path fill="#FFD43B" d="M24 44 C33 44 33 40 33 40 V35 H23.5 V33 H37 C37 33 43 33.5 43 24 C43 14.5 37.5 15 37.5 15 H34 V20 C34 20 34.2 25.5 28.5 25.5 H19 C19 25.5 14 25.4 14 30.2 V39 C14 39 13.2 44 24 44 Z" />
+        <circle cx="19.5" cy="9.5" r="1.7" fill="#fff" /><circle cx="28.5" cy="38.5" r="1.7" fill="#fff" />
+      </symbol>
+      <symbol id="i-office" viewBox="0 0 48 48">
+        <path fill="#D83B01" fill-rule="evenodd" d="M7 34 L28 44 L41 39.5 V9 L28 4 L7 13 Z M28 12 L15 17.5 V30.5 L28 36 Z" />
+        <path fill="#FF8F6B" d="M28 12 L41 9 V39.5 L28 36 Z" opacity=".55" />
+      </symbol>
+      <symbol id="i-word" viewBox="0 0 48 48">
+        <rect x="14" y="6" width="30" height="36" rx="3" fill="#2B7CD3" />
+        <rect x="14" y="6" width="30" height="9" rx="3" fill="#41A5EE" />
+        <rect x="4" y="12" width="24" height="26" rx="3" fill="#185ABD" />
+        <text x="16" y="31.5" font-family="Arial, sans-serif" font-weight="700" font-size="17" text-anchor="middle" fill="#fff">W</text>
+      </symbol>
+      <symbol id="i-excel" viewBox="0 0 48 48">
+        <rect x="14" y="6" width="30" height="36" rx="3" fill="#21A366" />
+        <rect x="14" y="6" width="30" height="9" rx="3" fill="#33C481" />
+        <rect x="4" y="12" width="24" height="26" rx="3" fill="#107C41" />
+        <text x="16" y="31.5" font-family="Arial, sans-serif" font-weight="700" font-size="17" text-anchor="middle" fill="#fff">X</text>
+      </symbol>
+      <symbol id="i-ppt" viewBox="0 0 48 48">
+        <rect x="14" y="6" width="30" height="36" rx="3" fill="#ED6C47" />
+        <rect x="14" y="6" width="30" height="9" rx="3" fill="#FF8F6B" />
+        <rect x="4" y="12" width="24" height="26" rx="3" fill="#C43E1C" />
+        <text x="16" y="31.5" font-family="Arial, sans-serif" font-weight="700" font-size="17" text-anchor="middle" fill="#fff">P</text>
+      </symbol>
+      <symbol id="i-outlook" viewBox="0 0 48 48">
+        <rect x="14" y="6" width="30" height="36" rx="3" fill="#0F78D4" />
+        <path d="M14 14 L29 26 L44 14 V9 a3 3 0 0 0 -3 -3 H17 a3 3 0 0 0 -3 3 Z" fill="#50D9FF" />
+        <rect x="4" y="12" width="24" height="26" rx="3" fill="#0A5CAD" />
+        <text x="16" y="31.5" font-family="Arial, sans-serif" font-weight="700" font-size="17" text-anchor="middle" fill="#fff">O</text>
+      </symbol>
+      <symbol id="i-teams" viewBox="0 0 48 48">
+        <circle cx="35" cy="10" r="5" fill="#7B83EB" />
+        <path d="M27 19 H44 V32 a8 8 0 0 1 -8 8 h-1 a7 7 0 0 1 -8 -7 Z" fill="#5059C9" />
+        <circle cx="21" cy="11" r="7" fill="#7B83EB" />
+        <rect x="4" y="19" width="26" height="24" rx="3" fill="#4B53BC" />
+        <path d="M11 25 H24 M17.5 25 V37" stroke="#fff" stroke-width="3.4" stroke-linecap="round" fill="none" />
+      </symbol>
+      <symbol id="i-onedrive" viewBox="0 0 48 48">
+        <path d="M14 36 C6 36 5 26 12 25 C12 16 23 13 27 20 C33 16 41 21 39 28 C45 28 46 36 39 36 Z" fill="#0364B8" />
+        <path d="M12 25 C12 16 23 13 27 20 C21 22 17 28 14 36 C6 36 5 26 12 25 Z" fill="#28A8EA" />
+        <path d="M27 20 C33 16 41 21 39 28 L29 36 H14 C17 28 21 22 27 20 Z" fill="#0F78D4" />
+      </symbol>
+      <symbol id="i-git" viewBox="0 0 48 48">
+        <rect x="9" y="9" width="30" height="30" rx="4" transform="rotate(45 24 24)" fill="#F05032" />
+        <path d="M24 15 V33 M24 22 L32 27" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" />
+        <circle cx="24" cy="15" r="3.2" fill="#fff" /><circle cx="24" cy="33" r="3.2" fill="#fff" /><circle cx="32" cy="27" r="3.2" fill="#fff" />
+      </symbol>
+      <symbol id="i-github" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="21" fill="#0d1117" stroke="#8b949e" stroke-width="1.2" />
+        <path d="M14 22 L15 12 L21 16.5 Q24 15.8 27 16.5 L33 12 L34 22 Q36.5 25 34 29.5 Q32 35 24 36 Q16 35 14 29.5 Q11.5 25 14 22 Z" fill="#f0f6fc" />
+        <path d="M24 36 V41 M19 36 Q17 40 13 40 M29 36 Q31 40 35 40" stroke="#f0f6fc" stroke-width="2.6" fill="none" stroke-linecap="round" />
+        <circle cx="20" cy="24" r="1.7" fill="#0d1117" /><circle cx="28" cy="24" r="1.7" fill="#0d1117" />
+      </symbol>
+      <symbol id="i-terminal" viewBox="0 0 48 48">
+        <rect x="4" y="8" width="40" height="32" rx="5" fill="#0d1117" stroke="#3fb950" stroke-width="2.4" />
+        <path d="M12 18 L20 24 L12 30" stroke="#3fb950" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M24 31 H35" stroke="#3fb950" stroke-width="3" stroke-linecap="round" />
+      </symbol>
+      <symbol id="i-network" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="19" fill="none" stroke="currentColor" stroke-width="2.4" />
+        <ellipse cx="24" cy="24" rx="8" ry="19" fill="none" stroke="currentColor" stroke-width="2" />
+        <path d="M5 24 H43 M9 14 H39 M9 34 H39" stroke="currentColor" stroke-width="2" fill="none" />
+        <circle cx="24" cy="24" r="3.4" fill="currentColor" />
+      </symbol>
+      <symbol id="flag-kh" viewBox="0 0 60 40">
+        <rect width="60" height="40" fill="#032EA1" />
+        <rect y="10" width="60" height="20" fill="#E00025" />
+        <g fill="#fff">
+          <rect x="18" y="24.5" width="24" height="2.4" />
+          <rect x="20.5" y="22" width="19" height="2.5" />
+          <path d="M27.5 22 V18 Q30 9.5 32.5 18 V22 Z" />
+          <path d="M22 22 V19.5 Q23.7 14.5 25.4 19.5 V22 Z" />
+          <path d="M34.6 22 V19.5 Q36.3 14.5 38 19.5 V22 Z" />
+        </g>
+      </symbol>
+      <symbol id="i-chip" viewBox="0 0 48 48">
+        <g stroke="currentColor" stroke-width="2.6" stroke-linecap="round">
+          <path d="M17 4 V11 M24 4 V11 M31 4 V11 M17 37 V44 M24 37 V44 M31 37 V44 M4 17 H11 M4 24 H11 M4 31 H11 M37 17 H44 M37 24 H44 M37 31 H44" />
+        </g>
+        <rect x="11" y="11" width="26" height="26" rx="4" fill="none" stroke="currentColor" stroke-width="2.6" />
+        <path d="M18 24 H22 L24 18 L27 30 L29 24 H31" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+      </symbol>
+      <!-- Profession icons (viewBox 0 0 24 24, drawn with currentColor) -->
+      <symbol id="r-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-4.5"/><path d="M22 9v6"/></symbol>
+      <symbol id="r-browser" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><circle cx="6.2" cy="6.5" r=".6" fill="currentColor"/><circle cx="8.6" cy="6.5" r=".6" fill="currentColor"/><path d="M9.5 13.5l-2 2 2 2M14.5 13.5l2 2-2 2"/></symbol>
+      <symbol id="r-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><circle cx="7" cy="7" r=".9" fill="currentColor"/><circle cx="7" cy="17" r=".9" fill="currentColor"/><path d="M11 7h6M11 17h6"/></symbol>
+      <symbol id="r-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 12.5l9 5 9-5"/><path d="M3 16.5l9 5 9-5"/></symbol>
+      <symbol id="r-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+      <symbol id="r-clip" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path d="M8.5 14l2.5 2.5 4.5-5"/></symbol>
+      <symbol id="r-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+      <symbol id="r-star" viewBox="0 0 24 24"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></symbol>
+      <!-- Social logos -->
+      <linearGradient id="igGrad" x1="0" y1="1" x2="1" y2="0">
+        <stop offset="0" stop-color="#feda75" /><stop offset=".35" stop-color="#fa7e1e" /><stop offset=".6" stop-color="#d62976" /><stop offset="1" stop-color="#4f5bd5" />
+      </linearGradient>
+      <symbol id="s-linkedin" viewBox="0 0 48 48">
+        <rect x="3" y="3" width="42" height="42" rx="8" fill="#0A66C2" />
+        <rect x="10" y="19" width="6" height="19" fill="#fff" /><circle cx="13" cy="12.5" r="3.6" fill="#fff" />
+        <path d="M21 19h5.7v2.7c1-1.9 3.2-3.2 6-3.2 5.3 0 6.3 3.5 6.3 8V38h-6v-10c0-2.3 0-4.6-2.9-4.6s-3.2 2.1-3.2 4.5V38H21z" fill="#fff" />
+      </symbol>
+      <symbol id="s-leetcode" viewBox="0 0 48 48">
+        <path d="M30 8 L11 27 a5.6 5.6 0 0 0 0 8 l4.4 4.4 a5.6 5.6 0 0 0 8 0 l6-6" fill="none" stroke="#FFA116" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M17 24.5 L26.5 15" fill="none" stroke="#FFA116" stroke-width="4" stroke-linecap="round" />
+        <path d="M26 27h15" stroke="#B3B3B3" stroke-width="4" stroke-linecap="round" />
+      </symbol>
+      <symbol id="s-facebook" viewBox="0 0 48 48">
+        <circle cx="24" cy="24" r="21" fill="#1877F2" />
+        <path d="M26.6 38V26.4h3.9l.6-4.5h-4.5v-2.9c0-1.3.4-2.2 2.2-2.2h2.4v-4a31 31 0 0 0-3.5-.2c-3.5 0-5.9 2.1-5.9 6v3.3h-4v4.5h4V38z" fill="#fff" />
+      </symbol>
+      <symbol id="s-instagram" viewBox="0 0 48 48">
+        <rect x="3" y="3" width="42" height="42" rx="12" fill="url(#igGrad)" />
+        <rect x="12" y="12" width="24" height="24" rx="7" fill="none" stroke="#fff" stroke-width="3" />
+        <circle cx="24" cy="24" r="5.6" fill="none" stroke="#fff" stroke-width="3" /><circle cx="31" cy="17" r="1.8" fill="#fff" />
+      </symbol>
+      <symbol id="r-branch" viewBox="0 0 24 24"><circle cx="6" cy="5" r="2.2"/><circle cx="6" cy="19" r="2.2"/><circle cx="18" cy="9" r="2.2"/><path d="M6 7.2v9.6M18 11.2c0 4-6 3-11 6.4"/></symbol>
+      <symbol id="r-terminal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2.5"/><path d="M7.5 9.5l3 2.5-3 2.5M13 15h4"/></symbol>
+      <symbol id="r-network" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+      <!-- Achievement icons (viewBox 0 0 24 24) -->
+      <symbol id="a-planet" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><ellipse cx="12" cy="12" rx="10.5" ry="3.6" transform="rotate(-25 12 12)"/></symbol>
+      <symbol id="a-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4.5l-3 15"/></symbol>
+      <symbol id="a-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2.5"/><rect x="8" y="6" width="8" height="4" rx="1"/><path d="M8.5 14h.01M12 14h.01M15.5 14h.01M8.5 17.5h.01M12 17.5h.01M15.5 17.5h.01" stroke-width="2.6"/></symbol>
+      <symbol id="a-sigma" viewBox="0 0 24 24"><path d="M18 5H6.5l6 7-6 7H18"/></symbol>
+      <symbol id="a-abacus" viewBox="0 0 24 24"><rect x="3.5" y="4" width="17" height="16" rx="2"/><path d="M3.5 12h17M9 4v16M15 4v16"/><circle cx="6.2" cy="8" r="1.1"/><circle cx="12" cy="8" r="1.1"/><circle cx="17.8" cy="8" r="1.1"/><circle cx="6.2" cy="16" r="1.1"/><circle cx="12" cy="16" r="1.1"/><circle cx="17.8" cy="16" r="1.1"/></symbol>
+      <symbol id="a-medal" viewBox="0 0 24 24"><circle cx="12" cy="15" r="5"/><path d="M9 10.5L7 3h3.5L12 7l1.5-4H17l-2 7.5"/></symbol>
+      <symbol id="a-cert" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9h10M7 12.5h5"/><circle cx="16.5" cy="14.5" r="2"/></symbol>
+      <symbol id="a-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5v1.5A3 3 0 0 0 8 10.5M16 6h3v1.5A3 3 0 0 1 16 10.5M12 13v4M8.5 20h7M10 17h4"/></symbol>
+      <symbol id="a-org" viewBox="0 0 24 24"><path d="M4 21V8l8-5 8 5v13M9 21v-6h6v6M9 11h.01M15 11h.01"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- Intro: the logo draws itself, then the visitor zooms inside -->
+  <div id="loader">
+    <svg class="loader-logo" viewBox="0 0 100 100" aria-hidden="true">
+      <polygon pathLength="1" points="50,6 90,28 90,72 50,94 10,72 10,28" />
+      <path pathLength="1" d="M35 33 H47 C59 33 67 40 67 50 C67 60 59 67 47 67 H35 Z" />
+    </svg>
+  </div>
+
+  <canvas id="bg" aria-hidden="true"></canvas>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <a href="#home" class="brand" aria-label="Portfolio home">Portfolio</a>
+    <nav class="links" id="links">
+      <a href="#about" data-i18n="k0">About</a>
+      <a href="#skills" data-i18n="k1">Skills</a>
+      <a href="#roles" data-i18n="k2">Professions</a>
+      <a href="#education" data-i18n="k3">Education</a>
+      <a href="#experience" data-i18n="k4">Experience</a>
+      <a href="#achievements" data-i18n="ach">Achievements</a>
+      <a href="#contact" data-i18n="k5">Contact</a>
+    </nav>
+    <div class="nav-tools">
+      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-l="en" aria-label="English" aria-pressed="true">EN</button><button type="button" data-l="km" aria-label="Khmer" aria-pressed="false">KH</button></div>
+      <button class="theme-btn" id="themeBtn" aria-label="Switch between light and dark mode" title="Light / dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg>
+      </button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow fade" data-i18n="k6"><span class="ps">$</span> hello, world! I'm</p>
+        <h1 class="name" aria-label="Doryco Chorng">
+          <span class="line" style="--i:0"><span>Doryco</span></span>
+          <span class="line" style="--i:1"><span>Chorng</span></span>
+        </h1>
+        <p class="typing fade" style="--i:2"><span id="typed"></span><span class="caret"></span></p>
+        <p class="lead fade" style="--i:3" data-i18n="k7">I'm an Associate of Computer Engineering student at <strong>Tacoma Community College</strong>. I build websites &mdash; both the part you see and the part that runs behind the scenes.</p>
+        <div class="cta fade" style="--i:4">
+          <a href="#skills" class="btn solid" data-i18n="k8">See my skills</a>
+          <a href="#contact" class="btn outline" data-i18n="k9">Contact me</a>
+        </div>
+        <ul class="socials-mini fade" style="--i:5" aria-label="My profiles">
+          <li><a href="https://github.com/dorycoChorng" target="_blank" rel="noopener noreferrer" aria-label="GitHub: dorycoChorng" title="GitHub"><svg viewBox="0 0 48 48"><use href="#i-github" /></svg></a></li>
+          <li><a href="https://linkedin.com/in/chorngdorycodev" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn: chorngdorycodev" title="LinkedIn"><svg viewBox="0 0 48 48"><use href="#s-linkedin" /></svg></a></li>
+          <li><a href="https://leetcode.com/u/doryco2889/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode: doryco2889" title="LeetCode"><svg viewBox="0 0 48 48"><use href="#s-leetcode" /></svg></a></li>
+          <li><a href="https://www.facebook.com/RycoooMe/" target="_blank" rel="noopener noreferrer" aria-label="Facebook: RycoooMe" title="Facebook"><svg viewBox="0 0 48 48"><use href="#s-facebook" /></svg></a></li>
+          <li><a href="https://www.instagram.com/dorycochorngdev/" target="_blank" rel="noopener noreferrer" aria-label="Instagram: @dorycochorngdev" title="Instagram"><svg viewBox="0 0 48 48"><use href="#s-instagram" /></svg></a></li>
+        </ul>
+      </div>
+      <figure class="hero-visual fade" style="--i:3">
+        <div class="code-card" id="codeCard" role="img" aria-label="A short summary of Doryco written in Python: a full stack developer who knows HTML, CSS, Angular, TypeScript, JavaScript, Java and Python, studying computer engineering, dreaming of being an embedded ML engineer.">
+          <div class="code-bar"><span class="dots"><i></i><i></i><i></i></span><div class="lang-tabs" role="tablist" aria-label="Choose a programming language"><button type="button" role="tab" data-lang="javascript" aria-selected="false" tabindex="-1"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-js" /></svg>JS</button><button type="button" role="tab" data-lang="java" aria-selected="false" tabindex="-1"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-java" /></svg>Java</button><button type="button" role="tab" data-lang="python" aria-selected="true" tabindex="0"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-python" /></svg>Python</button><button type="button" role="tab" data-lang="typescript" aria-selected="false" tabindex="-1"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-ts" /></svg>TS</button><button type="button" role="tab" data-lang="json" aria-selected="false" tabindex="-1"><span class="glyph" aria-hidden="true">{ }</span>JSON</button></div><svg class="code-logo" viewBox="0 0 100 100"><use href="#logo" /></svg></div>
+          <pre class="code" aria-hidden="true"><code><span class="cl" style="--i:0"><span class="com"># a quick summary of me</span></span><span class="cl" style="--i:1"><span class="fn">me</span> = {</span><span class="cl" style="--i:2">    <span class="prop">"name"</span>: <span class="str">"Doryco Chorng"</span>,</span><span class="cl" style="--i:3">    <span class="prop">"role"</span>: <span class="str">"Full Stack Developer"</span>,</span><span class="cl" style="--i:4">    <span class="prop">"stack"</span>: [</span><span class="cl" style="--i:5">        <span class="str">"HTML"</span>, <span class="str">"CSS"</span>, <span class="str">"Angular"</span>,</span><span class="cl" style="--i:6">        <span class="str">"TypeScript"</span>, <span class="str">"JavaScript"</span>,</span><span class="cl" style="--i:7">        <span class="str">"Java"</span>, <span class="str">"Python"</span>,</span><span class="cl" style="--i:8">    ],</span><span class="cl" style="--i:9">    <span class="prop">"studying"</span>: <span class="str">"Computer Engineering"</span>,</span><span class="cl" style="--i:10">    <span class="prop">"dream"</span>: <span class="str">"Embedded ML Engineer"</span>,</span><span class="cl" style="--i:11">}</span><span class="cl cursor-line" style="--i:12"><span class="kw">print</span>(<span class="fn">me</span>[<span class="str">"role"</span>])</span></code></pre>
+        </div>
+        <figcaption id="codeCaption">A quick summary of me, written in Python.</figcaption>
+      </figure>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down"><span data-i18n="k10">Scroll</span><i></i></a>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="title reveal"><span class="num">01 //</span><h2 data-i18n="k11">About me</h2></div>
+      <div class="about-grid">
+        <p class="statement reveal" data-i18n="k12">I'm <strong>Doryco Chorng</strong>, currently studying for an <strong>Associate degree in Computer Engineering</strong> at Tacoma Community College (TCC). I enjoy working across the whole stack, from designing pages people can use to writing the code that powers them.</p>
+        <ul class="facts card reveal">
+          <li><span data-i18n="k13">Name</span><b>Doryco Chorng</b></li>
+          <li><span data-i18n="k14">Studying</span><b data-i18n="k18">A.S. Computer Engineering</b></li>
+          <li><span data-i18n="k15">School</span><b>Tacoma Community College (TCC), WA</b></li>
+          <li><span data-i18n="k16">Focus</span><b data-i18n="k19">Full Stack Developer</b></li>
+          <li><span data-i18n="k17">Nationality</span><b class="nation"><svg class="flag" viewBox="0 0 60 40" role="img" aria-label="Flag of Cambodia"><use href="#flag-kh" /></svg><span data-i18n="k20">Cambodian</span></b></li>
+        </ul>
+      </div>
+      <div class="dream card reveal">
+        <svg class="dream-ico" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-chip" /></svg>
+        <div>
+          <span class="label" data-i18n="k21">My future dream</span>
+          <h3 data-i18n="k22">Embedded ML Engineer</h3>
+          <p data-i18n="k23">I want to combine computer engineering and machine learning to build smart devices.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="title reveal"><span class="num">02 //</span><h2 data-i18n="k1">Skills</h2></div>
+      <div class="skill-grid">
+
+        <article class="skill card reveal front">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-browser" /></svg></span><h3>Frontend</h3></div>
+          <ul class="chips">
+            <li><svg viewBox="0 0 48 48"><use href="#i-html" /></svg>HTML</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-css" /></svg>CSS</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-angular" /></svg>Angular</li>
+          </ul>
+        </article>
+
+        <article class="skill card reveal back">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-server" /></svg></span><h3>Backend</h3></div>
+          <ul class="chips">
+            <li><svg viewBox="0 0 48 48"><use href="#i-ts" /></svg>TypeScript</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-js" /></svg>JavaScript</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-java" /></svg>Java</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-python" /></svg>Python</li>
+          </ul>
+        </article>
+
+        <article class="skill card reveal git">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-branch" /></svg></span><h3>Version Control</h3></div>
+          <ul class="chips">
+            <li><svg viewBox="0 0 48 48"><use href="#i-git" /></svg>Git</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-github" /></svg>GitHub</li>
+            <li class="cmd"><code>git commit</code></li>
+          </ul>
+        </article>
+
+        <article class="skill card reveal term">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-terminal" /></svg></span><h3>Terminal</h3></div>
+          <ul class="chips">
+            <li><svg viewBox="0 0 48 48"><use href="#i-terminal" /></svg>Command Line</li>
+            <li class="cmd"><code>mkdir</code></li>
+          </ul>
+        </article>
+
+        <article class="skill card reveal net">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-network" /></svg></span><h3>Networking</h3></div>
+          <ul class="chips">
+            <li><svg class="accent" viewBox="0 0 48 48"><use href="#i-network" /></svg>Network Basics</li>
+            <li class="cmd"><code>ipconfig</code></li>
+          </ul>
+        </article>
+
+        <article class="skill card reveal office">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 48 48" class="colored" aria-hidden="true"><use href="#i-office" /></svg></span><h3>Microsoft Office 365</h3></div>
+          <ul class="chips">
+            <li><svg viewBox="0 0 48 48"><use href="#i-word" /></svg>Word</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-excel" /></svg>Excel</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-ppt" /></svg>PowerPoint</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-outlook" /></svg>Outlook</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-teams" /></svg>Teams</li>
+            <li><svg viewBox="0 0 48 48"><use href="#i-onedrive" /></svg>OneDrive</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Professions -->
+    <section id="roles" class="section">
+      <div class="title reveal"><span class="num">03 //</span><h2 data-i18n="k2">Professions</h2></div>
+      <div class="role-grid">
+        <div class="role skill card reveal tint-blue">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-cap" /></svg></span><h3 data-i18n="k24">Computer Engineering Student</h3></div>
+          <p data-i18n="k25">Associate degree program at TCC.</p>
+        </div>
+        <div class="role skill card reveal tint-purple">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-layers" /></svg></span><h3 data-i18n="k19">Full Stack Developer</h3></div>
+          <p data-i18n="k26">Building websites from the screen people see to the logic behind it.</p>
+        </div>
+        <div class="role skill card reveal tint-gold">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-wrench" /></svg></span><h3 data-i18n="k27">Technical Troubleshooter</h3></div>
+          <p data-i18n="k28">Troubleshooting technical issues.</p>
+        </div>
+        <div class="role skill card reveal tint-cyan">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-clip" /></svg></span><h3 data-i18n="k29">Class Monitor</h3></div>
+          <p data-i18n="k30">Helping teachers with daily tasks.</p>
+        </div>
+        <div class="role skill card reveal tint-red">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-heart" /></svg></span><h3 data-i18n="k31">Community Volunteer</h3></div>
+          <p data-i18n="k32">Volunteering in and helping with community service.</p>
+        </div>
+        <div class="role skill card reveal tint-orange">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-star" /></svg></span><h3 data-i18n="k33">Student Leader</h3></div>
+          <p data-i18n="k34">Taking on leadership responsibilities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="title reveal"><span class="num">04 //</span><h2 data-i18n="k3">Education</h2></div>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <span class="date" data-i18n="k35">2026 &ndash; Present</span>
+            <h3>Tacoma Community College</h3>
+            <p class="place" data-i18n="k39">WA, United States</p>
+            <p data-i18n="k41">Major in Associate degree of Computer Engineering.</p>
+          </article>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <span class="date" data-i18n="k36">2025 &ndash; 2026</span>
+            <h3>Stadium High School</h3>
+            <p class="place" data-i18n="k39">WA, United States</p>
+            <p data-i18n="k42">Studied as an 11<sup>th</sup> grader.</p>
+          </article>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <span class="date" data-i18n="k37">2024 &ndash; 2025</span>
+            <h3 data-i18n="sch1">NGS Preah Yukunthor High School</h3>
+            <p class="place" data-i18n="k40">Cambodia</p>
+            <p data-i18n="k43">Cambodia high school as a 10<sup>th</sup> grader.</p>
+          </article>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <span class="date" data-i18n="k38">2019 &ndash; 2024</span>
+            <h3 data-i18n="sch2">Pannasastra International School (PSIS High School)</h3>
+            <p class="place" data-i18n="sch2p">Sensok Campus, Phnom Penh, Cambodia</p>
+            <p data-i18n="k44">Cambodia private school from 5<sup>th</sup> &ndash; 9<sup>th</sup> grade.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="title reveal"><span class="num">05 //</span><h2 data-i18n="k4">Experience</h2></div>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <span class="date" data-i18n="k45">Jun 2025 &ndash; Aug 2025</span>
+            <h3 data-i18n="k46">Technical Troubleshooting</h3>
+            <p data-i18n="k47">Helped troubleshoot and resolve technical issues.</p>
+          </article>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <span class="date" data-i18n="k48">Sep 2024 &ndash; Jul 2025</span>
+            <h3 data-i18n="k49">Class Monitor &amp; Community Volunteer</h3>
+            <p data-i18n="k50">Helped teachers with their daily tasks in the classroom, took part in community volunteer work, and took on leadership responsibilities along the way.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="section">
+      <div class="title reveal"><span class="num">06 //</span><h2 data-i18n="ach">Achievements</h2></div>
+      <div class="skill-grid">
+        <article class="skill card award reveal tint-silver">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-planet" /></svg></span><div><h3>Copernicus Olympiad</h3></div></div>
+          <a class="organizer" href="https://copernicusolympiad.com/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile none"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-org" /></svg></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>Copernicus Olympiad (Houston, TX, USA)</b></span></a>
+          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
+        </article>
+        <article class="skill card award reveal tint-silver">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#r-network" /></svg></span><div><h3>WMI</h3><span class="sub">World Math Invitational Competition</span></div></div>
+          <a class="organizer" href="https://www.wminv.org/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-wmi.png" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>World Mathematics Invitational Organizing Committee (Taiwan)</b></span></a>
+          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
+        </article>
+        <article class="skill card award reveal tint-green">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-code" /></svg></span><div><h3>NEO Coding Olympiad</h3></div></div>
+          <a class="organizer" href="https://codingolympiad.org/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-neo.svg" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>NEO Olympiad by Main Team Organization</b></span></a>
+          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-cert" /></svg><span data-i18n="honor">Honorable Certificate</span></span><span class="year" data-i18n="y2025">2025</span></div>
+        </article>
+        <article class="skill card award reveal tint-bronze">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-calc" /></svg></span><div><h3>SASMO 2025</h3></div></div>
+          <a class="organizer" href="https://simcc.org/sasmo/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile none"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-org" /></svg></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>Singapore International Mastery Contests Centre (SIMCC)</b></span></a>
+          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="bronze">Bronze</span></span><span class="year" data-i18n="y2025">2025</span></div>
+        </article>
+        <article class="skill card award reveal tint-silver">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-sigma" /></svg></span><div><h3>AIMO 2025</h3><span class="sub">Asia International Math Olympiad</span></div></div>
+          <a class="organizer" href="https://aimo.world/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-aimo.jpg" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>Asia International Mathematical Olympiad Union</b></span></a>
+          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
+        </article>
+        <article class="skill card award reveal tint-gold">
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-abacus" /></svg></span><div><h3>UCMAS</h3><span class="sub" data-i18n="intl">International competition</span></div></div>
+          <a class="organizer" href="https://ucmas.com/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-ucmas.png" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>UC International Corporation (UCMAS)</b></span></a>
+          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-trophy" /></svg><span data-i18n="runner">3rd Runner-up</span></span><span class="year" data-i18n="y2019">2019</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="title reveal"><span class="num">07 //</span><h2 data-i18n="k5">Contact</h2></div>
+      <div class="contact-grid">
+
+        <div class="contact-info card reveal">
+          <h3 data-i18n="k51">Let's talk</h3>
+          <p data-i18n="k52">Interested in working together or just want to say hi? Send a message with the form, or find me on any of these.</p>
+          <a class="mail" href="mailto:doryco.chorng@outlook.com">doryco.chorng@outlook.com</a>
+          <h4 class="mini-title" data-i18n="k53">Find me online</h4>
+          <ul class="socials">
+            <li><a class="social" href="https://github.com/dorycoChorng" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 48 48"><use href="#i-github" /></svg><span><b>GitHub</b></span><i class="arrow" aria-hidden="true">&nearr;</i></a></li>
+            <li><a class="social" href="https://linkedin.com/in/chorngdorycodev" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 48 48"><use href="#s-linkedin" /></svg><span><b>LinkedIn</b></span><i class="arrow" aria-hidden="true">&nearr;</i></a></li>
+            <li><a class="social" href="https://leetcode.com/u/doryco2889/" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 48 48"><use href="#s-leetcode" /></svg><span><b>LeetCode</b></span><i class="arrow" aria-hidden="true">&nearr;</i></a></li>
+            <li><a class="social" href="https://www.facebook.com/RycoooMe/" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 48 48"><use href="#s-facebook" /></svg><span><b>Facebook</b></span><i class="arrow" aria-hidden="true">&nearr;</i></a></li>
+            <li><a class="social" href="https://www.instagram.com/dorycochorngdev/" target="_blank" rel="noopener noreferrer"><svg class="ico" viewBox="0 0 48 48"><use href="#s-instagram" /></svg><span><b>Instagram</b></span><i class="arrow" aria-hidden="true">&nearr;</i></a></li>
+          </ul>
+        </div>
+
+        <div class="contact-form card reveal">
+          <h3 data-i18n="k54">Contact us</h3>
+          <p data-i18n="k55">Fill in the form and your message is sent straight to my inbox.</p>
+
+          <form id="contactForm" novalidate>
+            <div class="row2">
+              <div class="field">
+                <label for="cf-name" data-i18n="k56">Full name</label>
+                <input id="cf-name" name="name" type="text" autocomplete="name" placeholder="Your full name" data-i18n-ph="p0" required />
+                <span class="err" data-for="name" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="cf-email" data-i18n="k57">Your email</label>
+                <input id="cf-email" name="email" type="email" autocomplete="email" placeholder="so I can reply to you" data-i18n-ph="p1" required />
+                <span class="err" data-for="email" aria-live="polite"></span>
+              </div>
+            </div>
+            <div class="field">
+              <label for="cf-purpose" data-i18n="k58">Purpose</label>
+              <select id="cf-purpose" name="purpose" required>
+                <option value="" selected disabled data-i18n="k60">Why are you contacting me?</option>
+                <option value="Work or internship opportunity" data-i18n="k61">Work or internship opportunity</option>
+                <option value="Project collaboration" data-i18n="k62">Project collaboration</option>
+                <option value="Ask a question" data-i18n="k63">Ask a question</option>
+                <option value="Feedback about my portfolio" data-i18n="k64">Feedback about my portfolio</option>
+                <option value="Just saying hi" data-i18n="k65">Just saying hi</option>
+                <option value="Other" data-i18n="k66">Other</option>
+              </select>
+              <span class="err" data-for="purpose" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="cf-message" data-i18n="k59">Message</label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="Write your message here..." data-i18n-ph="p2" required></textarea>
+              <span class="err" data-for="message" aria-live="polite"></span>
+            </div>
+            <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
+            <button class="btn solid block" type="submit" id="cfSubmit">
+              <span class="label-text" data-i18n="k67">Send message</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="form-done" id="formDone" hidden>
+            <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="23" /><path d="M15 27l8 8 15-17" /></svg>
+            <h3 data-i18n="k68">Message sent!</h3>
+            <p id="doneText">Thank you. I'll get back to you soon.</p>
+            <button class="btn outline" type="button" id="sendAnother" data-i18n="k69">Send another message</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
