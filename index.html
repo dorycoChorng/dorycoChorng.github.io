@@ -273,6 +273,7 @@
         <p class="statement reveal" data-i18n="k12">I'm <strong>Doryco Chorng</strong>, currently studying for an <strong>Associate degree in Computer Engineering</strong> at Tacoma Community College (TCC). I love learning to code and building something new, and curiosity is what led me here. My dream job is to become an <strong>Embedded ML Engineer</strong>.</p>
         <ul class="facts card reveal">
           <li><span data-i18n="k13">Name</span><b>Doryco Chorng</b></li>
+          <li><span data-i18n="age">Age</span><b id="ageValue">17 years old</b></li>
           <li><span data-i18n="k14">Studying</span><b data-i18n="k18">A.S. Computer Engineering</b></li>
           <li><span data-i18n="k15">School</span><b>Tacoma Community College (TCC), WA</b></li>
           <li><span data-i18n="k16">Focus</span><b data-i18n="focus">Full Stack, Hardware &amp; AI</b></li>
@@ -453,20 +454,24 @@
     <!-- Achievements -->
     <section id="achievements" class="section">
       <div class="title reveal"><span class="num">06 //</span><h2 data-i18n="ach">Achievements</h2></div>
-      <div class="skill-grid">
-        <article class="skill card award has-media reveal tint-silver">
-          <div class="award-media">
-            <button type="button" class="shot" data-full="ach-copernicus.jpg" data-cap="Copernicus Olympiad 2025 · silver medal and certificate (Mathematics, Preliminary Round)" data-cap-km="Copernicus Olympiad 2025 · មេដាយប្រាក់ និងវិញ្ញាបនបត្រ (គណិតវិទ្យា ជុំជម្រុះ)" aria-label="View photo: Copernicus Olympiad">
-              <img src="ach-copernicus.jpg" width="960" height="1280" alt="Doryco holding the Copernicus Olympiad silver medal and certificate outside a school building" style="object-position:50% 68%" loading="lazy" decoding="async" />
-              <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
-            </button>
-            <button type="button" class="medal-badge" data-full="medals-all.jpg" data-cap="My 2025 medals, left to right: SASMO Bronze, AIMO Silver, WMI Silver and Copernicus Silver" data-cap-km="មេដាយរបស់ខ្ញុំឆ្នាំ ២០២៥ ពីឆ្វេងទៅស្តាំ៖ SASMO មេដាយសំរិទ្ធ, AIMO មេដាយប្រាក់, WMI មេដាយប្រាក់ និង Copernicus មេដាយប្រាក់" aria-label="View medal: Copernicus Olympiad">
-              <img src="medal-copernicus.jpg" width="240" height="240" alt="Copernicus Olympiad 2025 silver medal" loading="lazy" decoding="async" />
-            </button>
+      <div class="skill-grid award-grid" id="achGrid">
+        <article class="skill card award has-media reveal tint-gold">
+          <div class="award-media deco" aria-hidden="true">
+            <div class="deco-panel"><svg viewBox="0 0 24 24"><use href="#a-abacus" /></svg></div>
+            <span class="medal-badge"><svg viewBox="0 0 24 24"><use href="#a-trophy" /></svg></span>
           </div>
-          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-planet" /></svg></span><div><h3>Copernicus Olympiad</h3><span class="round" data-i18n="r_cop">Mathematics · Preliminary Round</span></div></div>
-          <a class="organizer" href="https://copernicusolympiad.com/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile none"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-org" /></svg></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>Copernicus Olympiad (Houston, TX, USA)</b></span></a>
-          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-abacus" /></svg></span><div><h3>UCMAS</h3><span class="sub" data-i18n="intl">International competition</span></div></div>
+          <a class="organizer" href="https://ucmas.com/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-ucmas.png" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>UC International Corporation (UCMAS)</b></span></a>
+          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-trophy" /></svg><span data-i18n="runner">3rd Runner-up</span></span><span class="year" data-i18n="y2019">2019</span></div>
+        </article>
+        <article class="skill card award has-media reveal tint-green">
+          <div class="award-media deco" aria-hidden="true">
+            <div class="deco-panel"><svg viewBox="0 0 24 24"><use href="#a-code" /></svg></div>
+            <span class="medal-badge"><svg viewBox="0 0 24 24"><use href="#a-cert" /></svg></span>
+          </div>
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-code" /></svg></span><div><h3>NEO Coding Olympiad</h3></div></div>
+          <a class="organizer" href="https://codingolympiad.org/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-neo.svg" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>NEO Olympiad by Main Team Organization</b></span></a>
+          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-cert" /></svg><span data-i18n="honor">Honorable Certificate</span></span><span class="year" data-i18n="y2025">2025</span></div>
         </article>
         <article class="skill card award has-media reveal tint-silver">
           <div class="award-media">
@@ -482,14 +487,19 @@
           <a class="organizer" href="https://www.wminv.org/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-wmi.png" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>World Mathematics Invitational Organizing Committee (Taiwan)</b></span></a>
           <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
         </article>
-        <article class="skill card award has-media reveal tint-green">
-          <div class="award-media deco" aria-hidden="true">
-            <div class="deco-panel"><svg viewBox="0 0 24 24"><use href="#a-code" /></svg></div>
-            <span class="medal-badge"><svg viewBox="0 0 24 24"><use href="#a-cert" /></svg></span>
+        <article class="skill card award has-media reveal tint-silver">
+          <div class="award-media">
+            <button type="button" class="shot" data-full="ach-copernicus.jpg" data-cap="Copernicus Olympiad 2025 · silver medal and certificate (Mathematics, Preliminary Round)" data-cap-km="Copernicus Olympiad 2025 · មេដាយប្រាក់ និងវិញ្ញាបនបត្រ (គណិតវិទ្យា ជុំជម្រុះ)" aria-label="View photo: Copernicus Olympiad">
+              <img src="ach-copernicus.jpg" width="960" height="1280" alt="Doryco holding the Copernicus Olympiad silver medal and certificate outside a school building" style="object-position:50% 68%" loading="lazy" decoding="async" />
+              <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+            </button>
+            <button type="button" class="medal-badge" data-full="medals-all.jpg" data-cap="My 2025 medals, left to right: SASMO Bronze, AIMO Silver, WMI Silver and Copernicus Silver" data-cap-km="មេដាយរបស់ខ្ញុំឆ្នាំ ២០២៥ ពីឆ្វេងទៅស្តាំ៖ SASMO មេដាយសំរិទ្ធ, AIMO មេដាយប្រាក់, WMI មេដាយប្រាក់ និង Copernicus មេដាយប្រាក់" aria-label="View medal: Copernicus Olympiad">
+              <img src="medal-copernicus.jpg" width="240" height="240" alt="Copernicus Olympiad 2025 silver medal" loading="lazy" decoding="async" />
+            </button>
           </div>
-          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-code" /></svg></span><div><h3>NEO Coding Olympiad</h3></div></div>
-          <a class="organizer" href="https://codingolympiad.org/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-neo.svg" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>NEO Olympiad by Main Team Organization</b></span></a>
-          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-cert" /></svg><span data-i18n="honor">Honorable Certificate</span></span><span class="year" data-i18n="y2025">2025</span></div>
+          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-planet" /></svg></span><div><h3>Copernicus Olympiad</h3><span class="round" data-i18n="r_cop">Mathematics · Preliminary Round</span></div></div>
+          <a class="organizer" href="https://copernicusolympiad.com/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile none"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-org" /></svg></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>Copernicus Olympiad (Houston, TX, USA)</b></span></a>
+          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
         </article>
         <article class="skill card award has-media reveal tint-bronze">
           <div class="award-media">
@@ -518,15 +528,6 @@
           <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-sigma" /></svg></span><div><h3>AIMO 2025</h3><span class="sub">Asia International Math Olympiad</span><span class="round" data-i18n="r_aimo">Cambodia Trial Round</span></div></div>
           <a class="organizer" href="https://aimo.world/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-aimo.jpg" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>Asia International Mathematical Olympiad Union</b></span></a>
           <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-medal" /></svg><span data-i18n="silver">Silver</span></span><span class="year" data-i18n="y2025">2025</span></div>
-        </article>
-        <article class="skill card award has-media reveal tint-gold">
-          <div class="award-media deco" aria-hidden="true">
-            <div class="deco-panel"><svg viewBox="0 0 24 24"><use href="#a-abacus" /></svg></div>
-            <span class="medal-badge"><svg viewBox="0 0 24 24"><use href="#a-trophy" /></svg></span>
-          </div>
-          <div class="skill-head"><span class="skill-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-abacus" /></svg></span><div><h3>UCMAS</h3><span class="sub" data-i18n="intl">International competition</span></div></div>
-          <a class="organizer" href="https://ucmas.com/" target="_blank" rel="noopener noreferrer" title="Visit the organizer"><span class="logo-tile"><img src="logo-ucmas.png" alt="" loading="lazy" decoding="async" /></span><span class="org-text"><small data-i18n="orgby">Organized by</small><b>UC International Corporation (UCMAS)</b></span></a>
-          <div class="award-meta"><span class="rank"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#a-trophy" /></svg><span data-i18n="runner">3rd Runner-up</span></span><span class="year" data-i18n="y2019">2019</span></div>
         </article>
       </div>
     </section>

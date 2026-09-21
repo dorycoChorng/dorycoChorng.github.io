@@ -11,6 +11,7 @@
   const KMPH = {"p0":"ឈ្មោះពេញរបស់អ្នក","p1":"ដើម្បីឱ្យខ្ញុំអាចឆ្លើយតបទៅអ្នក","p2":"សរសេរសាររបស់អ្នកនៅទីនេះ..."};
   Object.assign(KM, { sch1: 'សាលារៀនជំនាន់ថ្មីវិទ្យាល័យព្រះយុគន្ធរ', sch2: 'សាលារៀនអន្តរជាតិបញ្ញាសាស្ត្រ សាខាសែនសុខ', sch2p: 'ភ្នំពេញ កម្ពុជា' });
   Object.assign(KM, { ach: 'សមិទ្ធផល', silver: 'មេដាយប្រាក់', bronze: 'មេដាយសំរិទ្ធ', honor: 'វិញ្ញាបនបត្រកិត្តិយស', runner: 'ជ័យលាភីលេខ ៣ (3rd Runner-up)', intl: 'ការប្រកួតអន្តរជាតិ', y2025: '២០២៥', y2019: '២០១៩' });
+  Object.assign(KM, { age: 'អាយុ' });
   Object.assign(KM, { r_cop: 'គណិតវិទ្យា · ជុំជម្រុះ', r_wmi: 'ជុំជម្រុះ · កម្ពុជា', r_sasmo: 'ថ្នាក់ទី១០ · សាលារៀនជំនាន់ថ្មីវិទ្យាល័យព្រះយុគន្ធរ', r_aimo: 'ជុំសាកល្បងនៅកម្ពុជា' });
   Object.assign(KM, { thatsme: '// នេះជាខ្ញុំ' });
   Object.assign(KM, { focus: 'Full Stack, Hardware និង AI' });
@@ -192,8 +193,8 @@
 
       const hot = heat > .04;
       if (hot) {
-        ctx.font = `${(13 + heat * 11) * DPR}px Consolas, "Cascadia Code", monospace`;
-        ctx.globalAlpha = Math.min(1, .3 + heat * .85);
+        ctx.font = `${(13 + heat * 5) * DPR}px Consolas, "Cascadia Code", monospace`;
+        ctx.globalAlpha = .1 + heat * .26;          // kept faint and see-through so it never competes with the content
         ctx.fillStyle = colors.syntax[d.col];
       } else {
         ctx.font = baseFont;
@@ -569,6 +570,177 @@
       if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
     });
     langHooks.push(() => { if (!lb.hidden) { labels(); show(idx); } });
+  }
+
+  /* ---------- Age, worked out from the birthday (updates itself every year) ---------- */
+  const BIRTHDAY = { year: 2009, month: 2, day: 11 };            // 11 February 2009
+  function currentAge(now = new Date()) {
+    let age = now.getFullYear() - BIRTHDAY.year;
+    const month = now.getMonth() + 1, day = now.getDate();
+    const birthdayPassed = month > BIRTHDAY.month || (month === BIRTHDAY.month && day >= BIRTHDAY.day);
+    if (!birthdayPassed) age -= 1;                               // birthday not reached yet this year
+    return age;
+  }
+  const toKhmerDigits = n => String(n).replace(/\d/g, d => '០១២៣៤៥៦៧៨៩'[d]);
+  const ageEl = $('#ageValue');
+  const showAge = () => {
+    if (!ageEl) return;
+    const age = currentAge();
+    ageEl.textContent = LANG === 'km' ? toKhmerDigits(age) + ' ឆ្នាំ' : age + ' years old';
+  };
+  langHooks.push(showAge);
+
+  /* ---------- Achievements: a route joins the cards in order and a plane flies along it ---------- */
+  const achGrid = $('#achGrid');
+  if (achGrid) {
+    const NS = 'http://www.w3.org/2000/svg';
+    const cards = $$('.award', achGrid);
+    const svg = document.createElementNS(NS, 'svg');
+    svg.setAttribute('class', 'ach-route');
+    svg.setAttribute('aria-hidden', 'true');
+    svg.innerHTML = '<path class="track" pathLength="100"></path><path class="fill" pathLength="100"></path><path class="flow" pathLength="100"></path><g class="dots"></g>';
+    achGrid.insertBefore(svg, achGrid.firstChild);
+    const [trackEl, fillEl, flowEl] = $$('path', svg);
+    const dotsG = $('.dots', svg);
+    const spark = document.createElementNS(NS, 'g');
+    spark.setAttribute('class', 'spark');
+    spark.innerHTML = '<circle class="halo" r="16"></circle><circle class="mid" r="8"></circle><circle class="core" r="4"></circle>';
+    svg.appendChild(spark);
+    const route = { pts: [], cum: [0], total: 1, dots: [], cardLen: [] };
+    const st = { cur: 0, target: 0, dir: 1, rot: 90, ready: false, dirty: true };
+
+    function build() {
+      const w = achGrid.offsetWidth, h = achGrid.offsetHeight;
+      svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
+      const rs = cards.map(c => ({ l: c.offsetLeft, t: c.offsetTop, r: c.offsetLeft + c.offsetWidth, b: c.offsetTop + c.offsetHeight }));
+      const rows = [];
+      rs.forEach((r, i) => {
+        const last = rows[rows.length - 1];
+        if (last && Math.abs(last.t - r.t) < 4) { last.items.push(i); last.b = Math.max(last.b, r.b); }
+        else rows.push({ t: r.t, b: r.b, items: [i] });
+      });
+      const multi = rows.some(r => r.items.length > 1);
+      const Lg = -12, Rg = w + 12, off = 14;
+
+      const P = [];
+      const add = (x, y, tag) => P.push({ x, y, tag });
+      if (multi) {
+        // the route runs in the open space above each row of cards, and doubles back between the rows
+        rows.forEach((row, k) => {
+          const y = row.t - off;
+          if (k === 0) add(Lg, y, { kind: 'start' });
+          else {
+            const prev = rows[k - 1], py = prev.t - off;
+            add(Rg, py); add(Rg, prev.b + off); add(Lg, prev.b + off); add(Lg, y);
+          }
+          row.items.forEach(i => add((rs[i].l + rs[i].r) / 2, y, { kind: 'dot', card: i, enter: true, stubTo: rs[i].t }));
+          if (k === rows.length - 1) add(Rg, y, { kind: 'end' });
+        });
+      } else {
+        // phones: the route runs down the left side, one stop per card
+        const cy = i => (rs[i].t + rs[i].b) / 2;
+        const Lv = -6;                                   // stays inside the screen edge
+        add(Lv, cy(0) - 40, { kind: 'start' });
+        cards.forEach((c, i) => add(Lv, cy(i), { kind: 'dot', card: i, enter: true, stubTo: null }));
+        add(Lv, cy(cards.length - 1) + 40, { kind: 'end' });
+      }
+
+      // lengths along the route
+      route.pts = P; route.cum = [0];
+      for (let i = 1; i < P.length; i++) route.cum.push(route.cum[i - 1] + Math.hypot(P[i].x - P[i - 1].x, P[i].y - P[i - 1].y));
+      route.total = route.cum[route.cum.length - 1] || 1;
+      const d = P.map((p, i) => (i ? 'L' : 'M') + p.x.toFixed(1) + ' ' + p.y.toFixed(1)).join(' ');
+      [trackEl, fillEl, flowEl].forEach(el => el.setAttribute('d', d));
+
+      // stops (coloured like their card), each joined to its card by a short connector
+      dotsG.innerHTML = '';
+      route.dots = []; route.cardLen = []; route.stops = [];
+      P.forEach((p, i) => {
+        if (!p.tag || !p.tag.kind) return;
+        const isDot = p.tag.kind === 'dot';
+        const tint = isDot ? (cards[p.tag.card].className.match(/tint-\w+/) || [''])[0] : '';
+        let stub = null;
+        if (isDot && p.tag.stubTo !== null) {
+          stub = document.createElementNS(NS, 'line');
+          stub.setAttribute('x1', p.x.toFixed(1)); stub.setAttribute('y1', p.y.toFixed(1));
+          stub.setAttribute('x2', p.x.toFixed(1)); stub.setAttribute('y2', p.tag.stubTo.toFixed(1));
+          stub.setAttribute('class', 'stub ' + tint);
+          dotsG.appendChild(stub);
+        }
+        const c = document.createElementNS(NS, 'circle');
+        c.setAttribute('cx', p.x.toFixed(1)); c.setAttribute('cy', p.y.toFixed(1));
+        c.setAttribute('r', isDot ? 12 : 7.5);
+        c.setAttribute('class', 'dot ' + p.tag.kind + ' ' + tint);
+        dotsG.appendChild(c);
+        let label = null;
+        if (isDot) {
+          label = document.createElementNS(NS, 'text');
+          label.setAttribute('x', p.x.toFixed(1)); label.setAttribute('y', (p.y + 4).toFixed(1));
+          label.setAttribute('class', 'stop-num');
+          label.textContent = p.tag.card + 1;
+          dotsG.appendChild(label);
+        }
+        route.dots.push({ el: c, stub, label, len: route.cum[i] });
+        if (isDot) route.stops[p.tag.card] = { x: p.x, y: p.y, tint };
+        if (p.tag.enter) route.cardLen[p.tag.card] = route.cum[i];
+      });
+      st.dirty = true;
+    }
+
+    function pointAt(L) {
+      const P = route.pts, cum = route.cum;
+      let k = 1;
+      while (k < cum.length - 1 && cum[k] < L) k++;
+      const seg = (cum[k] - cum[k - 1]) || 1, t = Math.min(Math.max((L - cum[k - 1]) / seg, 0), 1);
+      const a = P[k - 1], b = P[k];
+      return { x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t, ang: Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI };
+    }
+
+    function ripple(i) {
+      const s = route.stops[i];
+      if (!s || reduceMotion) return;
+      const c = document.createElementNS(NS, 'circle');
+      c.setAttribute('cx', s.x.toFixed(1)); c.setAttribute('cy', s.y.toFixed(1)); c.setAttribute('r', 12);
+      c.setAttribute('class', 'ripple ' + s.tint);
+      dotsG.appendChild(c);
+      setTimeout(() => c.remove(), 1200);
+    }
+
+    function paint() {
+      const L = st.cur * route.total;
+      fillEl.style.strokeDashoffset = String(100 - st.cur * 100);
+      const p = pointAt(L);
+      spark.setAttribute('transform', 'translate(' + p.x.toFixed(1) + ' ' + p.y.toFixed(1) + ')');
+      route.dots.forEach(dt => {
+        const on = L >= dt.len - .5;
+        dt.el.classList.toggle('on', on);
+        if (dt.stub) dt.stub.classList.toggle('on', on);
+        if (dt.label) dt.label.classList.toggle('on', on);
+      });
+      cards.forEach((c, i) => {
+        const reached = L >= (route.cardLen[i] || 0) - .5;
+        if (reached && !c.classList.contains('reached') && st.ready) {
+          c.classList.add('arrive');
+          ripple(i);
+          setTimeout(() => c.classList.remove('arrive'), 1000);
+        }
+        c.classList.toggle('reached', reached);
+      });
+    }
+
+    build();
+    if (typeof ResizeObserver !== 'undefined') new ResizeObserver(build).observe(achGrid);
+    window.addEventListener('load', build);
+    (function flyAch() {
+      const g = achGrid.getBoundingClientRect();
+      st.target = Math.min(Math.max((innerHeight * .62 - g.top) / g.height, 0), 1);
+      const prev = st.cur;
+      st.cur = reduceMotion ? st.target : st.cur + (st.target - st.cur) * .06;
+      if (Math.abs(st.target - st.cur) < .0004) st.cur = st.target;
+      const d = st.cur - prev;
+      if (st.dirty || d !== 0) { paint(); st.dirty = false; st.ready = true; }
+      requestAnimationFrame(flyAch);
+    })();
   }
 
   applyLang(LANG);
