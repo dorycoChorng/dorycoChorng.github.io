@@ -7,13 +7,15 @@
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
   /* ---------- Language: English / Khmer ---------- */
-  const KM = {"k0":"អំពី","k1":"ជំនាញ","k2":"វិជ្ជាជីវៈ","k3":"ការអប់រំ","k4":"បទពិសោធន៍","k5":"ទំនាក់ទំនង","k6":"<span class=\"ps\">$</span> សួស្តី! ខ្ញុំគឺ","k7":"ខ្ញុំជានិស្សិតថ្នាក់បរិញ្ញាបត្ររង ផ្នែកវិស្វកម្មកុំព្យូទ័រ នៅ <strong>Tacoma Community College</strong>។ ខ្ញុំចូលចិត្តរៀនសរសេរកូដ និងបង្កើតអ្វីដែលថ្មីៗ ភាពចង់ដឹងចង់ឃើញបាននាំខ្ញុំមកទីនេះ ហើយការងារក្តីសុបិនរបស់ខ្ញុំគឺក្លាយជា <strong>វិស្វករ Embedded ML</strong>។","k8":"មើលជំនាញរបស់ខ្ញុំ","k9":"ទាក់ទងខ្ញុំ","k10":"រំកិលចុះក្រោម","k11":"អំពីខ្ញុំ","k12":"ខ្ញុំគឺ <strong>Doryco Chorng</strong> បច្ចុប្បន្នកំពុងសិក្សាថ្នាក់ <strong>បរិញ្ញាបត្ររងផ្នែកវិស្វកម្មកុំព្យូទ័រ</strong> នៅ Tacoma Community College (TCC)។ ខ្ញុំចូលចិត្តរៀនសរសេរកូដ និងបង្កើតអ្វីដែលថ្មីៗ ហើយភាពចង់ដឹងចង់ឃើញបាននាំខ្ញុំមកទីនេះ។ ការងារក្តីសុបិនរបស់ខ្ញុំគឺក្លាយជា <strong>វិស្វករ Embedded ML</strong>។","k13":"ឈ្មោះ","k14":"កំពុងសិក្សា","k15":"សាលា","k16":"ផ្នែកផ្តោត","k17":"សញ្ជាតិ","k18":"បរិញ្ញាបត្ររង វិស្វកម្មកុំព្យូទ័រ","k19":"អ្នកអភិវឌ្ឍ Full Stack","k20":"ខ្មែរ","k21":"ក្តីសុបិនអនាគតរបស់ខ្ញុំ","k22":"វិស្វករ Embedded ML","k23":"ខ្ញុំចង់ផ្សំវិស្វកម្មកុំព្យូទ័រ និង machine learning ដើម្បីបង្កើតឧបករណ៍ឆ្លាតវៃ។","k24":"និស្សិតវិស្វកម្មកុំព្យូទ័រ","k25":"កម្មវិធីបរិញ្ញាបត្ររងនៅ TCC។","k26":"បង្កើតគេហទំព័រ ចាប់ពីអេក្រង់ដែលមនុស្សមើលឃើញ រហូតដល់ឡូជិកនៅពីក្រោយ។","k27":"អ្នកដោះស្រាយបញ្ហាបច្ចេកទេស","k28":"ដោះស្រាយបញ្ហាបច្ចេកទេស។","k29":"ប្រធានថ្នាក់","k30":"ជួយលោកគ្រូអ្នកគ្រូក្នុងកិច្ចការប្រចាំថ្ងៃ។","k31":"អ្នកស្ម័គ្រចិត្តសហគមន៍","k32":"ស្ម័គ្រចិត្ត និងជួយក្នុងសេវាកម្មសហគមន៍។","k33":"អ្នកដឹកនាំនិស្សិត","k34":"ទទួលខុសត្រូវក្នុងតួនាទីដឹកនាំ។","k35":"២០២៦ &ndash; បច្ចុប្បន្ន","k36":"២០២៥ &ndash; ២០២៦","k37":"២០២៤ &ndash; ២០២៥","k38":"២០១៩ &ndash; ២០២៤","k39":"WA សហរដ្ឋអាមេរិក","k40":"កម្ពុជា","k41":"ជំនាញបរិញ្ញាបត្ររង ផ្នែកវិស្វកម្មកុំព្យូទ័រ។","k42":"សិក្សានៅថ្នាក់ទី១១។","k43":"វិទ្យាល័យនៅកម្ពុជា ថ្នាក់ទី១០។","k44":"សាលាឯកជននៅកម្ពុជា ពីថ្នាក់ទី៥ ដល់ថ្នាក់ទី៩។","k45":"មិថុនា ២០២៥ &ndash; សីហា ២០២៥","k46":"ការដោះស្រាយបញ្ហាបច្ចេកទេស","k47":"ជួយដោះស្រាយបញ្ហាបច្ចេកទេស។","k48":"កញ្ញា ២០២៤ &ndash; កក្កដា ២០២៥","k49":"ប្រធានថ្នាក់ និងអ្នកស្ម័គ្រចិត្តសហគមន៍","k50":"ជួយលោកគ្រូអ្នកគ្រូក្នុងកិច្ចការប្រចាំថ្ងៃនៅក្នុងថ្នាក់ ចូលរួមការងារស្ម័គ្រចិត្តសហគមន៍ និងទទួលខុសត្រូវក្នុងតួនាទីដឹកនាំ។","k51":"ជជែកគ្នា","k52":"ចាប់អារម្មណ៍ធ្វើការជាមួយគ្នា ឬគ្រាន់តែចង់ជម្រាបសួរ? សូមផ្ញើសារតាមទម្រង់ ឬស្វែងរកខ្ញុំតាមគណនីទាំងនេះ។","k53":"ស្វែងរកខ្ញុំតាមអនឡាញ","k54":"ទំនាក់ទំនងយើង","k55":"សូមបំពេញទម្រង់ ហើយសាររបស់អ្នកនឹងត្រូវបានផ្ញើត្រង់ទៅប្រអប់សំបុត្ររបស់ខ្ញុំ។","k56":"ឈ្មោះពេញ","k57":"អ៊ីមែលរបស់អ្នក","k58":"គោលបំណង","k59":"សារ","k60":"ហេតុអ្វីអ្នកទាក់ទងខ្ញុំ?","k61":"ឱកាសការងារ ឬហ្វឹកហាត់ការ","k62":"សហការលើគម្រោង","k63":"សួរសំណួរ","k64":"មតិកែលម្អអំពី portfolio របស់ខ្ញុំ","k65":"គ្រាន់តែជម្រាបសួរ","k66":"ផ្សេងៗ","k67":"ផ្ញើសារ","k68":"បានផ្ញើសារហើយ!","k69":"ផ្ញើសារមួយទៀត"};
+  const KM = {"k0":"អំពី","k1":"ជំនាញ","k2":"វិជ្ជាជីវៈ","k3":"ការអប់រំ","k4":"បទពិសោធន៍","k5":"ទំនាក់ទំនង","k6":"<span class=\"ps\">$</span> សួស្តី! ខ្ញុំគឺ","k7":"ខ្ញុំជានិស្សិតថ្នាក់បរិញ្ញាបត្ររង ផ្នែកវិស្វកម្មកុំព្យូទ័រ នៅ <strong>Tacoma Community College</strong>។ ខ្ញុំចូលចិត្តរៀនសរសេរកូដ និងបង្កើតអ្វីដែលថ្មីៗ ភាពចង់ដឹងចង់ឃើញបាននាំខ្ញុំមកទីនេះ ហើយការងារក្តីសុបិនរបស់ខ្ញុំគឺក្លាយជា <strong>វិស្វករ Embedded ML</strong>។","k8":"មើលជំនាញរបស់ខ្ញុំ","k9":"ទាក់ទងខ្ញុំ","k10":"រំកិលចុះក្រោម","k11":"អំពីខ្ញុំ","k12":"ខ្ញុំគឺ <strong>Doryco Chorng</strong> បច្ចុប្បន្នកំពុងសិក្សាថ្នាក់ <strong>បរិញ្ញាបត្ររងផ្នែកវិស្វកម្មកុំព្យូទ័រ</strong> នៅ Tacoma Community College (TCC)។ ខ្ញុំចូលចិត្តរៀនសរសេរកូដ និងបង្កើតអ្វីដែលថ្មីៗ ហើយភាពចង់ដឹងចង់ឃើញបាននាំខ្ញុំមកទីនេះ។ ការងារក្តីសុបិនរបស់ខ្ញុំគឺក្លាយជា <strong>វិស្វករ Embedded ML</strong>។","k13":"ឈ្មោះ","k14":"កំពុងសិក្សា","k15":"សាលា","k16":"ផ្នែកផ្តោត","k17":"សញ្ជាតិ","k18":"បរិញ្ញាបត្ររង វិស្វកម្មកុំព្យូទ័រ","k19":"អ្នកអភិវឌ្ឍ និងអ្នកសរសេរកម្មវិធីនាពេលអនាគត","k20":"ខ្មែរ","k21":"ក្តីសុបិនអនាគតរបស់ខ្ញុំ","k22":"វិស្វករ Embedded ML","k23":"ខ្ញុំចង់ផ្សំវិស្វកម្មកុំព្យូទ័រ និង machine learning ដើម្បីបង្កើតឧបករណ៍ឆ្លាតវៃ។","k24":"និស្សិតវិស្វកម្មកុំព្យូទ័រ","k25":"កម្មវិធីបរិញ្ញាបត្ររងនៅ TCC។","k26":"បង្កើតគេហទំព័រ ចាប់ពីអេក្រង់ដែលមនុស្សមើលឃើញ រហូតដល់ឡូជិកនៅពីក្រោយ។","k27":"អ្នកដោះស្រាយបញ្ហាបច្ចេកទេស","k28":"ដោះស្រាយបញ្ហាបច្ចេកទេស។","k29":"ប្រធានថ្នាក់","k30":"ជួយលោកគ្រូអ្នកគ្រូក្នុងកិច្ចការប្រចាំថ្ងៃ។","k31":"អ្នកស្ម័គ្រចិត្តសហគមន៍","k32":"ស្ម័គ្រចិត្ត និងជួយក្នុងសេវាកម្មសហគមន៍។","k33":"អ្នកដឹកនាំនិស្សិត","k34":"ទទួលខុសត្រូវក្នុងតួនាទីដឹកនាំ។","k35":"២០២៦ &ndash; បច្ចុប្បន្ន","k36":"២០២៥ &ndash; ២០២៦","k37":"២០២៤ &ndash; ២០២៥","k38":"២០១៩ &ndash; ២០២៤","k39":"WA សហរដ្ឋអាមេរិក","k40":"កម្ពុជា","k41":"ជំនាញបរិញ្ញាបត្ររង ផ្នែកវិស្វកម្មកុំព្យូទ័រ។","k42":"សិក្សានៅថ្នាក់ទី១១។","k43":"វិទ្យាល័យនៅកម្ពុជា ថ្នាក់ទី១០។","k44":"សាលាឯកជននៅកម្ពុជា ពីថ្នាក់ទី៥ ដល់ថ្នាក់ទី៩។","k45":"មិថុនា ២០២៥ &ndash; សីហា ២០២៥","k46":"ការដោះស្រាយបញ្ហាបច្ចេកទេស","k47":"ជួសជុលបញ្ហាកុំព្យូទ័រទូទៅ និងដោះស្រាយបញ្ហាបច្ចេកទេសរបស់ម៉ាស៊ីនបោះពុម្ព។","k48":"កញ្ញា ២០២៤ &ndash; កក្កដា ២០២៥","k49":"ប្រធានថ្នាក់ និងអ្នកស្ម័គ្រចិត្តសហគមន៍","k50":"ជួយលោកគ្រូអ្នកគ្រូក្នុងកិច្ចការប្រចាំថ្ងៃនៅក្នុងថ្នាក់ ចូលរួមការងារស្ម័គ្រចិត្តសហគមន៍ និងទទួលខុសត្រូវក្នុងតួនាទីដឹកនាំ។","k51":"ជជែកគ្នា","k52":"ចាប់អារម្មណ៍ធ្វើការជាមួយគ្នា ឬគ្រាន់តែចង់ជម្រាបសួរ? សូមផ្ញើសារតាមទម្រង់ ឬស្វែងរកខ្ញុំតាមគណនីទាំងនេះ។","k53":"ស្វែងរកខ្ញុំតាមអនឡាញ","k54":"ទាក់ទងខ្ញុំ","k55":"សូមបំពេញទម្រង់ ហើយសាររបស់អ្នកនឹងត្រូវបានផ្ញើត្រង់ទៅប្រអប់សំបុត្ររបស់ខ្ញុំ។","k56":"ឈ្មោះពេញ","k57":"អ៊ីមែលរបស់អ្នក","k58":"គោលបំណង","k59":"សារ","k60":"ហេតុអ្វីអ្នកទាក់ទងខ្ញុំ?","k61":"ឱកាសការងារ ឬហ្វឹកហាត់ការ","k62":"សហការលើគម្រោង","k63":"សួរសំណួរ","k64":"មតិកែលម្អអំពី portfolio របស់ខ្ញុំ","k65":"គ្រាន់តែជម្រាបសួរ","k66":"ផ្សេងៗ","k67":"ផ្ញើសារ","k68":"បានផ្ញើសារហើយ!","k69":"ផ្ញើសារមួយទៀត"};
   const KMPH = {"p0":"ឈ្មោះពេញរបស់អ្នក","p1":"ដើម្បីឱ្យខ្ញុំអាចឆ្លើយតបទៅអ្នក","p2":"សរសេរសាររបស់អ្នកនៅទីនេះ..."};
   Object.assign(KM, { sch1: 'សាលារៀនជំនាន់ថ្មីវិទ្យាល័យព្រះយុគន្ធរ', sch2: 'សាលារៀនអន្តរជាតិបញ្ញាសាស្ត្រ សាខាសែនសុខ', sch2p: 'ភ្នំពេញ កម្ពុជា' });
   Object.assign(KM, { ach: 'សមិទ្ធផល', silver: 'មេដាយប្រាក់', bronze: 'មេដាយសំរិទ្ធ', honor: 'វិញ្ញាបនបត្រកិត្តិយស', runner: 'ជ័យលាភីលេខ ៣ (3rd Runner-up)', intl: 'ការប្រកួតអន្តរជាតិ', y2025: '២០២៥', y2019: '២០១៩' });
   Object.assign(KM, { age: 'អាយុ' });
   Object.assign(KM, { r_cop: 'គណិតវិទ្យា · ជុំជម្រុះ', r_wmi: 'ជុំជម្រុះ · កម្ពុជា', r_sasmo: 'ថ្នាក់ទី១០ · សាលារៀនជំនាន់ថ្មីវិទ្យាល័យព្រះយុគន្ធរ', r_aimo: 'ជុំសាកល្បងនៅកម្ពុជា' });
   Object.assign(KM, { thatsme: '// នេះជាខ្ញុំ' });
+  Object.assign(KM, { r_neo: 'ប្រភេទ Coding · ថ្ងៃទី១៩ មករា ២០២៥' });
+  Object.assign(KM, { sasmoSub: 'ការប្រកួតអូឡាំពិកគណិតវិទ្យាអន្តរជាតិសិង្ហបុរី' });
   Object.assign(KM, { focus: 'Full Stack, Hardware និង AI' });
   Object.assign(KM, { orgby: 'រៀបចំដោយ' });
   const MSG = {
@@ -93,12 +95,15 @@
 
   /* ---------- Intro: the logo draws itself, then we zoom inside ---------- */
   document.body.classList.add('loading');
+  let siteReady = false, onSiteReady = null;
   const enterSite = () => {
     $('#loader').classList.add('enter');
     document.body.classList.add('entered');
     setTimeout(() => {
       document.body.classList.remove('loading');
       startTyping();
+      siteReady = true;
+      if (onSiteReady) onSiteReady();
     }, reduceMotion ? 0 : 900);
   };
   window.addEventListener('load', () => setTimeout(enterSite, reduceMotion ? 0 : 1600));
@@ -210,8 +215,8 @@
 
   /* ---------- Typing effect ---------- */
   const PHRASES = {
-    en: ['Computer Engineering Student', 'Full Stack Developer', 'Future Embedded ML Engineer', 'Microsoft Office 365 User'],
-    km: ['និស្សិតវិស្វកម្មកុំព្យូទ័រ', 'អ្នកអភិវឌ្ឍ Full Stack', 'វិស្វករ Embedded ML នាពេលអនាគត', 'អ្នកប្រើប្រាស់ Microsoft Office 365']
+    en: ['Computer Engineering Student', 'Future Developer & Programmer', 'Future Embedded ML Engineer', 'Microsoft Office 365 User'],
+    km: ['និស្សិតវិស្វកម្មកុំព្យូទ័រ', 'អ្នកអភិវឌ្ឍ និងអ្នកសរសេរកម្មវិធីនាពេលអនាគត', 'វិស្វករ Embedded ML នាពេលអនាគត', 'អ្នកប្រើប្រាស់ Microsoft Office 365']
   };
   const seg = typeof Intl !== 'undefined' && Intl.Segmenter ? new Intl.Segmenter(undefined, { granularity: 'grapheme' }) : null;
   const parts = w => seg ? [...seg.segment(w)].map(s => s.segment) : [...w];
@@ -238,18 +243,87 @@
     if (typingStarted && reduceMotion) $('#typed').textContent = PHRASES[LANG][0];
   });
 
-  /* ---------- Reveal on scroll ---------- */
+  /* ---------- Every section animates in as you scroll to it ---------- */
+  // each part of each section gets its own entrance (direction / style), staggered
+  const ANIMS = [
+    ['.title', 'title'],
+    ['#about .portrait', 'left'], ['#about .statement', 'right'], ['#about .facts', 'right'], ['#about .dream', 'zoom'],
+    ['#skills .skill', 'pop', 3], ['#roles .role', 'flip', 3],
+    ['#education .tl-item .card', 'right'], ['#experience .tl-item .card', 'right'],
+    ['#achievements .award', 'rise', 3],
+    ['#contact .contact-info', 'left'], ['#contact .contact-form', 'right'],
+    ['#contact .mini-title, #contact .socials .social', 'rise', 0, .07], ['#contact .field, #contact .btn.block', 'rise', 0, .07]
+  ];
+  document.documentElement.classList.add('anim-setup');          // place everything at its starting position instantly (no transition)
+  ANIMS.forEach(([sel, kind, cols, step]) => {
+    $$(sel).forEach((el, i) => {
+      el.classList.add('reveal');
+      el.dataset.anim = kind;
+      if (step) {
+        // children of a card: a quick cascade after their card has appeared
+        const scope = $$(sel);
+        el.style.setProperty('--d', (.3 + Math.min(scope.indexOf(el), 8) * step).toFixed(2) + 's');
+      } else if (cols) {
+        el.style.setProperty('--d', ((i % cols) * .12).toFixed(2) + 's');       // cards in the same row come one after another
+      } else {
+        el.style.setProperty('--d', '0s');
+      }
+    });
+  });
+  // anything else marked as reveal keeps the simple rise
   $$('.reveal').forEach(el => {
+    if (el.dataset.anim) return;
     const idx = [...el.parentElement.children].filter(c => c.classList.contains('reveal')).indexOf(el);
-    el.style.setProperty('--d', `${Math.min(Math.max(idx, 0), 4) * .08}s`);
+    el.style.setProperty('--d', (Math.min(Math.max(idx, 0), 4) * .08) + 's');
   });
   $$('.chips').forEach(c => [...c.children].forEach((s, i) => s.style.setProperty('--i', i)));
-  const io = new IntersectionObserver(entries => {
+  void document.body.offsetHeight;
+  document.documentElement.classList.remove('anim-setup');
+
+  // remember each element's own stagger delay so the entrance can be replayed exactly
+  $$('.reveal').forEach(el => { el.dataset.delay = el.style.getPropertyValue('--d') || '0s'; });
+
+  const enter = el => {
+    if (el.classList.contains('in')) return;
+    clearTimeout(el._t);
+    el.style.setProperty('--d', el.dataset.delay || '0s');
+    el.classList.add('in');
+    if (el.matches('.facts')) countUpAge();
+    // once it has landed, drop the entrance delay so hover effects respond instantly
+    const d = parseFloat(el.dataset.delay) || 0;
+    el._t = setTimeout(() => el.style.setProperty('--d', '0s'), (d + 1.1) * 1000);
+  };
+  const leave = el => {
+    if (reduceMotion || !el.classList.contains('in')) return;
+    clearTimeout(el._t);
+    el.style.setProperty('--d', '0s');
+    el.classList.remove('in');                     // back to its starting pose, ready to animate again
+  };
+  // arrives: plays once it is a little way into view
+  const ioIn = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) enter(e.target); });
+  }, { threshold: .12, rootMargin: '0px 0px -7% 0px' });
+  // leaves: resets only when it is completely out of view
+  const ioOut = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (!e.isIntersecting) leave(e.target); });
+  }, { threshold: 0 });
+  $$('.reveal').forEach(el => { ioIn.observe(el); ioOut.observe(el); });
+
+  // the whole section (its background scene, heading, timeline) also resets and replays
+  const sectionIO = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      if (e.isIntersecting && e.intersectionRatio >= .06) e.target.classList.add('in-view');
+      else if (!e.isIntersecting && !reduceMotion) e.target.classList.remove('in-view');
     });
-  }, { threshold: .12 });
-  $$('.reveal').forEach(el => io.observe(el));
+  }, { threshold: [0, .06] });
+  $$('.section').forEach(s => sectionIO.observe(s));
+
+  // pictures fade in as they finish loading
+  $$('img[loading="lazy"]').forEach(img => {
+    img.setAttribute('data-fade', '');
+    const done = () => img.classList.add('loaded');
+    if (img.complete && img.naturalWidth) done(); else { img.addEventListener('load', done); img.addEventListener('error', done); }
+  });
 
   /* ---------- Nav: scroll state, progress bar, active link ---------- */
   const nav = $('#nav');
@@ -303,6 +377,34 @@
     requestAnimationFrame(flyPlanes);
   })();
 
+  /* ---------- Top links: a glowing indicator that slides to the link you point at, and rests on the current section ---------- */
+  const linksBox = $('#links');
+  const pill = document.createElement('span'); pill.className = 'nav-pill'; pill.setAttribute('aria-hidden', 'true');
+  const ind = document.createElement('span'); ind.className = 'nav-ind'; ind.setAttribute('aria-hidden', 'true');
+  linksBox.append(pill, ind);
+  links.forEach((a, i) => a.style.setProperty('--k', i));
+  let hovered = null;
+  function moveInd() {
+    if (innerWidth <= 900) return;
+    const target = hovered || $('.links a.active');
+    if (!target) { pill.style.opacity = ind.style.opacity = 0; return; }
+    const b = linksBox.getBoundingClientRect(), r = target.getBoundingClientRect();
+    const x = r.left - b.left;
+    pill.style.transform = 'translateX(' + x.toFixed(1) + 'px)'; pill.style.width = r.width.toFixed(1) + 'px';
+    ind.style.transform = 'translateX(' + (x + 13).toFixed(1) + 'px)'; ind.style.width = Math.max(r.width - 26, 8).toFixed(1) + 'px';
+    pill.style.opacity = hovered ? 1 : .55; ind.style.opacity = 1;
+  }
+  links.forEach(a => {
+    a.addEventListener('mouseenter', () => { hovered = a; moveInd(); });
+    a.addEventListener('focus', () => { hovered = a; moveInd(); });
+    a.addEventListener('blur', () => { hovered = null; moveInd(); });
+  });
+  linksBox.addEventListener('mouseleave', () => { hovered = null; moveInd(); });
+  window.addEventListener('resize', moveInd);
+  window.addEventListener('load', moveInd);
+  langHooks.push(() => requestAnimationFrame(moveInd));
+  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(moveInd).observe(linksBox);
+
   function onScroll() {
     const y = scrollY;
     nav.classList.toggle('scrolled', y > 30);
@@ -311,6 +413,7 @@
     let current = -1;
     sections.forEach((s, i) => { if (s && s.getBoundingClientRect().top < innerHeight * .4) current = i; });
     links.forEach((a, i) => a.classList.toggle('active', i === current));
+    moveInd();
     updateTimelines();
   }
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -325,9 +428,15 @@
     menuBtn.classList.toggle('open', open);
     menuBtn.setAttribute('aria-expanded', open);
     document.body.style.overflow = open ? 'hidden' : '';
+    document.body.classList.toggle('menu-open', open);
   };
   menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
   links.forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('click', e => {
+    if (menu.classList.contains('open') && !e.target.closest('.nav')) setMenu(false);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); menuBtn.focus(); } });
+  window.addEventListener('resize', () => { if (innerWidth > 900 && menu.classList.contains('open')) setMenu(false); });
 
   /* ---------- Contact form: sends the message to my inbox ---------- */
   const CONTACT_EMAIL = 'doryco.chorng@outlook.com';
@@ -400,7 +509,7 @@
   if (codeCard) {
     const w = c => t => '<span class="' + c + '">' + t + '</span>';
     const kw = w('kw'), fn = w('fn'), prop = w('prop'), str = w('str'), com = w('com'), tp = w('tp');
-    const name = str('"Doryco Chorng"'), role = str('"Full Stack Developer"'), study = str('"Computer Engineering"'), dream = str('"Embedded ML Engineer"');
+    const name = str('"Doryco Chorng"'), role = str('"Future Developer &amp; Programmer"'), study = str('"Computer Engineering"'), dream = str('"Embedded ML Engineer"');
     const s1 = [str('"HTML"'), str('"CSS"'), str('"Angular"')].join(', ') + ',';
     const s2 = str('"TypeScript"') + ', ' + str('"JavaScript"') + ',';
     const s3 = str('"Java"') + ', ' + str('"Python"');
@@ -493,6 +602,61 @@
     }
     langHooks.push(updateCaption);
 
+    /* --- typing effect: every character is typed one after another, with a blinking caret --- */
+    const T = { timer: null, chars: [], vis: false, caret: document.createElement('span') };
+    T.caret.className = 'tcaret'; T.caret.setAttribute('aria-hidden', 'true');
+    function prepareChars() {
+      const walker = document.createTreeWalker(codeEl, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(n => {
+        if (!n.nodeValue) return;
+        const frag = document.createDocumentFragment();
+        for (const ch of n.nodeValue) { const s = document.createElement('span'); s.className = 'ch'; s.textContent = ch; frag.appendChild(s); }
+        n.replaceWith(frag);
+      });
+      T.chars = $$('.ch', codeEl);
+      $$('.cursor-line', codeEl).forEach(l => l.classList.remove('cursor-line'));
+    }
+    function stopTyping() { clearTimeout(T.timer); T.timer = null; }
+    function clearTyped() {
+      T.chars.forEach(c => c.classList.remove('on'));
+      $$('.cl', codeEl).forEach(l => l.classList.remove('started'));
+      T.caret.remove();
+    }
+    function showAll() {
+      T.chars.forEach(c => c.classList.add('on'));
+      $$('.cl', codeEl).forEach(l => l.classList.add('started'));
+      if (T.chars.length) T.chars[T.chars.length - 1].after(T.caret);
+    }
+    function typeCode() {
+      stopTyping(); clearTyped();
+      if (reduceMotion || !T.chars.length) { showAll(); return; }
+      const total = T.chars.length, per = Math.min(22, Math.max(6, 4200 / total));
+      let i = 0;
+      T.chars[0].before(T.caret);
+      (function tick() {
+        if (i >= total) { T.timer = null; return; }
+        const c = T.chars[i], line = c.closest('.cl');
+        c.classList.add('on'); line.classList.add('started');
+        c.after(T.caret);
+        i++;
+        const next = T.chars[i];
+        let d = per * (.55 + Math.random() * .9);
+        if (',:{[('.includes(c.textContent)) d += per * 1.5;
+        if (next && next.closest('.cl') !== line) d += 150;              // a short pause at the end of each line
+        T.timer = setTimeout(tick, d);
+      })();
+    }
+    // starts when the card is on screen (after the intro) and starts over each time you scroll back to it
+    new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting && e.intersectionRatio >= .25) { if (!T.vis) { T.vis = true; if (siteReady) typeCode(); } }
+      else if (!e.isIntersecting) { T.vis = false; stopTyping(); if (!reduceMotion) clearTyped(); }
+    }), { threshold: [0, .25] }).observe(codeCard);
+    onSiteReady = () => { if (T.vis) typeCode(); };
+    prepareChars();
+    if (!reduceMotion) clearTyped(); else showAll();
+
     function setLang(lang) {
       const [phrase, lines] = SNIPPETS[lang];
       tabs.forEach(t => {
@@ -500,11 +664,12 @@
         t.setAttribute('aria-selected', on);
         t.tabIndex = on ? 0 : -1;
       });
-      codeEl.innerHTML = lines.map((l, i) => '<span class="cl' + (i === lines.length - 1 ? ' cursor-line' : '') + '" style="--i:' + i + '">' + l + '</span>').join('');
-      pre.classList.add('switched');
+      codeEl.innerHTML = lines.map((l, i) => '<span class="cl" style="--i:' + i + '">' + l + '</span>').join('');
+      prepareChars();
+      typeCode();
       codeLang = lang;
       updateCaption();
-      codeCard.setAttribute('aria-label', 'A short summary of Doryco written ' + phrase.replace('written ', '') + ': a full stack developer studying computer engineering who dreams of becoming an embedded ML engineer.');
+      codeCard.setAttribute('aria-label', 'A short summary of Doryco written ' + phrase.replace('written ', '') + ': a future developer and programmer studying computer engineering who dreams of becoming an embedded ML engineer.');
     }
     tabs.forEach((t, i) => {
       t.addEventListener('click', () => setLang(t.dataset.lang));
@@ -589,6 +754,15 @@
     ageEl.textContent = LANG === 'km' ? toKhmerDigits(age) + ' ឆ្នាំ' : age + ' years old';
   };
   langHooks.push(showAge);
+  function countUpAge() {
+    if (!ageEl || reduceMotion) return;
+    const target = currentAge(), t0 = performance.now(), dur = 1100;
+    (function step(now) {
+      const p = Math.min((now - t0) / dur, 1), n = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      ageEl.textContent = LANG === 'km' ? toKhmerDigits(n) + ' ឆ្នាំ' : n + ' years old';
+      if (p < 1) requestAnimationFrame(step); else showAge();
+    })(t0);
+  }
 
   /* ---------- Achievements: a route joins the cards in order and a plane flies along it ---------- */
   const achGrid = $('#achGrid');
@@ -620,7 +794,7 @@
         else rows.push({ t: r.t, b: r.b, items: [i] });
       });
       const multi = rows.some(r => r.items.length > 1);
-      const Lg = -12, Rg = w + 12, off = 14;
+      const Lg = -20, Rg = w + 20, off = 34;      // the line keeps its distance from the boxes
 
       const P = [];
       const add = (x, y, tag) => P.push({ x, y, tag });
@@ -639,7 +813,7 @@
       } else {
         // phones: the route runs down the left side, one stop per card
         const cy = i => (rs[i].t + rs[i].b) / 2;
-        const Lv = -6;                                   // stays inside the screen edge
+        const Lv = 17;                                   // phones: the line runs in its own lane, left of the boxes
         add(Lv, cy(0) - 40, { kind: 'start' });
         cards.forEach((c, i) => add(Lv, cy(i), { kind: 'dot', card: i, enter: true, stubTo: null }));
         add(Lv, cy(cards.length - 1) + 40, { kind: 'end' });

@@ -633,7 +633,6 @@ a, button, select, summary { touch-action: manipulation; }
   .hero { padding-top: calc(78px + env(safe-area-inset-top, 0px)); padding-bottom: 40px; min-height: auto; }
   .name { font-size: clamp(2.6rem, 14vh, 4.4rem); }
   .section { padding-top: 60px; }
-  .links a { font-size: 1.35rem; padding: 2px 0; }
   .loader-logo { width: 72px; height: 72px; }
 }
 @media (max-width: 900px) and (min-width: 640px) and (max-height: 520px) and (orientation: landscape) {
@@ -850,3 +849,155 @@ body.has-mouse .cursor-ring { opacity: .3; }
 @keyframes ripple { from { transform: scale(1); opacity: .9; } to { transform: scale(3.4); opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .ach-route .spark .halo { animation: none; } }
 @media (max-width: 640px) { .ach-route .spark .halo { r: 11px; } .ach-route .spark .mid { r: 6px; } }
+
+/* ---------- Mobile menu: a compact dropdown with smaller text (easy to read and tap on iPhone / Galaxy) ---------- */
+@media (max-width: 900px) {
+  .links {
+    position: absolute; inset: auto; top: 100%; left: 12px; right: 12px; margin-top: 8px;
+    display: flex; flex-direction: column; justify-content: flex-start; align-items: stretch; gap: 0;
+    padding: 6px; max-height: calc(100vh - 110px); max-height: calc(100dvh - 110px); overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+    background: var(--card); border: 1px solid var(--line); border-radius: 18px;
+    box-shadow: 0 24px 50px -12px rgba(0, 0, 0, .55);
+    clip-path: inset(0 0 100% 0 round 18px); opacity: 0; transform: translateY(-6px); pointer-events: none;
+    transition: clip-path .45s var(--ease), opacity .25s, transform .45s var(--ease);
+  }
+  .links.open { clip-path: inset(0 0 0 0 round 18px); opacity: 1; transform: none; pointer-events: auto; }
+  .links a {
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 13px 14px; font-size: 1rem; font-weight: 500; letter-spacing: 0; line-height: 1.35; color: var(--fg);
+    border-radius: 12px; border-bottom: 0;
+  }
+  html[lang="km"] .links a { line-height: 1.5; }
+  .links a::after { position: static; width: 7px; height: 7px; margin: 0; border-radius: 50%; transform: none; background: transparent; box-shadow: none; transition: background .3s; }
+  .links a:hover::after, .links a.active::after { width: 7px; transform: none; }
+  .links a.active { background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
+  .links a.active::after { background: var(--accent); }
+  .links a:active { background: color-mix(in srgb, var(--fg) 8%, transparent); }
+  .links a + a { margin-top: 2px; }
+  .brand, .nav-tools { position: relative; z-index: 2; }
+  /* the page dims behind the open menu */
+  body::before { content: ""; position: fixed; inset: 0; z-index: 850; background: rgba(4, 7, 12, .5); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); opacity: 0; pointer-events: none; transition: opacity .3s; }
+  body.menu-open::before { opacity: 1; pointer-events: auto; }
+}
+@media (max-width: 900px) and (max-height: 520px) and (orientation: landscape) {
+  .links { max-height: calc(100dvh - 80px); }
+  .links a { padding: 9px 14px; font-size: .95rem; }
+}
+@media (max-width: 400px) { .links { left: 8px; right: 8px; } .links a { padding: 12px 12px; font-size: .97rem; } }
+
+/* ---------- Achievements: room between the route line and the boxes ---------- */
+.award-grid { row-gap: 92px; }
+@media (max-width: 640px) {
+  .award-grid { row-gap: 26px; padding-left: 42px; }
+}
+
+/* ---------- Top links: sliding indicator + staggered entrance (desktop / laptop) ---------- */
+@media (min-width: 901px) {
+  .links { position: relative; }
+  .links a::after { display: none; }
+  .links a { z-index: 1; }
+  .nav-pill { position: absolute; left: 0; top: 0; bottom: 0; width: 0; border-radius: 999px; z-index: 0; pointer-events: none; opacity: 0;
+    background: color-mix(in srgb, var(--accent) 13%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent);
+    transition: transform .55s var(--ease), width .55s var(--ease), opacity .3s; }
+  .nav-ind { position: absolute; left: 0; bottom: -3px; height: 3px; width: 0; border-radius: 3px; z-index: 1; pointer-events: none; opacity: 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2)); box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 70%, transparent);
+    transition: transform .55s var(--ease), width .55s var(--ease), opacity .3s; }
+  .links a:hover, .links a:focus-visible { color: var(--fg); }
+  body.entered .links a { animation: linkIn .7s var(--ease) both; animation-delay: calc(var(--k, 0) * .07s + .75s); }
+  @keyframes linkIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+}
+@media (max-width: 900px) { .nav-pill, .nav-ind { display: none; } }
+@media (prefers-reduced-motion: reduce) { .nav-pill, .nav-ind { transition: none; } body.entered .links a { animation: none; } }
+
+/* ---------- About: Angkor Wat sunrise behind the section ---------- */
+#about { position: relative; }
+main { overflow-x: clip; }
+.about-scene {
+  position: absolute; top: 0; left: 50%; width: 100vw; transform: translateX(-50%); height: clamp(320px, 42vw, 640px); z-index: -1; pointer-events: none; color: var(--fg);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 70%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 22%, #000 70%, transparent 100%);
+}
+.about-scene .scene { display: block; width: 100%; height: 100%; }
+.about-scene .sky0 { stop-color: var(--c-fn); stop-opacity: 0; }
+.about-scene .sky1 { stop-color: var(--c-fn); stop-opacity: .2; }
+.about-scene .sky2 { stop-color: var(--office); stop-opacity: .34; }
+.about-scene .sun0 { stop-color: var(--office); stop-opacity: .95; }
+.about-scene .sun1 { stop-color: var(--office); stop-opacity: .3; }
+.about-scene .sun2 { stop-color: var(--office); stop-opacity: 0; }
+.about-scene .sunCore { fill: var(--gold); opacity: .85; }
+.about-scene .wat0 { stop-color: var(--office); stop-opacity: .22; }
+.about-scene .wat1 { stop-color: var(--c-fn); stop-opacity: 0; }
+.about-scene .far path { fill: var(--fg); fill-opacity: .06; }
+.about-scene .near path { fill: var(--fg); fill-opacity: .12; }
+.about-scene .temple { fill: var(--fg); fill-opacity: .2; }
+.about-scene .reflect { fill: var(--fg); fill-opacity: .12; }
+.about-scene .palms { color: var(--fg); opacity: .2; }
+.about-scene .horizon { stroke: var(--office); stroke-opacity: .5; stroke-width: 1.5; fill: none; }
+:root:not([data-theme="dark"]) .about-scene .temple { fill-opacity: .16; }
+@media (max-width: 700px) { .about-scene { height: 300px; } .about-scene .palms { opacity: .12; } }
+
+/* Angkor Wat scene: quieter, so the text on top always stays easy to read */
+.about-scene .sun0 { stop-opacity: .55; }
+.about-scene .sun1 { stop-opacity: .18; }
+.about-scene .sunCore { opacity: .5; }
+.about-scene .far path { fill-opacity: .04; }
+.about-scene .near path { fill-opacity: .08; }
+.about-scene .temple { fill-opacity: .12; }
+.about-scene .reflect { fill-opacity: .07; }
+.about-scene .palms { opacity: .12; }
+.about-scene .horizon { stroke-opacity: .3; }
+:root:not([data-theme="dark"]) .about-scene .temple { fill-opacity: .1; }
+.about-scene { opacity: .95; }
+
+/* Angkor Wat scene: no hard sun disc and no palms, so nothing sits behind the text */
+.about-scene .sunCore, .about-scene .palms { display: none; }
+.about-scene .sun0 { stop-opacity: .4; }
+
+/* ---------- Entrance animations: each part of each section arrives in its own way ---------- */
+.reveal[data-anim="left"]:not(.in)  { transform: translateX(-56px); }
+.reveal[data-anim="right"]:not(.in) { transform: translateX(56px); }
+.reveal[data-anim="zoom"]:not(.in)  { transform: translateY(24px) scale(.9); }
+.reveal[data-anim="pop"]:not(.in)   { transform: translateY(38px) scale(.93); }
+.reveal[data-anim="rise"]:not(.in)  { transform: translateY(46px) scale(.97); }
+.reveal[data-anim="flip"]:not(.in)  { transform: perspective(700px) translateY(34px) rotateX(-16deg); transform-origin: 50% 0; }
+.reveal[data-anim="title"]:not(.in) { transform: none; }
+
+#contact .field.reveal, #contact .btn.block.reveal, #contact .social.reveal, #contact .mini-title.reveal { transition: opacity .8s var(--ease), transform .9s var(--ease), border-color .3s, background .3s, color .4s; transition-delay: var(--d, 0s); }
+
+/* headings: the number pops, the words slide, the line draws */
+.title h2, .title .num { transition: transform .9s var(--ease), opacity .8s; }
+.title:not(.in) h2 { transform: translateX(-34px); opacity: 0; }
+.title:not(.in) .num { transform: scale(.4) rotate(-25deg); opacity: 0; }
+.title .num { transition-delay: .1s; }
+.title h2 { transition-delay: .2s; }
+
+/* cards: their icon spins in once the card lands */
+.skill .skill-ico, .role .skill-ico { transition: transform .9s var(--ease) .25s, opacity .6s .25s; }
+.skill:not(.in) .skill-ico { transform: rotate(-90deg) scale(.4); opacity: 0; }
+
+/* the Angkor Wat scene rises and fades in as the About section arrives */
+.about-scene { transition: opacity 1.6s ease, transform 1.6s var(--ease); }
+#about:not(.in-view) .about-scene { opacity: 0; transform: translateX(-50%) translateY(40px); }
+
+/* photos fade in as they finish loading */
+img[data-fade] { transition: opacity .9s ease, transform 1.2s var(--ease); }
+img[data-fade]:not(.loaded) { opacity: 0; }
+.portrait-frame img[data-fade]:not(.loaded), .award-media img[data-fade]:not(.loaded) { transform: scale(1.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal[data-anim]:not(.in), .title:not(.in) h2, .title:not(.in) .num, .skill:not(.in) .skill-ico { opacity: 1 !important; transform: none !important; }
+  #about:not(.in-view) .about-scene { opacity: 1; transform: translateX(-50%); }
+  img[data-fade]:not(.loaded) { opacity: 1; transform: none; }
+}
+
+.anim-setup .reveal, .anim-setup .reveal *, .anim-setup .title h2, .anim-setup .title .num, .anim-setup .skill-ico { transition: none !important; }
+
+/* ---------- Code card: typed character by character ---------- */
+body .hero-code .code .cl { opacity: 1; transform: none; transition: none; animation: none; }
+.code .ch { visibility: hidden; }
+.code .ch.on { visibility: visible; }
+.code .cl:not(.started)::before { opacity: 0; }
+.code .cl::before { transition: opacity .3s; }
+.tcaret { display: inline-block; position: relative; width: 0; height: 1em; }
+.tcaret::after { content: ""; position: absolute; left: 1px; bottom: -.25em; width: 8px; height: 1.25em; background: var(--accent); animation: blink 1s steps(2) infinite; }
+@media (prefers-reduced-motion: reduce) { .code .ch { visibility: visible; } .code .cl:not(.started)::before { opacity: .6; } .tcaret::after { animation: none; } }
+.medal-badge.plain { cursor: default; }
