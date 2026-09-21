@@ -217,6 +217,7 @@
       <a href="#education" data-i18n="k3">Education</a>
       <a href="#experience" data-i18n="k4">Experience</a>
       <a href="#achievements" data-i18n="ach">Achievements</a>
+      <a href="#hackathon" data-i18n="hack_nav">Hackathon</a>
       <a href="#contact" data-i18n="k5">Contact</a>
     </nav>
     <div class="nav-tools">
@@ -235,8 +236,8 @@
       <div class="hero-inner">
         <p class="eyebrow fade" data-i18n="k6"><span class="ps">$</span> hello, world! I'm</p>
         <h1 class="name" aria-label="Doryco Chorng">
-          <span class="line" style="--i:0"><span>Doryco</span></span>
-          <span class="line" style="--i:1"><span>Chorng</span></span>
+          <span class="line" style="--i:0"><span data-i18n="nm1">Doryco</span></span>
+          <span class="line" style="--i:1"><span data-i18n="nm2">Chorng</span></span>
         </h1>
         <p class="typing fade" style="--i:2"><span id="typed"></span><span class="caret"></span></p>
         <p class="lead fade" style="--i:3" data-i18n="k7">I'm an Associate of Computer Engineering student at <strong>Tacoma Community College</strong>. I love learning to code and building something new, curiosity is what led me here, and my dream job is to become an <strong>Embedded ML Engineer</strong>.</p>
@@ -296,7 +297,7 @@
         </figure>
         <p class="statement reveal" data-i18n="k12">I'm <strong>Doryco Chorng</strong>, currently studying for an <strong>Associate degree in Computer Engineering</strong> at Tacoma Community College (TCC). I love learning to code and building something new, and curiosity is what led me here. My dream job is to become an <strong>Embedded ML Engineer</strong>.</p>
         <ul class="facts card reveal">
-          <li><span data-i18n="k13">Name</span><b>Doryco Chorng</b></li>
+          <li><span data-i18n="k13">Name</span><b data-i18n="nameval">Doryco Chorng</b></li>
           <li><span data-i18n="age">Age</span><b id="ageValue">17 years old</b></li>
           <li><span data-i18n="k14">Studying</span><b data-i18n="k18">A.S. Computer Engineering</b></li>
           <li><span data-i18n="k15">School</span><b>Tacoma Community College (TCC), WA</b></li>
@@ -310,6 +311,45 @@
           <span class="label" data-i18n="k21">My future dream</span>
           <h3 data-i18n="k22">Embedded ML Engineer</h3>
           <p data-i18n="k23">I want to combine computer engineering and machine learning to build smart devices.</p>
+        </div>
+      </div>
+          <div class="story" id="story">
+        <div class="story-head reveal"><span class="label" data-i18n="st_label">Personal story</span><h3 data-i18n="st_title">My journey</h3></div>
+        <p class="story-intro reveal" data-i18n="st_intro">My name is Doryco Chorng and I am currently an international student majoring in an A.S. in Computer Engineering at TCC. It has been a very difficult and tough journey.</p>
+        <ul class="grade-path reveal" aria-hidden="true"><li class="g-e">E</li><li class="g-b">B</li><li class="g-us">USA</li><li class="g-gpa">4.0</li></ul>
+        <div class="timeline story-tl" id="storyTl">
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <div class="tl-meta"><span class="date" data-i18n="st1_when">Childhood</span><span class="grade g-e" data-i18n="st1_g">Grade E</span></div>
+            <h3 data-i18n="st1_t">Where it started</h3>
+            <p data-i18n="st1_p">I started this journey as a child with bad grades, mostly E grades. It continued from kindergarten all the way through primary school.</p>
+          </article>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <div class="tl-meta"><span class="date" data-i18n="st2_when">High school</span><span class="grade g-b" data-i18n="st2_g">Grade B</span></div>
+            <h3 data-i18n="st2_t">Growing stronger</h3>
+            <p data-i18n="st2_p">When I started high school, my grades began to rise to B, and they stayed stable.</p>
+          </article>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <div class="tl-meta"><span class="date" data-i18n="st3_when">United States</span><span class="grade g-us" data-i18n="st3_g">Studying in the U.S.</span></div>
+            <h3 data-i18n="st3_t">A big opportunity</h3>
+            <p data-i18n="st3_p">Then I got the opportunity to study in the United States, which was the best achievement of my life.</p>
+          </article>
+        </div>
+        <div class="tl-item">
+          <span class="tl-dot"></span>
+          <article class="card reveal">
+            <div class="tl-meta"><span class="date" data-i18n="st4_when">TCC</span><span class="grade g-gpa" data-i18n="st4_g">4.0 GPA</span></div>
+            <h3 data-i18n="st4_t">Skipping senior year</h3>
+            <p data-i18n="st4_p">I also had the chance to skip my senior year and start at TCC, earning a dual high school diploma and an Associate degree in Computer Engineering, while keeping a stable 4.0 GPA.</p>
+          </article>
+        </div>
         </div>
       </div>
     </section>
@@ -555,9 +595,39 @@
       </div>
     </section>
 
+    <!-- Hackathon album -->
+    <section id="hackathon" class="section">
+      <div class="title reveal"><span class="num">07 //</span><h2 data-i18n="hack">Hackathon Album</h2></div>
+      <p class="album-intro reveal" data-i18n="hk_intro">Photos from Kidkathon and Tech Kid, Cambodia, the hackathon events I joined to gain experience.</p>
+      <ul class="album-tags reveal"><li class="ev">Kidkathon</li><li class="ev" data-i18n="hk_tk">Tech Kid, Cambodia</li><li>micro:bit</li><li>MakeCode</li><li data-i18n="hk_t3">Hands-on building</li></ul>
+      <div class="album">
+        <figure class="snap s1 reveal">
+          <button type="button" class="snap-btn" data-full="hack-house.jpg" data-cap="Kidkathon · Tech Kid, Cambodia · Building a cardboard smart house with micro:bit boards" data-cap-km="Kidkathon · Tech Kid កម្ពុជា · កសាងផ្ទះឆ្លាតវៃពីក្រដាសកាតុងជាមួយបន្ទះ micro:bit" aria-label="View photo: Building a cardboard smart house with micro:bit boards">
+            <img src="hack-house.jpg" width="720" height="1280" alt="A cardboard model house with a popsicle-stick roof, grass base and micro:bit boards attached to it" style="object-position:50% 42%" loading="lazy" decoding="async" />
+            <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+          </button>
+          <figcaption><span class="pin">01</span><span data-i18n="hk1_c">Building a cardboard smart house with micro:bit boards</span></figcaption>
+        </figure>
+        <figure class="snap s2 reveal">
+          <button type="button" class="snap-btn" data-full="hack-code.jpg" data-cap="Kidkathon · Tech Kid, Cambodia · Writing code in Microsoft MakeCode for micro:bit" data-cap-km="Kidkathon · Tech Kid កម្ពុជា · សរសេរកូដក្នុង Microsoft MakeCode សម្រាប់ micro:bit" aria-label="View photo: Writing code in Microsoft MakeCode for micro:bit">
+            <img src="hack-code.jpg" width="720" height="1280" alt="A laptop showing the Microsoft MakeCode editor for micro:bit at the hackathon" style="object-position:50% 38%" loading="lazy" decoding="async" />
+            <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+          </button>
+          <figcaption><span class="pin">02</span><span data-i18n="hk2_c">Writing code in Microsoft MakeCode for micro:bit</span></figcaption>
+        </figure>
+        <figure class="snap s3 reveal">
+          <button type="button" class="snap-btn" data-full="hack-build.jpg" data-cap="Kidkathon · Tech Kid, Cambodia · Coding and testing a micro:bit project in the simulator" data-cap-km="Kidkathon · Tech Kid កម្ពុជា · សរសេរកូដ និងសាកល្បងគម្រោង micro:bit ក្នុងកម្មវិធីក្លែងធ្វើ" aria-label="View photo: Coding and testing a micro:bit project in the simulator">
+            <img src="hack-build.jpg" width="640" height="640" alt="A participant coding on a laptop with the micro:bit simulator on screen" style="object-position:50% 40%" loading="lazy" decoding="async" />
+            <span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></span>
+          </button>
+          <figcaption><span class="pin">03</span><span data-i18n="hk3_c">Coding and testing a micro:bit project in the simulator</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="section contact">
-      <div class="title reveal"><span class="num">07 //</span><h2 data-i18n="k5">Contact</h2></div>
+      <div class="title reveal"><span class="num">08 //</span><h2 data-i18n="k5">Contact</h2></div>
       <div class="contact-grid">
 
         <div class="contact-info card reveal">

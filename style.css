@@ -1001,3 +1001,203 @@ body .hero-code .code .cl { opacity: 1; transform: none; transition: none; anima
 .tcaret::after { content: ""; position: absolute; left: 1px; bottom: -.25em; width: 8px; height: 1.25em; background: var(--accent); animation: blink 1s steps(2) infinite; }
 @media (prefers-reduced-motion: reduce) { .code .ch { visibility: visible; } .code .cl:not(.started)::before { opacity: .6; } .tcaret::after { animation: none; } }
 .medal-badge.plain { cursor: default; }
+
+/* ---------- Byte, the robot buddy ---------- */
+.bot-layer { position: fixed; inset: 0; z-index: 700; pointer-events: none; --bot-body: #dfe7f3; --bot-shade: #b7c3d6; --bot-line: #7f8ea6; --bot-visor: #0b1018; }
+:root:not([data-theme="dark"]) .bot-layer { --bot-body: #ffffff; --bot-shade: #d4dce8; --bot-line: #93a1b8; --bot-visor: #1a2230; }
+.bot-layer.off .bot, .bot-layer.off .bot-bubble, .bot-layer.off .bot-chips, .bot-layer.off .bot-hud { display: none; }
+.bot { position: absolute; left: 0; top: 0; width: 58px; height: 72px; padding: 0; border: 0; background: none; cursor: pointer; pointer-events: auto; will-change: transform; -webkit-tap-highlight-color: transparent; }
+.bot.grab { cursor: grabbing; }
+.bot:focus-visible { outline: 2px dashed var(--accent); outline-offset: 4px; border-radius: 18px; }
+.bot-art { display: block; width: 100%; height: 100%; overflow: visible; transform: rotate(var(--tilt, 0deg)); transition: transform .2s; animation: botFloat 3.2s ease-in-out infinite; filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .35)); }
+@keyframes botFloat { 50% { transform: translateY(-6px) rotate(var(--tilt, 0deg)); } }
+.bot.hop .bot-art { animation: botHop .55s var(--ease); }
+@keyframes botHop { 0% { transform: translateY(0) scale(1, 1); } 30% { transform: translateY(-26px) scale(.94, 1.08); } 60% { transform: translateY(0) scale(1.08, .92); } 100% { transform: translateY(0) scale(1); } }
+.b-shadow { fill: rgba(0, 0, 0, .28); }
+.b-flame { fill: var(--accent); opacity: .85; transform-origin: 40px 80px; animation: flame .35s ease-in-out infinite alternate; }
+@keyframes flame { from { transform: scaleY(.7); opacity: .6; } to { transform: scaleY(1.15); opacity: .95; } }
+.b-body, .b-head { fill: var(--bot-body); stroke: var(--bot-line); stroke-width: 2; }
+.b-arm { fill: var(--bot-shade); stroke: var(--bot-line); stroke-width: 1.6; transform-box: fill-box; transform-origin: 50% 12%; }
+.bot.talking .b-arm.r, .bot[data-mood="happy"] .b-arm.r { animation: wave .5s ease-in-out infinite alternate; }
+@keyframes wave { from { transform: rotate(-8deg); } to { transform: rotate(38deg); } }
+.b-core { fill: var(--accent-2); animation: pulse 2s ease-in-out infinite; }
+.b-ear { fill: var(--bot-shade); stroke: var(--bot-line); stroke-width: 1.6; }
+.b-ant { stroke: var(--bot-line); stroke-width: 2.4; stroke-linecap: round; }
+.b-bulb { fill: var(--accent-2); filter: drop-shadow(0 0 5px var(--accent-2)); animation: pulse 1.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.bot.talking .b-bulb { animation-duration: .5s; }
+.b-visor { fill: var(--bot-visor); }
+.eyes { transform: translate(var(--ex, 0px), var(--ey, 0px)); }
+.eyes .eye { fill: var(--accent); filter: drop-shadow(0 0 3px var(--accent)); transform-box: fill-box; transform-origin: center; animation: blinkEye 4.6s infinite; }
+@keyframes blinkEye { 0%, 92%, 100% { transform: scaleY(1); } 95% { transform: scaleY(.08); } }
+.eyes path, .eyes circle { fill: none; stroke: var(--accent); stroke-width: 3.2; stroke-linecap: round; filter: drop-shadow(0 0 3px var(--accent)); }
+.e-happy, .e-sleep, .e-dizzy, .e-wow { display: none; }
+.bot[data-mood="happy"] .e-open, .bot[data-mood="sleep"] .e-open, .bot[data-mood="dizzy"] .e-open, .bot[data-mood="wow"] .e-open { display: none; }
+.bot[data-mood="happy"] .e-happy, .bot[data-mood="sleep"] .e-sleep, .bot[data-mood="dizzy"] .e-dizzy, .bot[data-mood="wow"] .e-wow { display: block; }
+.bot[data-mood="dizzy"] .bot-art { animation: dizzy .5s linear infinite; }
+@keyframes dizzy { to { transform: rotate(360deg); } }
+.bot[data-mood="sleep"] .bot-art { animation-duration: 6s; opacity: .85; }
+
+/* speech bubble */
+.bot-bubble { position: absolute; left: 0; top: 0; padding: 14px 16px 14px; background: var(--card); color: var(--fg); border: 1.5px solid color-mix(in srgb, var(--accent) 55%, var(--line)); border-radius: 16px; box-shadow: 0 18px 40px -14px rgba(0, 0, 0, .6); pointer-events: auto; opacity: 0; transition: opacity .22s, translate .3s var(--ease); translate: 0 8px; }
+.bot-bubble.open { opacity: 1; translate: 0 0; }
+.bot-bubble[hidden] { display: none; }
+.bot-bubble::after { content: ""; position: absolute; left: var(--tail, 50%); bottom: -8px; width: 14px; height: 14px; margin-left: -7px; background: var(--card); border-right: 1.5px solid color-mix(in srgb, var(--accent) 55%, var(--line)); border-bottom: 1.5px solid color-mix(in srgb, var(--accent) 55%, var(--line)); transform: rotate(45deg); }
+.bot-bubble.below::after { bottom: auto; top: -8px; transform: rotate(225deg); }
+.bb-name { font-family: var(--mono); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+.bb-text { font-size: .92rem; line-height: 1.5; margin: 0; min-height: 1.5em; padding-right: 14px; }
+.bb-x { position: absolute; top: 6px; right: 8px; width: 24px; height: 24px; border: 0; border-radius: 50%; background: none; color: var(--muted); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+.bb-x:hover { color: var(--fg); background: color-mix(in srgb, var(--fg) 8%, transparent); }
+.bb-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.bb-actions:empty { display: none; }
+.bb-actions button { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); font: 500 .78rem var(--sans); cursor: pointer; transition: border-color .25s, background .25s, color .25s; }
+
+.bb-actions button:hover { border-color: var(--accent); }
+html[lang="km"] .bb-text, html[lang="km"] .bb-actions button { line-height: 1.75; }
+.bot-bubble.short .bb-x { display: none; }
+
+/* Byte's "wake me up" button and the highlights he triggers */
+.bot-wake { position: absolute; right: 12px; bottom: 12px; width: 46px; height: 46px; padding: 6px; border-radius: 50%; border: 1px solid var(--line); background: var(--card); box-shadow: var(--shadow); cursor: pointer; pointer-events: auto; }
+.bot-wake[hidden] { display: none; }
+.wake-face { display: block; width: 100%; height: 100%; }
+.wake-face svg { width: 100%; height: 100%; overflow: visible; }
+.bot-wake .b-shadow, .bot-wake .b-flame { display: none; }
+.bot-wake .e-happy { display: block; } .bot-wake .e-open { display: none; }
+.bot-flash { animation: botFlash .9s ease-in-out 3; }
+@keyframes botFlash { 50% { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 60%, transparent), 0 0 28px color-mix(in srgb, var(--accent) 55%, transparent); border-color: var(--accent); } }
+
+
+/* the walking strip: Byte lives here, so he never covers the text you are reading */
+.bot-layer.na, .bot-layer.off .bot-dock { display: none; }
+.bot-dock { position: absolute; left: 0; right: 0; bottom: 0; height: 84px; pointer-events: auto; background: color-mix(in srgb, var(--bg) 90%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); border-top: 1px solid var(--line); }
+.bot-dock::before { content: ""; position: absolute; left: 0; right: 0; bottom: 6px; height: 2px; background: repeating-linear-gradient(90deg, var(--line) 0 10px, transparent 10px 22px); opacity: .8; }
+body.has-bot { padding-bottom: 84px; }
+body.has-bot .hero { min-height: calc(100vh - 84px); min-height: calc(100svh - 84px); }
+body.has-bot .scroll-hint { display: none; }
+.flipper { transform-box: view-box; transform-origin: 40px 50px; transform: scaleX(var(--flip, 1)); }
+.bot.walking .bot-art { animation: botWalk .42s ease-in-out infinite; }
+@keyframes botWalk { 0%, 100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-4px) rotate(3deg); } }
+.bot.walking .b-arm.l { animation: swing .42s ease-in-out infinite alternate; }
+.bot.walking .b-arm.r { animation: swing .42s ease-in-out infinite alternate-reverse; }
+@keyframes swing { from { transform: rotate(-20deg); } to { transform: rotate(20deg); } }
+.bot-wake { right: 14px; bottom: 14px; }
+@media (max-width: 743px), (max-height: 499px) { .bot-layer { display: none; } body.has-bot { padding-bottom: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .bot-art, .b-flame, .b-core, .b-bulb, .eyes .eye, .bot-flash, .bot.walking .bot-art, .bot.walking .b-arm { animation: none !important; }
+  .bot.hop .bot-art { animation: none; }
+  .bot-bubble { transition: none; }
+}
+body.has-bot .hero { padding-top: 96px; padding-bottom: 28px; }
+
+/* ---------- My journey: personal story as a timeline ---------- */
+.story { margin-top: clamp(64px, 9vw, 110px); }
+.story-head { margin-bottom: 16px; }
+.story-head h3 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.15; margin-top: 4px; }
+.story-intro { max-width: 760px; color: var(--muted); font-size: clamp(1.02rem, 1.8vw, 1.2rem); line-height: 1.7; margin-bottom: 26px; }
+.grade-path { display: flex; align-items: center; flex-wrap: wrap; gap: 0; margin: 0 0 34px; padding: 0; }
+.grade-path li { position: relative; display: grid; place-items: center; min-width: 54px; height: 44px; padding: 0 16px; border-radius: 999px; font: 700 .9rem var(--mono); border: 1.5px solid currentColor; background: color-mix(in srgb, currentColor 12%, var(--card)); }
+.grade-path li + li { margin-left: 34px; }
+.grade-path li + li::before { content: ""; position: absolute; right: 100%; top: 50%; width: 34px; height: 2px; background: linear-gradient(90deg, var(--line), currentColor); }
+.grade-path li + li::after { content: ""; position: absolute; right: calc(100% + 2px); top: 50%; width: 7px; height: 7px; margin-top: -3.5px; border-top: 2px solid currentColor; border-right: 2px solid currentColor; transform: rotate(45deg); }
+.g-e { color: var(--c-kw); } .g-b { color: var(--accent); } .g-us { color: var(--gold); } .g-gpa { color: var(--accent-2); }
+.tl-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 10px; }
+.tl-meta .date { margin: 0; }
+.grade { display: inline-block; padding: 3px 12px; border-radius: 6px; font: 600 .78rem var(--mono); border: 1px solid currentColor; background: color-mix(in srgb, currentColor 13%, transparent); }
+html[lang="km"] .grade, html[lang="km"] .grade-path li, html[lang="km"] .story-head .label { font-family: "Noto Sans Khmer", "Khmer UI", "Leelawadee UI", "Khmer OS System", var(--sans); }
+html[lang="km"] .story-intro { line-height: 1.95; }
+.story-tl .card p { color: var(--muted); }
+
+/* ---------- Ask Byte: the question box in the strip, and the answers ---------- */
+.bot-ask { position: absolute; right: 16px; bottom: 20px; width: min(340px, 36vw); height: 44px; display: flex; align-items: center; gap: 6px; padding: 4px 4px 4px 16px; background: var(--card); border: 1.5px solid var(--line); border-radius: 999px; pointer-events: auto; transition: border-color .3s, box-shadow .3s; }
+.bot-ask:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent); }
+.bot-ask input { flex: 1; min-width: 0; border: 0; outline: 0; background: none; color: var(--fg); font: 400 .9rem var(--sans); }
+.bot-ask input::placeholder { color: var(--muted); opacity: .9; }
+.bot-ask button { flex: none; width: 34px; height: 34px; display: grid; place-items: center; border: 0; border-radius: 50%; background: var(--accent); color: var(--bg); cursor: pointer; transition: transform .3s var(--ease), background .3s; }
+.bot-ask button:hover { transform: scale(1.08) rotate(-8deg); background: var(--accent-2); }
+.bot-ask svg { width: 17px; height: 17px; fill: currentColor; }
+.bot-layer.off .bot-ask { display: none; }
+html[lang="km"] .bot-ask input { font-family: "Noto Sans Khmer", "Khmer UI", "Leelawadee UI", "Khmer OS System", var(--sans); }
+.bb-q { margin: 0 0 8px; padding: 6px 10px; border-radius: 10px; background: color-mix(in srgb, var(--accent) 13%, transparent); color: var(--fg); font-size: .82rem; line-height: 1.45; }
+.bb-q[hidden] { display: none; }
+.bb-actions button.chip { background: var(--bg); border-color: var(--line); color: var(--fg); font-weight: 500; }
+.bb-actions button:first-child:not(.chip) { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 600; }
+.bb-actions button.chip:hover { border-color: var(--accent); color: var(--accent); }
+.bot-bubble { max-height: calc(100vh - 170px); overflow-y: auto; }
+@media (max-width: 900px) { .bot-ask { width: min(280px, 38vw); } }
+
+.bb-text { white-space: pre-line; }
+
+/* ---------- Byte's answers: organised and easy to read ---------- */
+.bot-bubble { padding: 16px 18px 16px; }
+.bb-text { font-size: .93rem; line-height: 1.55; white-space: normal; }
+.bb-q { margin: 6px 0 12px; padding: 8px 12px; border-radius: 12px; border-left: 3px solid var(--accent); font-size: .82rem; font-weight: 500; }
+.bb-lead { margin: 0 0 10px; font-weight: 600; }
+.bb-list { list-style: none; margin: 0 0 4px; padding: 0; }
+.bb-list li { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 12px; padding: 8px 0; border-top: 1px solid var(--line); font-size: .87rem; line-height: 1.5; }
+.bb-list li.plain { display: block; }
+.bb-list li b { padding-top: 1px; color: var(--accent); font: 600 .74rem/1.5 var(--mono); letter-spacing: .01em; overflow-wrap: anywhere; }
+.bb-list li span { color: var(--fg); overflow-wrap: anywhere; }
+html[lang="km"] .bb-list li b { font-family: "Noto Sans Khmer", "Khmer UI", "Leelawadee UI", "Khmer OS System", var(--sans); font-size: .82rem; }
+.bb-lead, .bb-list li { opacity: 0; transform: translateY(6px); animation: bbIn .45s var(--ease) forwards; animation-delay: calc(var(--i, 0) * 80ms); }
+@keyframes bbIn { to { opacity: 1; transform: none; } }
+.bb-more { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); }
+.bb-more[hidden] { display: none; }
+.bb-more-l { display: block; margin-bottom: 8px; font: 500 .68rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+html[lang="km"] .bb-more-l { font-family: "Noto Sans Khmer", "Khmer UI", "Leelawadee UI", "Khmer OS System", var(--sans); letter-spacing: 0; text-transform: none; font-size: .78rem; }
+.bb-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.bb-chips button { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); font: 500 .78rem var(--sans); cursor: pointer; transition: border-color .25s, color .25s, background .25s; }
+.bb-chips button:hover { border-color: var(--accent); color: var(--accent); }
+.bb-actions { margin-top: 12px; }
+.bb-actions:empty { margin: 0; }
+.bot-bubble { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+@media (prefers-reduced-motion: reduce) { .bb-lead, .bb-list li { animation: none; opacity: 1; transform: none; } }
+.bb-list li span::first-letter { text-transform: uppercase; }
+
+/* ---------- Hackathon album: a pinboard of tilted photo prints ---------- */
+#hackathon .album-intro { max-width: 640px; color: var(--muted); font-size: clamp(1.02rem, 1.8vw, 1.15rem); margin: -10px 0 16px; }
+.album-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 40px; list-style: none; }
+.album-tags li { padding: 5px 14px; border-radius: 999px; font: 600 .78rem var(--mono); color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); }
+html[lang="km"] .album-tags li { font-family: "Noto Sans Khmer", "Khmer UI", "Leelawadee UI", "Khmer OS System", var(--sans); }
+.album {
+  position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); grid-template-areas: "a b" "a c"; gap: clamp(28px, 4vw, 52px) clamp(24px, 4vw, 56px); align-items: start;
+  padding: clamp(24px, 4vw, 44px); border-radius: 22px;
+  background:
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 42%),
+    radial-gradient(circle at 88% 82%, color-mix(in srgb, var(--accent-2) 9%, transparent), transparent 42%),
+    radial-gradient(color-mix(in srgb, var(--fg) 14%, transparent) 1.2px, transparent 1.4px) 0 0 / 22px 22px,
+    color-mix(in srgb, var(--card) 70%, var(--bg));
+  border: 1px dashed var(--line);
+}
+.snap { margin: 0; position: relative; padding: 12px 12px 0; background: var(--card); border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 26px 44px -22px rgba(0, 0, 0, .55), 0 2px 0 var(--line); transition: rotate .6s var(--ease), translate .6s var(--ease), box-shadow .5s, opacity .9s var(--ease), transform .9s var(--ease); }
+.snap.s1 { grid-area: a; rotate: -1.8deg; }
+.snap.s2 { grid-area: b; rotate: 1.4deg; }
+.snap.s3 { grid-area: c; rotate: -.9deg; }
+.snap:hover { rotate: 0deg; translate: 0 -8px; box-shadow: 0 34px 56px -22px rgba(0, 0, 0, .65), 0 0 0 1px color-mix(in srgb, var(--accent) 45%, transparent); z-index: 2; }
+/* a strip of tape holds each print to the board */
+.snap::before { content: ""; position: absolute; top: -13px; left: 50%; width: 92px; height: 26px; margin-left: -46px; transform: rotate(-3deg); z-index: 3; pointer-events: none; background: color-mix(in srgb, var(--gold) 38%, transparent); border-left: 2px dotted color-mix(in srgb, var(--gold) 55%, transparent); border-right: 2px dotted color-mix(in srgb, var(--gold) 55%, transparent); backdrop-filter: blur(1px); }
+.snap.s2::before { transform: rotate(4deg); margin-left: -30px; }
+.snap.s3::before { transform: rotate(-5deg); margin-left: -60px; background: color-mix(in srgb, var(--accent-2) 34%, transparent); border-color: color-mix(in srgb, var(--accent-2) 55%, transparent); }
+.snap-btn { position: relative; display: block; width: 100%; padding: 0; border: 0; overflow: hidden; background: var(--bg); cursor: zoom-in; border-radius: 2px; }
+.snap-btn img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 1s var(--ease), filter .5s; filter: saturate(1.05); }
+.snap.s1 .snap-btn { aspect-ratio: 4 / 5.2; }
+.snap.s2 .snap-btn { aspect-ratio: 4 / 3.3; }
+.snap.s3 .snap-btn { aspect-ratio: 4 / 3.3; }
+.snap:hover .snap-btn img { transform: scale(1.06); filter: saturate(1.15); }
+.snap .zoom { position: absolute; top: 12px; right: 12px; z-index: 2; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: rgba(0, 0, 0, .55); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); opacity: 0; transform: scale(.85); transition: opacity .3s, transform .4s var(--ease); }
+.snap .zoom svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.snap:hover .zoom, .snap-btn:focus-visible .zoom { opacity: 1; transform: none; }
+@media (hover: none) { .snap .zoom { opacity: 1; transform: none; } .snap { rotate: 0deg !important; } }
+.snap figcaption { display: flex; align-items: center; gap: 12px; padding: 14px 4px 16px; font-size: .9rem; line-height: 1.45; color: var(--fg); }
+.snap .pin { flex: none; display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; font: 700 .72rem var(--mono); color: var(--bg); background: var(--accent); }
+.snap.s2 .pin { background: var(--accent-2); }
+.snap.s3 .pin { background: var(--gold); }
+html[lang="km"] .snap figcaption { line-height: 1.7; }
+@media (max-width: 760px) {
+  .album { grid-template-columns: minmax(0, 1fr); grid-template-areas: "a" "b" "c"; padding: 22px 16px; gap: 30px; }
+  .snap.s1 { rotate: -1deg; } .snap.s2 { rotate: .8deg; } .snap.s3 { rotate: -.6deg; }
+  .snap.s1 .snap-btn { aspect-ratio: 4 / 4.6; }
+}
+@media (prefers-reduced-motion: reduce) { .snap, .snap-btn img { transition: none; } }
+
+/* event tags: where the photos are from */
+.album-tags li.ev { color: var(--gold); background: color-mix(in srgb, var(--gold) 14%, transparent); border-color: color-mix(in srgb, var(--gold) 38%, transparent); font-size: .82rem; }
+.album-tags li.ev::before { content: "\2605\00a0"; }
