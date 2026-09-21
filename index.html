@@ -218,6 +218,7 @@
       <a href="#experience" data-i18n="k4">Experience</a>
       <a href="#achievements" data-i18n="ach">Achievements</a>
       <a href="#hackathon" data-i18n="hack_nav">Hackathon</a>
+      <a href="#articles" data-i18n="art_nav">Articles</a>
       <a href="#contact" data-i18n="k5">Contact</a>
     </nav>
     <div class="nav-tools">
@@ -625,9 +626,25 @@
       </div>
     </section>
 
+    <!-- Articles -->
+    <section id="articles" class="section">
+      <div class="title reveal"><span class="num">08 //</span><h2 data-i18n="art_h">Articles</h2></div>
+      <div class="art-teaser card reveal">
+        <div class="art-tav" id="artAvatar" aria-hidden="true"></div>
+        <div class="art-info">
+          <p class="art-lead" data-i18n="art_lead">I write short articles about coding, learning and building. They live on their own page, where you can read them anytime.</p>
+          <div class="art-latest-wrap" id="artLatestWrap" hidden>
+            <span class="label" data-i18n="art_latest">Latest</span>
+            <ul class="art-latest" id="artLatest"></ul>
+          </div>
+          <a class="btn solid" href="articles.html" data-i18n="art_btn">Read my articles</a>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="section contact">
-      <div class="title reveal"><span class="num">08 //</span><h2 data-i18n="k5">Contact</h2></div>
+      <div class="title reveal"><span class="num">09 //</span><h2 data-i18n="k5">Contact</h2></div>
       <div class="contact-grid">
 
         <div class="contact-info card reveal">
@@ -707,6 +724,8 @@
     <button type="button" class="lb-nav next" id="lbNext" aria-label="Next">&#8250;</button>
   </div>
 
+  <script src="avatars.js"></script>
+  <script src="articles-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

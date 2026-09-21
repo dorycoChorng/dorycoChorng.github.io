@@ -23,6 +23,7 @@
   Object.assign(KM, { r_cop: 'គណិតវិទ្យា · ជុំជម្រុះ', r_wmi: 'ជុំជម្រុះ · កម្ពុជា', r_sasmo: 'ថ្នាក់ទី១០ · សាលារៀនជំនាន់ថ្មីវិទ្យាល័យព្រះយុគន្ធរ', r_aimo: 'ជុំសាកល្បងនៅកម្ពុជា' });
   Object.assign(KM, { thatsme: '// នេះជាខ្ញុំ' });
   Object.assign(KM, {"st_label":"រឿងផ្ទាល់ខ្លួន","st_title":"ដំណើររបស់ខ្ញុំ","st_intro":"ខ្ញុំឈ្មោះ ជង់ ឌូរីកូ ហើយបច្ចុប្បន្នខ្ញុំជានិស្សិតអន្តរជាតិ កំពុងសិក្សាថ្នាក់បរិញ្ញាបត្ររងផ្នែកវិស្វកម្មកុំព្យូទ័រ នៅ TCC។ វាជាដំណើរដ៏លំបាក និងត្រូវការការតស៊ូខ្លាំង។","st1_when":"កុមារភាព","st1_g":"ពិន្ទុ E","st1_t":"ចំណុចចាប់ផ្តើម","st1_p":"ខ្ញុំចាប់ផ្តើមដំណើរនេះតាំងពីកុមារភាព ដោយមានលទ្ធផលមិនល្អ ភាគច្រើនទទួលបានពិន្ទុ E។ វាបន្តតាំងពីមត្តេយ្យ រហូតដល់បឋមសិក្សា។","st2_when":"វិទ្យាល័យ","st2_g":"ពិន្ទុ B","st2_t":"កាន់តែរឹងមាំ","st2_p":"ពេលខ្ញុំចាប់ផ្តើមរៀនវិទ្យាល័យ ពិន្ទុរបស់ខ្ញុំចាប់ផ្តើមឡើងដល់ B ហើយនៅរក្សាបានស្ថិរភាព។","st3_when":"សហរដ្ឋអាមេរិក","st3_g":"សិក្សានៅសហរដ្ឋអាមេរិក","st3_t":"ឱកាសដ៏ធំ","st3_p":"បន្ទាប់មក ខ្ញុំទទួលបានឱកាសទៅសិក្សានៅសហរដ្ឋអាមេរិក ដែលជាសមិទ្ធផលដ៏ល្អបំផុតក្នុងជីវិតរបស់ខ្ញុំ។","st4_when":"TCC","st4_g":"GPA 4.0","st4_t":"រំលងឆ្នាំចុងក្រោយ","st4_p":"ខ្ញុំក៏មានឱកាសរំលងឆ្នាំចុងក្រោយនៃវិទ្យាល័យ ហើយចាប់ផ្តើមនៅ TCC ដោយទទួលបានទាំងសញ្ញាបត្រវិទ្យាល័យ និងបរិញ្ញាបត្ររងផ្នែកវិស្វកម្មកុំព្យូទ័រ ជាមួយ GPA 4.0 ដែលរក្សាបានស្ថិរភាព។","nm1":"ជង់","nm2":"ឌូរីកូ","nameval":"ជង់ ឌូរីកូ"});
+  Object.assign(KM, { art_h: 'អត្ថបទ', art_nav: 'អត្ថបទ', art_lead: 'ខ្ញុំសរសេរអត្ថបទខ្លីៗអំពីការសរសេរកូដ ការរៀន និងការបង្កើតអ្វីៗ។ វានៅលើទំព័រផ្ទាល់ខ្លួន ដែលអ្នកអាចអានបានគ្រប់ពេល។', art_latest: 'ថ្មីៗ', art_btn: 'អានអត្ថបទរបស់ខ្ញុំ' });
   Object.assign(KM, { hack: 'អាល់ប៊ុមហាកាតុន', hack_nav: 'ហាកាតុន', hk_intro: 'រូបថតពី Kidkathon និង Tech Kid កម្ពុជា ជាព្រឹត្តិការណ៍ហាកាតុនដែលខ្ញុំបានចូលរួម ដើម្បីទទួលបទពិសោធន៍។', hk_tk: 'Tech Kid កម្ពុជា', hk_t3: 'ការសាងសង់ដោយផ្ទាល់', hk1_c: 'កសាងផ្ទះឆ្លាតវៃពីក្រដាសកាតុងជាមួយបន្ទះ micro:bit', hk2_c: 'សរសេរកូដក្នុង Microsoft MakeCode សម្រាប់ micro:bit', hk3_c: 'សរសេរកូដ និងសាកល្បងគម្រោង micro:bit ក្នុងកម្មវិធីក្លែងធ្វើ' });
   Object.assign(KM, { r_neo: 'ប្រភេទ Coding · ថ្ងៃទី១៩ មករា ២០២៥' });
   Object.assign(KM, { sasmoSub: 'ការប្រកួតអូឡាំពិកគណិតវិទ្យាអន្តរជាតិសិង្ហបុរី' });
@@ -265,7 +266,7 @@
     ['#story .tl-item .card', 'right'], ['#about .story-head, #about .story-intro, #about .grade-path', 'rise'],
     ['#education .tl-item .card', 'right'], ['#experience .tl-item .card', 'right'],
     ['#achievements .award', 'rise', 3],
-    ['#hackathon .snap', 'rise', 3], ['#hackathon .album-intro, #hackathon .album-tags', 'rise'],
+    ['#hackathon .snap', 'rise', 3], ['#articles .art-teaser', 'rise'], ['#hackathon .album-intro, #hackathon .album-tags', 'rise'],
     ['#contact .contact-info', 'left'], ['#contact .contact-form', 'right'],
     ['#contact .mini-title, #contact .socials .social', 'rise', 0, .07], ['#contact .field, #contact .btn.block', 'rise', 0, .07]
   ];
@@ -979,9 +980,10 @@
           experience: 'Two chapters: helping teachers and the community as class monitor, and fixing computers and printers.',
           achievements: 'Six competitions on one route. Click any photo to see it big. Those medals are real!',
           hackathon: 'Photos from Kidkathon and Tech Kid, Cambodia: a cardboard smart house, coding with micro:bit and MakeCode. Click any print to see it big.',
+          articles: 'His articles live on their own page. Open it to read them, or ask me what they are about.',
           contact: 'Ready to say hi? Fill in the form and it goes straight to his inbox, or find him on GitHub and LinkedIn.'
         },
-        act: { home: 'Show me JSON', about: 'Say it in Khmer', skills: 'Show me the tools', roles: 'Light them up', education: 'Go to Experience', experience: 'Go to Achievements', achievements: 'Open a photo', hackathon: 'Open a photo', contact: 'Start typing' },
+        act: { home: 'Show me JSON', about: 'Say it in Khmer', skills: 'Show me the tools', roles: 'Light them up', education: 'Go to Experience', experience: 'Go to Achievements', achievements: 'Open a photo', hackathon: 'Open a photo', articles: 'Open articles', contact: 'Start typing' },
         nudges: [
           'Psst, the sun and moon button in the corner switches between light and dark.',
           'Did you know? The EN and KH buttons translate the whole page.',
@@ -1004,9 +1006,10 @@
           experience: 'ជំពូកពីរ៖ ជួយលោកគ្រូអ្នកគ្រូ និងសហគមន៍ក្នុងនាមប្រធានថ្នាក់ និងជួសជុលកុំព្យូទ័រ និងម៉ាស៊ីនបោះពុម្ព។',
           achievements: 'ការប្រកួតប្រាំមួយក្នុងផ្លូវតែមួយ។ ចុចលើរូបភាពណាមួយដើម្បីមើលធំ។ មេដាយទាំងនេះពិតប្រាកដ!',
           hackathon: 'រូបថតពី Kidkathon និង Tech Kid កម្ពុជា៖ ផ្ទះឆ្លាតវៃពីក្រដាសកាតុង និងការសរសេរកូដជាមួយ micro:bit និង MakeCode។ ចុចលើរូបណាមួយដើម្បីមើលធំ។',
+          articles: 'អត្ថបទរបស់គាត់នៅលើទំព័រផ្ទាល់ខ្លួន។ បើកវាដើម្បីអាន ឬសួរខ្ញុំថាវាអំពីអ្វី។',
           contact: 'ចង់ជម្រាបសួរទេ? បំពេញទម្រង់ ហើយសារនឹងទៅដល់ប្រអប់សំបុត្ររបស់គាត់ ឬរកគាត់នៅ GitHub និង LinkedIn។'
         },
-        act: { home: 'បង្ហាញ JSON', about: 'ប្តូរជាអង់គ្លេស', skills: 'បង្ហាញឧបករណ៍', roles: 'បន្លិចតួនាទី', education: 'ទៅបទពិសោធន៍', experience: 'ទៅសមិទ្ធផល', achievements: 'បើករូបភាព', hackathon: 'បើករូបភាព', contact: 'ចាប់ផ្តើមសរសេរ' },
+        act: { home: 'បង្ហាញ JSON', about: 'ប្តូរជាអង់គ្លេស', skills: 'បង្ហាញឧបករណ៍', roles: 'បន្លិចតួនាទី', education: 'ទៅបទពិសោធន៍', experience: 'ទៅសមិទ្ធផល', achievements: 'បើករូបភាព', hackathon: 'បើករូបភាព', articles: 'បើកអត្ថបទ', contact: 'ចាប់ផ្តើមសរសេរ' },
         nudges: [
           'ខ្សឹបៗ ប៊ូតុងព្រះអាទិត្យ និងព្រះចន្ទនៅជ្រុង អាចប្តូររវាងម៉ូតភ្លឺ និងងងឹត។',
           'តើអ្នកដឹងទេ? ប៊ូតុង EN និង KH បកប្រែទំព័រទាំងមូល។',
@@ -1021,25 +1024,19 @@
       }
     };
     const tx = () => T[LANG] || T.en;
-    const SECTIONS = ['home', 'about', 'skills', 'roles', 'education', 'experience', 'achievements', 'hackathon', 'contact'];
+    const SECTIONS = ['home', 'about', 'skills', 'roles', 'education', 'experience', 'achievements', 'hackathon', 'articles', 'contact'];
 
     /* ----- markup ----- */
-    const ART = '<svg class="bot-art" viewBox="0 0 80 100" aria-hidden="true">' +
-      '<ellipse class="b-shadow" cx="40" cy="96" rx="19" ry="3.5"/>' +
-      '<g class="flipper">' +
-      '<path class="b-flame" d="M33 80 Q40 97 47 80 Z"/>' +
-      '<rect class="b-arm l" x="12" y="60" width="9" height="19" rx="4.5"/><rect class="b-arm r" x="59" y="60" width="9" height="19" rx="4.5"/>' +
-      '<rect class="b-body" x="22" y="56" width="36" height="26" rx="12"/><circle class="b-core" cx="40" cy="69" r="5"/>' +
-      '<line class="b-ant" x1="40" y1="20" x2="40" y2="10"/><circle class="b-bulb" cx="40" cy="7.5" r="4.2"/>' +
-      '<rect class="b-ear" x="3" y="32" width="6" height="16" rx="3"/><rect class="b-ear" x="71" y="32" width="6" height="16" rx="3"/>' +
-      '<rect class="b-head" x="8" y="18" width="64" height="44" rx="19"/><rect class="b-visor" x="15" y="25" width="50" height="30" rx="13"/>' +
-      '<g class="eyes">' +
-        '<g class="e-open"><rect class="eye" x="26" y="34" width="9" height="13" rx="4"/><rect class="eye" x="45" y="34" width="9" height="13" rx="4"/></g>' +
-        '<g class="e-happy"><path d="M25 43 Q30.5 34 36 43 M44 43 Q49.5 34 55 43"/></g>' +
-        '<g class="e-sleep"><path d="M26 42 H35 M45 42 H54"/></g>' +
-        '<g class="e-dizzy"><path d="M26 35 L35 46 M35 35 L26 46 M45 35 L54 46 M54 35 L45 46"/></g>' +
-        '<g class="e-wow"><circle cx="30.5" cy="41" r="6"/><circle cx="49.5" cy="41" r="6"/></g>' +
-      '</g></g></svg>';
+    /* BUDDY_STYLES: ten cute characters live in avatars.js and are shared with the articles page */
+    const { STYLES, DEFAULT_NAME, art } = window.BuddyArt;
+    const COLORS = ['#58a6ff', '#3fb950', '#b47cff', '#ff6fb1', '#ff9f43', '#ff5a5f'];
+    const cfg = {
+      style: STYLES.includes(store.get('botStyle')) ? store.get('botStyle') : 'robot',
+      color: COLORS.includes(store.get('botColor')) ? store.get('botColor') : COLORS[0],
+      name: (store.get('botName') || '').slice(0, 12)
+    };
+    const botName = () => cfg.name || DEFAULT_NAME[cfg.style];
+    const ART = art(cfg.style);
 
     const layer = document.createElement('div');
     layer.className = 'bot-layer';
@@ -1048,11 +1045,14 @@
       '<form class="bot-ask" autocomplete="off"><input id="botAsk" type="text" maxlength="160" enterkeyhint="send" /><button type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-4 16-4-7z"/></svg></button></form>' +
       '<button type="button" class="bot" data-mood="idle">' + ART + '</button>' +
       '<div class="bot-bubble" hidden><button type="button" class="bb-x" aria-label="Close">&times;</button><div class="bb-name">Byte</div><p class="bb-q" hidden></p><div class="bb-text"></div><div class="bb-actions"></div><div class="bb-more" hidden><span class="bb-more-l"></span><div class="bb-chips"></div></div></div>' +
+      '<button type="button" class="bot-cust-btn" aria-haspopup="dialog" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-1 2-2 0-1.3-1-1.6-1-2.7 0-1 .8-1.6 1.8-1.6H17a4 4 0 0 0 4-4A9 9 0 0 0 12 3Z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10" cy="7.2" r="1.2"/><circle cx="14.5" cy="7.2" r="1.2"/></svg></button>' +
+      '<div class="bot-cust" hidden role="dialog" aria-labelledby="bcTitle"><div class="bc-head"><b id="bcTitle"></b><button type="button" class="bc-x" aria-label="Close">&times;</button></div><p class="bc-hint"></p><div class="bc-styles"></div><div class="bc-row"><span class="bc-l bc-lc"></span><div class="bc-sw"></div></div><div class="bc-row"><label class="bc-l bc-ln" for="bcName"></label><input id="bcName" type="text" maxlength="12" autocomplete="off" /></div><div class="bc-foot"><button type="button" class="bc-rand"></button></div></div>' +
       '<button type="button" class="bot-wake" hidden><span class="wake-face">' + ART + '</span></button>';
     document.body.appendChild(layer);
     const bot = $('.bot', layer), bubble = $('.bot-bubble', layer), bbText = $('.bb-text', layer), bbAct = $('.bb-actions', layer);
     const wake = $('.bot-wake', layer);
     const bbMore = $('.bb-more', layer), bbMoreL = $('.bb-more-l', layer), bbChips = $('.bb-chips', layer);
+    const nameEl = $('.bb-name', layer);
     const bbQ = $('.bb-q', layer), ask = $('.bot-ask', layer), askIn = $('input', ask), askBtn = $('button', ask);
 
     /* ----- state ----- */
@@ -1066,7 +1066,7 @@
     const allowed = () => window.innerWidth >= 744 && window.innerHeight >= 500;
     const W = () => document.documentElement.clientWidth, H = () => window.innerHeight;
     const MARGIN = 16;
-    const askW = () => (ask.offsetWidth || 0) + 22;
+    const askW = () => (ask.offsetWidth || 0) + 22 + 56;
     const maxX = () => Math.max(W() - B.w - MARGIN - askW(), MARGIN);
     const clampX = x => Math.min(Math.max(x, MARGIN), maxX());
     const rnd = (a, b) => a + Math.random() * (b - a);
@@ -1131,6 +1131,8 @@
       clearTimeout(B.hideT); clearInterval(B.typeT);
       B.cur = { getter: getter, ms: ms };
       const c = getter();
+      if (c.text) c.text = c.text.replace(/\bByte\b/g, botName());
+      nameEl.textContent = botName();
       bbAct.innerHTML = ''; bbChips.innerHTML = '';
       bbQ.hidden = !c.q; bbQ.textContent = c.q ? tx().you + c.q : '';
       (c.buttons || []).forEach(b => {
@@ -1178,6 +1180,7 @@
       education: () => goto('experience'),
       experience: () => goto('achievements'),
       achievements: () => { const b = $('#achievements .award-media .shot'); if (b) b.click(); },
+      articles: () => { location.href = 'articles.html'; },
       hackathon: () => { const b = $('#hackathon .snap-btn'); if (b) b.click(); },
       contact: () => { const f = $('#cf-name'); if (f) { f.scrollIntoView({ behavior: 'smooth', block: 'center' }); setTimeout(() => f.focus({ preventScroll: true }), 500); } }
     };
@@ -1196,6 +1199,7 @@
           buttons: [
             { label: t.act[sec], fn: ACTIONS[sec] },
             { label: t.askBtn, fn: () => openAsk(), keep: true },
+            { label: t.look, fn: () => openCust() },
             { label: B.autoTips ? t.mute : t.unmute, fn: () => { B.autoTips = !B.autoTips; store.set('botTips', B.autoTips ? 'on' : 'off'); shortSay(B.autoTips ? 'on' : 'muted'); } },
             { label: t.hide, fn: () => turn(false) }
           ]
@@ -1337,6 +1341,12 @@
       a: ['Yes! He joined hackathon events to gain experience.\n• Events: Kidkathon and Tech Kid, Cambodia\n• Built: a cardboard smart house with micro:bit boards\n• Coded with: Microsoft MakeCode for micro:bit\n• Photos: see the Hackathon Album section',
           'បាទ! គាត់បានចូលរួមព្រឹត្តិការណ៍ហាកាតុន ដើម្បីទទួលបទពិសោធន៍។\n• ព្រឹត្តិការណ៍៖ Kidkathon និង Tech Kid កម្ពុជា\n• បានសាងសង់៖ ផ្ទះឆ្លាតវៃពីក្រដាសកាតុងជាមួយបន្ទះ micro:bit\n• សរសេរកូដជាមួយ៖ Microsoft MakeCode សម្រាប់ micro:bit\n• រូបថត៖ មើលផ្នែកអាល់ប៊ុមហាកាតុន']
     });
+    KB.push({
+      id: 'articles', boost: 6, q: ['Does he write articles?', 'តើគាត់សរសេរអត្ថបទទេ?'], go: 'articles', next: ['skills', 'contact'],
+      k: ['article', 'articles', 'blog', 'write', 'writing', 'posts', 'read'], kk: ['អត្ថបទ', 'ប្លក់', 'អាន'],
+      a: ['Yes! He writes short articles about coding, learning and building.\n• Where: the Articles page (open it from the Articles section)\n• Read: anyone can read them\n• Write: only the owner can add or edit articles',
+          'បាទ! គាត់សរសេរអត្ថបទខ្លីៗអំពីការសរសេរកូដ ការរៀន និងការបង្កើតអ្វីៗ។\n• នៅឯណា៖ ទំព័រអត្ថបទ (បើកពីផ្នែកអត្ថបទ)\n• អាន៖ អ្នកណាក៏អាចអានបាន\n• សរសេរ៖ មានតែម្ចាស់ប៉ុណ្ណោះដែលអាចបន្ថែម ឬកែអត្ថបទ']
+    });
     /* RICH_ANSWERS: the longer answers, organised as a lead line plus labelled rows */
     const RICH = {
       who: ['Doryco Chorng (Khmer: ជង់ ឌូរីកូ) is a Cambodian international student.\n• Studying: A.S. in Computer Engineering at TCC, Washington\n• Dream: Embedded ML Engineer\n• Known for: math and coding competitions and a 4.0 GPA',
@@ -1368,6 +1378,7 @@
     const norm = s => s.toLowerCase().replace(/[^a-z0-9\u1780-\u17ff\s.+#]/g, ' ').replace(/\s+/g, ' ').trim();
     function findIntent(q) {
       const n = norm(q), words = new Set(n.split(' '));
+      if (cfg.name && n.split(' ').includes(cfg.name.toLowerCase()) && KBID.byte) return KBID.byte;
       let best = null, bestScore = 0;
       KB.forEach(it => {
         let s = 0;
@@ -1389,11 +1400,143 @@
       f.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
       setTimeout(() => f.focus({ preventScroll: true }), 500);
     }
+    /* ===== Live answers: the time and day where the visitor is, the weather, and sending a message through Gmail ===== */
+    Object.assign(T.en, {
+      lvTime: 'What time is it?', lvWeather: 'How is the weather?', lvSend: 'Send a message',
+      itIs: (when, where) => (where ? 'In ' + where + ' it is ' : 'Where you are, it is ') + when + '.',
+      lTime: 'Time', lDay: 'Day', lDate: 'Date', lZone: 'Time zone', lTemp: 'Temperature', lFeels: 'Feels like', lNow: 'Now', lToday: 'Today', lWind: 'Wind', lHum: 'Humidity', lRain: 'Rain chance',
+      wxLoading: 'Checking the weather...', wxFail: 'I could not reach the weather service right now. Please check your internet and try again.', wxNoPlace: place => 'I could not find a place called "' + place + '". Try a bigger city name.',
+      wxHere: place => 'Here is the weather in ' + place + ':', wxExact: 'Use my exact location', wxDenied: 'I could not get your location. You can also ask, for example: weather in Phnom Penh.', wxYourPlace: 'your location', wxNote: 'Tip: ask "weather in Tokyo" for any city.',
+      cpAsk: 'Sure! What would you like to say to Doryco? Type your message in the box below and press Ask me. (Type "cancel" to stop.)',
+      cpReady: 'Your message is ready. Choose how to send it:', cpTo: 'To', cpMsg: 'Message',
+      cpGmail: 'Open in Gmail', cpMail: 'Open in my mail app', cpForm: 'Use the contact form', cpCancel: 'Cancel', cpCancelled: 'Okay, cancelled. Nothing was sent.',
+      cpGmailDone: 'Gmail is open with everything filled in. Just press Send there. (I cannot send it for you, because it goes from your own Gmail account.)', cpMailDone: 'Your mail app should open with the message filled in. Press Send there.', cpFormDone: 'I put your message in the contact form below. Add your name and press Send.',
+      cpSubject: 'A message from your portfolio', cpFoot: 'Sent from the portfolio bot'
+    });
+    Object.assign(T.km, {
+      lvTime: 'ម៉ោងប៉ុន្មានហើយ?', lvWeather: 'អាកាសធាតុយ៉ាងម៉េច?', lvSend: 'ផ្ញើសារ',
+      itIs: (when, where) => (where ? 'នៅ ' + where + ' ' : 'កន្លែងរបស់អ្នក ') + 'ឥឡូវនេះគឺ ' + when + '។',
+      lTime: 'ម៉ោង', lDay: 'ថ្ងៃ', lDate: 'កាលបរិច្ឆេទ', lZone: 'ល្វែងម៉ោង', lTemp: 'សីតុណ្ហភាព', lFeels: 'ដូចជា', lNow: 'ឥឡូវនេះ', lToday: 'ថ្ងៃនេះ', lWind: 'ខ្យល់', lHum: 'សំណើម', lRain: 'ឱកាសភ្លៀង',
+      wxLoading: 'កំពុងពិនិត្យអាកាសធាតុ...', wxFail: 'ឥឡូវនេះខ្ញុំមិនអាចភ្ជាប់សេវាអាកាសធាតុបានទេ។ សូមពិនិត្យអ៊ីនធឺណិត រួចព្យាយាមម្តងទៀត។', wxNoPlace: place => 'ខ្ញុំរកមិនឃើញកន្លែងឈ្មោះ "' + place + '" ទេ។ សូមសាកល្បងឈ្មោះក្រុងធំជាងនេះ។',
+      wxHere: place => 'នេះជាអាកាសធាតុនៅ ' + place + '៖', wxExact: 'ប្រើទីតាំងពិតរបស់ខ្ញុំ', wxDenied: 'ខ្ញុំមិនអាចទទួលបានទីតាំងរបស់អ្នកទេ។ អ្នកក៏អាចសួរថា៖ weather in Phnom Penh។', wxYourPlace: 'ទីតាំងរបស់អ្នក', wxNote: 'គន្លឹះ៖ សួរ "weather in Tokyo" សម្រាប់ក្រុងណាមួយ។',
+      cpAsk: 'បាន! តើអ្នកចង់និយាយអ្វីទៅ ជង់ ឌូរីកូ? វាយសាររបស់អ្នកក្នុងប្រអប់ខាងក្រោម រួចចុច សួរខ្ញុំ។ (វាយ "cancel" ដើម្បីបញ្ឈប់។)',
+      cpReady: 'សាររបស់អ្នកត្រៀមរួចហើយ។ ជ្រើសរើសវិធីផ្ញើ៖', cpTo: 'ទៅ', cpMsg: 'សារ',
+      cpGmail: 'បើកក្នុង Gmail', cpMail: 'បើកក្នុងកម្មវិធីអ៊ីមែល', cpForm: 'ប្រើទម្រង់ទំនាក់ទំនង', cpCancel: 'បោះបង់', cpCancelled: 'យល់ព្រម បានបោះបង់។ គ្មានអ្វីត្រូវបានផ្ញើទេ។',
+      cpGmailDone: 'Gmail បានបើកជាមួយអ្វីៗបំពេញរួច។ គ្រាន់តែចុចផ្ញើនៅទីនោះ។ (ខ្ញុំមិនអាចផ្ញើជំនួសអ្នកបានទេ ព្រោះវាចេញពីគណនី Gmail របស់អ្នកផ្ទាល់។)', cpMailDone: 'កម្មវិធីអ៊ីមែលរបស់អ្នកគួរតែបើកជាមួយសារបំពេញរួច។ ចុចផ្ញើនៅទីនោះ។', cpFormDone: 'ខ្ញុំបានដាក់សាររបស់អ្នកក្នុងទម្រង់ទំនាក់ទំនងខាងក្រោម។ បំពេញឈ្មោះ រួចចុចផ្ញើ។',
+      cpSubject: 'សារពី portfolio របស់អ្នក', cpFoot: 'ផ្ញើពីបូតរបស់ portfolio'
+    });
+    const WX = {
+      0: ['Clear sky', 'មេឃថ្លា'], 1: ['Mostly clear', 'ថ្លាភាគច្រើន'], 2: ['Partly cloudy', 'មានពពកខ្លះ'], 3: ['Cloudy', 'មានពពក'], 45: ['Foggy', 'មានអ័ព្ទ'], 48: ['Foggy', 'មានអ័ព្ទ'],
+      51: ['Light drizzle', 'ភ្លៀងរលឹម'], 53: ['Drizzle', 'ភ្លៀងរលឹម'], 55: ['Heavy drizzle', 'ភ្លៀងរលឹមខ្លាំង'], 56: ['Freezing drizzle', 'ភ្លៀងរលឹមត្រជាក់'], 57: ['Freezing drizzle', 'ភ្លៀងរលឹមត្រជាក់'],
+      61: ['Light rain', 'ភ្លៀងតិចៗ'], 63: ['Rain', 'ភ្លៀង'], 65: ['Heavy rain', 'ភ្លៀងខ្លាំង'], 66: ['Freezing rain', 'ភ្លៀងត្រជាក់'], 67: ['Freezing rain', 'ភ្លៀងត្រជាក់'],
+      71: ['Light snow', 'ព្រិលតិចៗ'], 73: ['Snow', 'ព្រិល'], 75: ['Heavy snow', 'ព្រិលខ្លាំង'], 77: ['Snow grains', 'គ្រាប់ព្រិល'],
+      80: ['Rain showers', 'ភ្លៀងបង្អុរ'], 81: ['Rain showers', 'ភ្លៀងបង្អុរ'], 82: ['Heavy showers', 'ភ្លៀងបង្អុរខ្លាំង'], 85: ['Snow showers', 'ព្រិលបង្អុរ'], 86: ['Snow showers', 'ព្រិលបង្អុរ'],
+      95: ['Thunderstorm', 'ផ្គររន្ទះ'], 96: ['Thunderstorm with hail', 'ផ្គររន្ទះនិងព្រឹលដុំ'], 99: ['Thunderstorm with hail', 'ផ្គររន្ទះនិងព្រឹលដុំ']
+    };
+    const PLACES = [
+      [/cambodia|phnom penh|siem reap|kampot|battambang/, 'Asia/Phnom_Penh', 'Cambodia'], [/tacoma|seattle|washington|pacific time/, 'America/Los_Angeles', 'Tacoma'],
+      [/new york|eastern time/, 'America/New_York', 'New York'], [/london|england|\buk\b/, 'Europe/London', 'London'], [/tokyo|japan/, 'Asia/Tokyo', 'Tokyo'], [/singapore/, 'Asia/Singapore', 'Singapore'],
+      [/bangkok|thailand/, 'Asia/Bangkok', 'Bangkok'], [/paris|france/, 'Europe/Paris', 'Paris'], [/sydney|australia/, 'Australia/Sydney', 'Sydney'], [/dubai/, 'Asia/Dubai', 'Dubai'],
+      [/india|delhi|mumbai/, 'Asia/Kolkata', 'India'], [/beijing|china/, 'Asia/Shanghai', 'Beijing'], [/seoul|korea/, 'Asia/Seoul', 'Seoul']
+    ];
+    const asciiQ = q => q.toLowerCase().replace(/[^a-z0-9ក-៿\s]/g, ' ').replace(/\s+/g, ' ').trim();
+    const visitorZone = () => { try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) { return ''; } };
+    function isTimeQ(n) {
+      if (/\b(born|birth|age|old|graduat|study|school|experience|hackathon|when did|how long|he|his|she|her|doryco|does|did|was|were)\b/.test(n)) return false;
+      return /\b(what|which|tell|show|current|know)\b.*\b(time|day|date|today)\b/.test(n) || /\btime is it\b|\bday is it\b|\btoday s date\b|\bwhat s the time\b|\bwhat s today\b|\bcurrent (time|date|day)\b|\bwhat is today\b|\bwhat day\b|\bwhat time\b/.test(n) || /ម៉ោង(?!ខ្ញុំ)|ថ្ងៃនេះ|ថ្ងៃអី|កាលបរិច្ឆេទ|ថ្ងៃអ្វី/.test(n) && !/កើត|អាយុ|រៀន/.test(n);
+    }
+    const isWeatherQ = n => /\b(weather|temperature|forecast|raining|umbrella|humid|sunny|snowing)\b|will it rain|is it (hot|cold|raining|sunny)|អាកាសធាតុ|សីតុណ្ហភាព|ភ្លៀង|ក្តៅឬ|ត្រជាក់ឬ/.test(n);
+    const isComposeQ = n => /\b(send|write|compose|drop|leave|text)\b.*\b(message|msg|email|e mail|mail|note|him|doryco|gmail)\b|\bgmail\b|\bmessage (him|doryco)\b|ផ្ញើ.*(សារ|អ៊ីមែល|gmail)|សរសេរសារ|ចង់ផ្ញើសារ/.test(n);
+    function timeAnswer(q) {
+      const n = asciiQ(q), l = (isKm(q) || LANG === 'km') ? 1 : 0, T2 = T[l ? 'km' : 'en'];
+      let zone = visitorZone(), where = '';
+      for (const p of PLACES) if (p[0].test(n)) { zone = p[1]; where = p[2]; break; }
+      const loc = l ? 'km-KH' : 'en-US', now = new Date(), o = z => (z ? { timeZone: z } : {});
+      let tm, wd, dt;
+      try {
+        tm = new Intl.DateTimeFormat(loc, Object.assign({ hour: 'numeric', minute: '2-digit' }, o(zone))).format(now);
+        wd = new Intl.DateTimeFormat(loc, Object.assign({ weekday: 'long' }, o(zone))).format(now);
+        dt = new Intl.DateTimeFormat(loc, Object.assign({ year: 'numeric', month: 'long', day: 'numeric' }, o(zone))).format(now);
+      } catch (e) { tm = now.toLocaleTimeString(); wd = now.toLocaleDateString(undefined, { weekday: 'long' }); dt = now.toLocaleDateString(); }
+      const text = T2.itIs(tm + (l ? ' ' : ', ') + wd, where) + '\n• ' + T2.lTime + ': ' + tm + '\n• ' + T2.lDay + ': ' + wd + '\n• ' + T2.lDate + ': ' + dt + '\n• ' + T2.lZone + ': ' + (zone || '?').replace(/_/g, ' ');
+      say(() => ({ q: q, text: text, buttons: liveChips(['lvWeather', 'lvSend']) }), 0);
+    }
+    const jget = url => fetch(url).then(r => { if (!r.ok) throw new Error('http'); return r.json(); });
+    function liveTok() { B.liveTok = (B.liveTok || 0) + 1; return B.liveTok; }
+    async function weatherAt(lat, lon, place, q, tok) {
+      const d = await jget('https://api.open-meteo.com/v1/forecast?latitude=' + lat + '&longitude=' + lon + '&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=auto&forecast_days=1');
+      if (tok !== B.liveTok) return;
+      const c = d.current || {}, dd = d.daily || {}, l = (isKm(q) || LANG === 'km') ? 1 : 0, T2 = T[l ? 'km' : 'en'];
+      const desc = (WX[c.weather_code] || ['', ''])[l], r = v => Math.round(v);
+      const lines = [T2.wxHere(place)];
+      lines.push('• ' + T2.lNow + ': ' + (desc ? desc + ', ' : '') + r(c.temperature_2m) + '°C');
+      lines.push('• ' + T2.lFeels + ': ' + r(c.apparent_temperature) + '°C');
+      if (dd.temperature_2m_max) lines.push('• ' + T2.lToday + ': ' + r(dd.temperature_2m_min[0]) + '° - ' + r(dd.temperature_2m_max[0]) + '°C');
+      if (dd.precipitation_probability_max && dd.precipitation_probability_max[0] != null) lines.push('• ' + T2.lRain + ': ' + dd.precipitation_probability_max[0] + '%');
+      lines.push('• ' + T2.lHum + ': ' + c.relative_humidity_2m + '%');
+      lines.push('• ' + T2.lWind + ': ' + r(c.wind_speed_10m) + ' km/h');
+      say(() => ({ q: q, text: lines.join('\n'), buttons: [{ label: T2.wxExact, keep: true, fn: () => exactWeather(q) }].concat(liveChips(['lvTime', 'lvSend'])) }), 0);
+    }
+    function exactWeather(q) {
+      const tok = liveTok(), T2 = T[(isKm(q) || LANG === 'km') ? 'km' : 'en'];
+      if (!navigator.geolocation) { say(() => ({ text: T2.wxDenied }), 0); return; }
+      say(() => ({ text: T2.wxLoading }), 0);
+      navigator.geolocation.getCurrentPosition(pos => { weatherAt(pos.coords.latitude.toFixed(3), pos.coords.longitude.toFixed(3), T2.wxYourPlace, q, tok).catch(() => say(() => ({ text: T2.wxFail }), 0)); },
+        () => say(() => ({ text: T2.wxDenied }), 0), { timeout: 9000, maximumAge: 600000 });
+    }
+    async function weatherAnswer(q) {
+      const tok = liveTok(), l = (isKm(q) || LANG === 'km') ? 1 : 0, T2 = T[l ? 'km' : 'en'];
+      const n = asciiQ(q); let place = '';
+      const m = n.match(/\b(?:in|at|for|of|near)\s+([a-z][a-z ]{1,40}?)(?:\s+(?:today|now|right now|tomorrow|tonight|please|like|outside))*$/);
+      if (m && !/^(the|my|this|here)\b/.test(m[1])) place = m[1].trim();
+      for (const p of PLACES) if (!place && p[0].test(n)) { place = p[2] === 'Cambodia' ? 'Phnom Penh' : p[2]; break; }
+      const guessed = !place; if (!place) place = visitorZone().split('/').pop().replace(/_/g, ' ');
+      if (!place) { exactWeather(q); return; }
+      say(() => ({ q: q, text: T2.wxLoading }), 0);
+      try {
+        const g = await jget('https://geocoding-api.open-meteo.com/v1/search?name=' + encodeURIComponent(place) + '&count=1&language=en&format=json');
+        if (tok !== B.liveTok) return;
+        const hit = g.results && g.results[0];
+        if (!hit) { say(() => ({ q: q, text: T2.wxNoPlace(place), buttons: [{ label: T2.wxExact, keep: true, fn: () => exactWeather(q) }] }), 0); return; }
+        await weatherAt(hit.latitude, hit.longitude, hit.name + (hit.country ? ', ' + hit.country : ''), q, tok);
+      } catch (e) { if (tok === B.liveTok) say(() => ({ q: q, text: T2.wxFail, buttons: guessed ? [{ label: T2.wxExact, keep: true, fn: () => exactWeather(q) }] : [] }), 0); }
+    }
+    /* messages: Byte asks what to say, then opens Gmail (or the mail app or the form) with everything filled in. The visitor presses Send. */
+    function composeStart(q) {
+      B.compose = { step: 'ask' };
+      say(() => ({ q: q, text: tx().cpAsk, buttons: [{ label: tx().cpCancel, fn: () => { B.compose = null; } }] }), 0);
+      askIn.focus();
+    }
+    function composeStep(q) {
+      const n = asciiQ(q);
+      if (/^(cancel|stop|no|never mind|nevermind|exit)$/.test(n) || /^បោះបង់/.test(q.trim())) { B.compose = null; say(() => ({ text: tx().cpCancelled }), 0); return true; }
+      const msg = q.trim().slice(0, 1500); B.compose = null;
+      const build = () => { const t = tx(); return { subject: t.cpSubject, body: msg + '\n\n-- ' + t.cpFoot + ' (' + botName() + ')' }; };
+      const enc = encodeURIComponent, done = key => say(() => ({ text: tx()[key], buttons: liveChips(['lvTime', 'lvWeather']) }), 0);
+      say(() => ({ q: q, text: tx().cpReady + '\n• ' + tx().cpTo + ': ' + CONTACT_EMAIL + '\n• ' + tx().cpMsg + ': ' + (msg.length > 160 ? msg.slice(0, 157) + '...' : msg),
+        buttons: [
+          { label: tx().cpGmail, keep: true, fn: () => { const b = build(); window.open('https://mail.google.com/mail/?view=cm&fs=1&to=' + enc(CONTACT_EMAIL) + '&su=' + enc(b.subject) + '&body=' + enc(b.body), '_blank', 'noopener'); done('cpGmailDone'); } },
+          { label: tx().cpMail, keep: true, fn: () => { const b = build(); location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + enc(b.subject) + '&body=' + enc(b.body); done('cpMailDone'); } },
+          { label: tx().cpForm, keep: true, fn: () => { sendToForm(msg); done('cpFormDone'); } },
+          { label: tx().cpCancel, fn: () => { } }
+        ] }), 0);
+      return true;
+    }
+    const liveChips = keys => keys.map(k => ({ label: tx()[k], chip: true, keep: true, fn: () => answer(tx()[k]) }));
+    function liveIntent(q) {
+      const n = asciiQ(q);
+      if (isComposeQ(n)) { composeStart(q); return true; }
+      if (isWeatherQ(n)) { weatherAnswer(q); return true; }
+      if (isTimeQ(n)) { timeAnswer(q); return true; }
+      return false;
+    }
+
     function answer(question, forcedId) {
       const it = forcedId ? KBID[forcedId] : findIntent(question);
       const li = isKm(question) ? 1 : (LANG === 'km' && forcedId ? 1 : 0);
       B.lastAct = performance.now(); if (B.sleepy) { B.sleepy = false; setMood('idle'); }
       setMood('happy', 900);
+      if (!forcedId) { if (B.compose && composeStep(question)) return; if (liveIntent(question)) return; }
       if (!it) {
         say(() => {
           const t = tx();
@@ -1410,7 +1553,7 @@
       }, 0);
     }
     function openAsk() {
-      say(() => ({ text: tx().askIntro, chipsLabel: tx().pick, buttons: chipsFor(['summary', 'school', 'skills', 'achievements', 'contact']) }), 0);
+      say(() => ({ text: tx().askIntro, chipsLabel: tx().pick, buttons: chipsFor(['summary', 'school', 'skills', 'achievements', 'contact']).concat(liveChips(['lvTime', 'lvWeather', 'lvSend'])) }), 0);
       askIn.focus();
     }
     ask.addEventListener('submit', e => {
@@ -1430,6 +1573,82 @@
     setInterval(() => { if (document.activeElement !== askIn && !askIn.value) { phI++; setPh(); } }, 4200);
     setPh();
     langHooks.push(setPh);
+
+    /* ===== Change look: pick a character, a colour and a name; the choice is remembered ===== */
+    Object.assign(T.en, {
+      look: 'Change look', custTitle: 'Choose your buddy', custHint: 'Pick a style, a colour and a name. Your buddy will follow you through the whole website.', custColor: 'Colour', custName: 'Name', custRand: 'Surprise me',
+      custClose: 'Close', styleNames: { robot: 'Robot', boy: 'Boy', girl: 'Girl', astro: 'Astronaut', cat: 'Cat', bunny: 'Bunny', panda: 'Panda', bear: 'Bear', penguin: 'Penguin', fox: 'Fox' },
+      newLook: 'Ooh, I love my new look!', nameSet: 'Nice, call me NAME from now on!', lookBtn: 'Change buddy style'
+    });
+    Object.assign(T.km, {
+      look: 'ប្តូររូបរាង', custTitle: 'ជ្រើសរើសមិត្តរបស់អ្នក', custHint: 'ជ្រើសរើសរចនាប័ទ្ម ពណ៌ និងឈ្មោះ។ មិត្តរបស់អ្នកនឹងដើរតាមអ្នកពេញគេហទំព័រ។', custColor: 'ពណ៌', custName: 'ឈ្មោះ', custRand: 'ភ្ញាក់ផ្អើលខ្ញុំ',
+      custClose: 'បិទ', styleNames: { robot: 'រ៉ូបូត', boy: 'ក្មេងប្រុស', girl: 'ក្មេងស្រី', astro: 'អវកាសយានិក', cat: 'ឆ្មា', bunny: 'ទន្សាយ', panda: 'ផេនដា', bear: 'ខ្លាឃ្មុំ', penguin: 'ភេនហ្គីន', fox: 'កញ្ជ្រោង' },
+      newLook: 'អូ ខ្ញុំចូលចិត្តរូបរាងថ្មីណាស់!', nameSet: 'ល្អណាស់ ហៅខ្ញុំថា NAME ចាប់ពីពេលនេះ!', lookBtn: 'ប្តូររចនាប័ទ្មមិត្ត'
+    });
+    const cust = $('.bot-cust', layer), custBtn = $('.bot-cust-btn', layer);
+    const stylesEl = $('.bc-styles', cust), swEl = $('.bc-sw', cust), nameIn = $('#bcName', cust);
+    STYLES.forEach(s => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'bc-style'; b.dataset.style = s;
+      b.innerHTML = art(s) + '<span></span>';
+      b.addEventListener('click', () => { setLook({ style: s }); });
+      stylesEl.appendChild(b);
+    });
+    COLORS.forEach(c => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'bc-swatch'; b.dataset.color = c; b.style.setProperty('--sw', c);
+      b.addEventListener('click', () => { setLook({ color: c }); });
+      swEl.appendChild(b);
+    });
+    function paintCust() {
+      const t = tx();
+      $('#bcTitle', cust).textContent = t.custTitle; $('.bc-hint', cust).textContent = t.custHint;
+      $('.bc-lc', cust).textContent = t.custColor; $('.bc-ln', cust).textContent = t.custName; $('.bc-rand', cust).textContent = t.custRand;
+      $('.bc-x', cust).setAttribute('aria-label', t.custClose); custBtn.setAttribute('aria-label', t.lookBtn); custBtn.title = t.lookBtn;
+      $$('.bc-style', cust).forEach(b => { $('span', b).textContent = t.styleNames[b.dataset.style]; b.setAttribute('aria-pressed', String(b.dataset.style === cfg.style)); b.setAttribute('aria-label', t.styleNames[b.dataset.style]); });
+      $$('.bc-swatch', cust).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.color === cfg.color)));
+      nameIn.placeholder = DEFAULT_NAME[cfg.style]; nameIn.value = cfg.name;
+    }
+    // draws the chosen character everywhere it appears and remembers the choice
+    function applyLook() {
+      layer.dataset.style = cfg.style;
+      layer.style.setProperty('--bc', cfg.color);
+      bot.innerHTML = art(cfg.style);
+      $('.wake-face', layer).innerHTML = art(cfg.style);
+      nameEl.textContent = botName();
+      paintCust();
+    }
+    function setLook(change, silent) {
+      Object.assign(cfg, change);
+      store.set('botStyle', cfg.style); store.set('botColor', cfg.color); store.set('botName', cfg.name);
+      applyLook();
+      if (silent) return;
+      B.lastAct = performance.now(); if (B.sleepy) { B.sleepy = false; }
+      setMood('happy', 1200); bot.classList.remove('hop'); void bot.offsetWidth; bot.classList.add('hop');
+      if (B.ok && B.on) say(() => ({ text: tx().newLook }), 2200);
+    }
+    function openCust() {
+      cust.hidden = false; custBtn.setAttribute('aria-expanded', 'true');
+      requestAnimationFrame(() => cust.classList.add('open'));
+      const cur = $('.bc-style[aria-pressed="true"]', cust); if (cur) cur.focus();
+    }
+    function closeCust() {
+      cust.classList.remove('open'); custBtn.setAttribute('aria-expanded', 'false');
+      setTimeout(() => { if (!cust.classList.contains('open')) cust.hidden = true; }, 200);
+    }
+    custBtn.addEventListener('click', () => (cust.hidden ? openCust() : closeCust()));
+    $('.bc-x', cust).addEventListener('click', () => { closeCust(); custBtn.focus(); });
+    nameIn.addEventListener('change', () => {
+      const v = nameIn.value.replace(/[<>]/g, '').trim().slice(0, 12);
+      setLook({ name: v }, true);
+      if (v && B.ok && B.on) { setMood('happy', 1200); say(() => ({ text: tx().nameSet.replace('NAME', v) }), 2400); }
+    });
+    nameIn.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); nameIn.blur(); } });
+    $('.bc-rand', cust).addEventListener('click', () => setLook({ style: STYLES[Math.floor(Math.random() * STYLES.length)], color: COLORS[Math.floor(Math.random() * COLORS.length)] }));
+    document.addEventListener('click', e => { if (!cust.hidden && !e.target.closest('.bot-cust') && !e.target.closest('.bot-cust-btn') && !e.target.closest('.bb-actions')) closeCust(); });
+    window.addEventListener('keydown', e => { if (e.key === 'Escape' && !cust.hidden) { closeCust(); custBtn.focus(); } });
+    langHooks.push(paintCust);
+    applyLook();
 
     /* ----- on / off ----- */
     function turn(on) {
@@ -1540,6 +1759,32 @@
       B.nudgeAt = performance.now() + rnd(32000, 46000);
       if (B.on && B.ok && B.autoTips) setTimeout(() => { if (B.on && B.ok && bubble.hidden) { B.lastAuto = performance.now(); say(tipGetter(B.sec), 11000); } }, 3200);
     };
+  })();
+
+  /* ---------- Articles teaser: the visitor's own avatar and the latest published articles ---------- */
+  (function articlesTeaser() {
+    const avBox = $('#artAvatar'), list = $('#artLatest'), wrap = $('#artLatestWrap');
+    if (!avBox) return;
+    const get = k => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+    if (window.BuddyArt) {
+      const BA = window.BuddyArt, st = get('botStyle');
+      avBox.style.setProperty('--bc', get('botColor') || '#58a6ff');
+      avBox.innerHTML = BA.art(BA.STYLES.includes(st) ? st : 'robot');
+    }
+    const data = (Array.isArray(window.ARTICLES_DATA) ? window.ARTICLES_DATA : []).filter(a => !a.draft)
+      .sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 3);
+    function paint() {
+      if (!list) return;
+      wrap.hidden = !data.length;
+      list.innerHTML = '';
+      data.forEach(a => {
+        const li = document.createElement('li'), l = document.createElement('a');
+        l.href = 'articles.html#/a/' + encodeURIComponent(a.id);
+        l.textContent = LANG === 'km' && a.titleKm ? a.titleKm : a.title;
+        li.appendChild(l); list.appendChild(li);
+      });
+    }
+    paint(); langHooks.push(paint);
   })();
 
   applyLang(LANG);

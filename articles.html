@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1117" />
+  <title>Articles | Doryco Chorng</title>
+  <meta name="description" content="Short articles about coding, learning and building, by Doryco Chorng." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111'/%3E%3Ctext x='50' y='66' font-size='44' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%23fff'%3EDC%3C/text%3E%3C/svg%3E" />
+  <script>
+    /* apply the saved theme and language before first paint (the same choices as the main page) */
+    (function () {
+      var t = null, l = null;
+      try { t = localStorage.getItem('theme'); l = localStorage.getItem('lang'); } catch (e) {}
+      document.documentElement.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+      document.documentElement.setAttribute('lang', l === 'km' ? 'km' : 'en');
+    })();
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="articles.css" />
+</head>
+<body class="entered a-page">
+
+  <header class="nav" id="nav">
+    <a href="index.html" class="brand" aria-label="Portfolio home">Portfolio</a>
+    <nav class="a-links" aria-label="Pages">
+      <a href="index.html" id="lnkHome">Home</a>
+      <a href="articles.html" id="lnkArticles" class="active" aria-current="page">Articles</a>
+    </nav>
+    <div class="nav-tools">
+      <button type="button" class="theme-btn" id="ownerBtn" aria-label="Owner login" title="Owner login">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+      </button>
+      <div class="lang-switch" role="group" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="km" aria-pressed="false">KH</button></div>
+      <button class="theme-btn" id="themeBtn" aria-label="Switch between light and dark mode" title="Light / dark mode">
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- shown only after the owner has signed in -->
+  <div class="owner-bar" id="ownerBar" hidden>
+    <div class="ob-in">
+      <span class="ob-tag"><i></i><b id="obTitle">Owner mode</b></span>
+      <span class="ob-status" id="obStatus"></span>
+      <span class="ob-actions">
+        <button type="button" class="ob-btn primary" id="obNew"></button>
+        <button type="button" class="ob-btn" id="obExport"></button>
+        <button type="button" class="ob-btn" id="obDiscard"></button>
+        <button type="button" class="ob-btn ghost" id="obLogout"></button>
+      </span>
+    </div>
+    <p class="ob-help" id="obHelp" hidden></p>
+  </div>
+
+  <main class="a-main" id="app" tabindex="-1"></main>
+
+  <footer class="a-foot"><a href="index.html" id="footBack">Back to portfolio</a></footer>
+
+  <div id="modalRoot"></div>
+  <div class="a-toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="avatars.js"></script>
+  <script src="articles-data.js"></script>
+  <script src="articles.js"></script>
+</body>
+</html>
