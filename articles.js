@@ -32,7 +32,7 @@
       /* editor */
       edClose: 'Close', edDone: 'Done', edPreview: 'Preview', edWrite: 'Write', edDetails: 'Details', edByte: 'Byte', saving: 'Saving...', saved: 'Saved', ready: 'Ready to publish', draftMode: 'Draft',
       phTitle: 'Title', phSub: 'Subtitle: tell readers what this is about', phBody: 'Tell your story...', phCaption: 'Type a caption for this picture (optional)',
-      addImage: 'Picture', addH2: 'Heading', addH3: 'Subheading', addQuote: 'Quote', addList: 'Bulleted list', addNum: 'Numbered list', addCode: 'Code block',
+      addImage: 'Picture', addH2: 'Heading', addH3: 'Subheading', addQuote: 'Quote', addList: 'Bulleted list', addNum: 'Numbered list', addCode: 'Code block', devTag: 'Under development', codeDev: 'Code blocks are under development. Coming soon!',
       dropHere: 'Drop pictures to upload', uploading: 'Uploading...', badImage: 'That file is not a picture I can use.', imgAdded: n => n + (n === 1 ? ' picture added' : ' pictures added'),
       asCover: 'Use as cover', isCover: 'Cover', removeImg: 'Remove', linkPh: 'Paste a link and press Enter',
       dTags: 'Tags (comma separated)', dDate: 'Date', dAvatar: 'Cover avatar', dColor: 'Cover colour', dPics: 'Pictures in this story', dNoPics: 'No pictures yet. Drag some in, paste them, or press + on an empty line.', dDelete: 'Delete story',
@@ -77,7 +77,7 @@
       tabEn: 'English', tabKm: 'ខ្មែរ', byName: 'Byte',
       discardConfirm: 'បោះបង់ការផ្លាស់ប្តូរទាំងអស់ក្នុងម៉ាស៊ីន (រួមទាំងរូបភាពដែលអ្នកបានបន្ថែម) ហើយត្រឡប់ទៅអត្ថបទដែលបានផ្សព្វផ្សាយ?', noStorage: 'កម្មវិធីរុករកនេះមិនអាចរក្សាទុករូបភាពក្នុងម៉ាស៊ីនបានទេ ដូច្នេះវានឹងបាត់នៅពេលអ្នកចាកចេញ។',
       edByte: 'Byte', edWrite: 'សរសេរ', phCaption: 'វាយចំណងរូបភាព (មិនចាំបាច់)',
-      addImage: 'រូបភាព', addH2: 'ចំណងជើង', addH3: 'ចំណងជើងរង', addQuote: 'សម្រង់', addList: 'បញ្ជីមានចំណុច', addNum: 'បញ្ជីមានលេខ', addCode: 'ប្លុកកូដ',
+      addImage: 'រូបភាព', addH2: 'ចំណងជើង', addH3: 'ចំណងជើងរង', addQuote: 'សម្រង់', addList: 'បញ្ជីមានចំណុច', addNum: 'បញ្ជីមានលេខ', addCode: 'ប្លុកកូដ', devTag: 'កំពុងអភិវឌ្ឍ', codeDev: 'ប្លុកកូដកំពុងស្ថិតក្នុងការអភិវឌ្ឍ។ មកដល់ឆាប់ៗនេះ!',
       dropHere: 'ទម្លាក់រូបភាពដើម្បីផ្ទុកឡើង', uploading: 'កំពុងផ្ទុកឡើង...', badImage: 'ឯកសារនោះមិនមែនជារូបភាពដែលខ្ញុំអាចប្រើបានទេ។', imgAdded: n => 'បានបន្ថែមរូបភាព ' + n,
       asCover: 'ប្រើជារូបគម្រប', isCover: 'គម្រប', removeImg: 'ដកចេញ', linkPh: 'បិទភ្ជាប់តំណ រួចចុច Enter',
       dTags: 'ស្លាក (ផ្ដាច់ដោយសញ្ញាក្បៀស)', dDate: 'កាលបរិច្ឆេទ', dAvatar: 'តួអង្គគម្រប', dColor: 'ពណ៌គម្រប', dPics: 'រូបភាពក្នុងរឿងនេះ', dNoPics: 'មិនទាន់មានរូបភាពទេ។ អូសចូល បិទភ្ជាប់ ឬចុច + លើបន្ទាត់ទទេ។', dDelete: 'លុបរឿង',
@@ -744,7 +744,7 @@
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'i') { e.preventDefault(); document.execCommand('italic'); changed(); return; }
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
-        if (tx.textContent.trim() === '```') { tx.innerHTML = ''; const cb = makeBlock({ type: 'code', code: '' }); wrap.after(cb); wrap.remove(); $('textarea', cb).focus(); changed(); return; }
+        if (tx.textContent.trim() === '```') { toast(t().codeDev); return; }
         if (type === 'li' || type === 'oli') { if (!tx.textContent.trim()) { convert(wrap, 'p'); return; } }
         // split at the caret
         let restHtml = '';
@@ -820,11 +820,15 @@
     $('#mzPlusBtn').addEventListener('mousedown', e => e.preventDefault());
     $('#mzPlusBtn').addEventListener('click', () => {
       if (!Z.menu.hidden) { Z.menu.hidden = true; return; }
-      Z.menu.innerHTML = menuItems().map(m => '<button type="button" data-k="' + m[0] + '"><span>' + m[2] + '</span>' + esc(m[1]) + '</button>').join(''); Z.menu.hidden = false;
+      Z.menu.innerHTML = menuItems().map(m => m[0] === 'code'
+        ? '<button type="button" class="is-dev" data-k="code" aria-disabled="true" title="' + esc(t().devTag) + '"><span>' + m[2] + '</span>' + esc(m[1]) + '<em class="dev-tag">' + esc(t().devTag) + '</em></button>'
+        : '<button type="button" data-k="' + m[0] + '"><span>' + m[2] + '</span>' + esc(m[1]) + '</button>').join(''); Z.menu.hidden = false;
     });
     Z.menu.addEventListener('mousedown', e => e.preventDefault());
     Z.menu.addEventListener('click', e => {
-      const b = e.target.closest('button'); if (!b || !focusedBlk) return; const k = b.dataset.k, at = focusedBlk; Z.menu.hidden = true;
+      const b = e.target.closest('button'); if (!b || !focusedBlk) return; const k = b.dataset.k, at = focusedBlk;
+      if (k === 'code') { toast(t().codeDev); return; } /* code blocks are under development */
+      Z.menu.hidden = true;
       if (k === 'img') { Z.file._target = at; Z.file.click(); }
       else if (k === 'code') { const cb = makeBlock({ type: 'code', code: '' }); at.after(cb); at.remove(); $('textarea', cb).focus(); changed(); }
       else convert(at, k);

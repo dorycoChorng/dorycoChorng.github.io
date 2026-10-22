@@ -278,10 +278,13 @@ html[lang="km"] .blk-t { line-height: 2; }
 .mz-plus[hidden], .mz-menu[hidden], .mz-float[hidden], .mz-drop[hidden], .mz-details[hidden], .mz-side[hidden] { display: none; }
 .mz-plus-btn { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid var(--muted); background: var(--bg); color: var(--muted); font: 300 1.5rem/1 var(--sans); cursor: pointer; display: grid; place-items: center; transition: transform .3s var(--ease), border-color .2s, color .2s; }
 .mz-plus-btn:hover { border-color: var(--accent); color: var(--accent); transform: rotate(90deg); }
-.mz-menu { position: absolute; top: 40px; left: 0; width: 220px; padding: 6px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); box-shadow: 0 18px 40px -12px rgba(0, 0, 0, .6); display: grid; gap: 2px; }
+.mz-menu { position: absolute; top: 40px; left: 0; width: 260px; padding: 6px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); box-shadow: 0 18px 40px -12px rgba(0, 0, 0, .6); display: grid; gap: 2px; }
 .mz-menu button { display: flex; align-items: center; gap: 12px; padding: 9px 10px; border: 0; border-radius: 9px; background: none; color: var(--fg); font: 500 .9rem var(--sans); text-align: left; cursor: pointer; }
 .mz-menu button:hover { background: color-mix(in srgb, var(--accent) 14%, transparent); }
 .mz-menu span { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--line); font: 600 .82rem var(--mono); }
+.mz-menu button.is-dev { opacity: .6; cursor: not-allowed; }
+.mz-menu button.is-dev:hover { background: none; }
+.mz-menu .dev-tag { margin-left: auto; padding: 2px 7px; border-radius: 999px; border: 1px solid color-mix(in srgb, #d29922 55%, transparent); background: color-mix(in srgb, #d29922 16%, transparent); color: #d29922; font: 600 .66rem var(--sans); font-style: normal; white-space: nowrap; }
 .mz-float { position: fixed; z-index: 6; display: flex; align-items: center; gap: 2px; padding: 5px; border-radius: 12px; background: #10151d; border: 1px solid #2a3342; box-shadow: 0 14px 30px -10px rgba(0, 0, 0, .7); }
 .mz-float button { min-width: 32px; height: 32px; padding: 0 8px; border: 0; border-radius: 8px; background: none; color: #e6edf3; font: 600 .95rem var(--sans); cursor: pointer; }
 .mz-float button:hover { background: #26303f; }
